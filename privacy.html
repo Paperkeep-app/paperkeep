@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paperkeep — Politique de confidentialité / Privacy policy</title>
+<style>
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #17181A; background: #FAFAF8; }
+  h1 { font-size: 26px; margin-bottom: 4px; } h2 { font-size: 19px; margin-top: 32px; }
+  .date { color: #6A6D72; font-size: 14px; } hr { border: 0; border-top: 1px solid #DDD; margin: 44px 0; }
+  code { background: #EEE; padding: 1px 5px; border-radius: 3px; font-size: 14px; }
+</style>
+
+<h1>Paperkeep — Politique de confidentialité</h1>
+<p class="date">Dernière mise à jour : 11 septembre 2026</p>
+
+<h2>En bref</h2>
+<p>Paperkeep fonctionne entièrement dans votre navigateur. Aucune donnée n'est envoyée au développeur ni à un tiers. Il n'y a ni compte, ni serveur, ni statistiques d'usage, ni publicité.</p>
+
+<h2>Ce que l'extension lit</h2>
+<p>Uniquement quand vous cliquez sur son icône, Paperkeep lit la page ouverte pour y repérer des factures : liens, dates, montants, nom du fournisseur. Cette lecture a lieu sur votre ordinateur. Pour récupérer un document, l'extension peut ouvrir la page de facture du fournisseur dans un onglet d'arrière-plan, puis le refermer.</p>
+
+<h2>Ce que l'extension enregistre</h2>
+<p>Dans le stockage local de votre navigateur (<code>chrome.storage.local</code>), et nulle part ailleurs :</p>
+<ul>
+  <li>un compteur mensuel du nombre de factures téléchargées ;</li>
+  <li>l'historique des 500 derniers téléchargements : nom du fournisseur, nom du fichier, taille, résultat de la vérification.</li>
+</ul>
+<p>Les fichiers de factures sont enregistrés dans votre dossier Téléchargements, sous <code>Factures/</code>.</p>
+
+<h2>Communications réseau</h2>
+<p>Les seules requêtes émises sont celles nécessaires pour télécharger vos factures, directement depuis le site du fournisseur que vous consultez. Aucune donnée n'est transmise à Paperkeep ou à quiconque.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li><code>activeTab</code> et <code>scripting</code> : lire la page ouverte, au moment de votre clic seulement.</li>
+  <li><code>downloads</code> : enregistrer les factures et vérifier qu'il s'agit bien d'un document.</li>
+  <li><code>storage</code> : conserver le compteur et l'historique décrits ci-dessus.</li>
+  <li><code>pageCapture</code> : conserver une page de reçu lorsque le fournisseur ne propose aucun PDF.</li>
+  <li>Accès facultatif à <code>invoice.stripe.com</code>, <code>pay.stripe.com</code> et <code>hbomax.com</code> : demandé au moment du clic, seulement si la facture se trouve sur ces domaines.</li>
+</ul>
+
+<h2>Utilisation limitée</h2>
+<p>L'utilisation des informations reçues des API de Chrome respecte les exigences d'utilisation limitée du programme Chrome Web Store : ces données servent uniquement à la fonction de l'extension, ne sont ni vendues, ni transférées, ni utilisées à des fins publicitaires ou d'évaluation de solvabilité.</p>
+
+<h2>Suppression</h2>
+<p>Désinstaller l'extension supprime son stockage local. Les fichiers déjà téléchargés restent dans votre dossier, sous votre contrôle.</p>
+
+<h2>Contact</h2>
+<p>Pour toute question sur cette politique ou sur vos données : <a href="mailto:paperkeep.contact@gmail.com">paperkeep.contact@gmail.com</a></p>
+
+<hr>
+
+<h1 lang="en">Paperkeep — Privacy policy</h1>
+<p class="date">Last updated: September 11, 2026</p>
+
+<h2>In short</h2>
+<p>Paperkeep runs entirely in your browser. No data is sent to the developer or to any third party. There is no account, no server, no usage analytics and no advertising.</p>
+
+<h2>What the extension reads</h2>
+<p>Only when you click its icon, Paperkeep reads the open page to find invoices: links, dates, amounts, vendor name. This happens on your computer. To retrieve a document, the extension may open the vendor's invoice page in a background tab, then close it.</p>
+
+<h2>What the extension stores</h2>
+<p>In your browser's local storage (<code>chrome.storage.local</code>) only:</p>
+<ul>
+  <li>a monthly count of downloaded invoices;</li>
+  <li>a history of the last 500 downloads: vendor name, file name, size, verification result.</li>
+</ul>
+<p>Invoice files are saved to your Downloads folder, under <code>Factures/</code>.</p>
+
+<h2>Network activity</h2>
+<p>The only requests made are those needed to download your invoices, directly from the vendor website you are visiting. No data is transmitted to Paperkeep or anyone else.</p>
+
+<h2>Permissions</h2>
+<ul>
+  <li><code>activeTab</code> and <code>scripting</code>: read the open page, only when you click.</li>
+  <li><code>downloads</code>: save invoices and check that they are actual documents.</li>
+  <li><code>storage</code>: keep the count and history described above.</li>
+  <li><code>pageCapture</code>: keep a receipt page when the vendor provides no PDF.</li>
+  <li>Optional access to <code>invoice.stripe.com</code>, <code>pay.stripe.com</code> and <code>hbomax.com</code>: requested at click time, only when the invoice lives on those domains.</li>
+</ul>
+
+<h2>Limited Use</h2>
+<p>The use of information received from Chrome APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements: data is used solely to provide the extension's feature, and is never sold, transferred, or used for advertising or creditworthiness purposes.</p>
+
+<h2>Deletion</h2>
+<p>Uninstalling the extension deletes its local storage. Files already downloaded remain in your folder, under your control.</p>
+
+<h2>Contact</h2>
+<p>For any question about this policy or your data: <a href="mailto:paperkeep.contact@gmail.com">paperkeep.contact@gmail.com</a></p>
+</html>
