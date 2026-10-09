@@ -1,0 +1,21 @@
+# Paperkeep
+
+> Paperkeep is a free Chrome extension (Manifest V3) that finds the invoices on the billing page the user is viewing, downloads them and renames them as DATE_VENDOR_AMOUNT (for example 2026-09-06_vendor_15-00EUR.pdf) into Downloads/Factures. It is built for freelancers and small businesses who must hand their purchase invoices to an accountant. Interface in French, Dutch and English. Published from Belgium.
+
+Key facts:
+- Price: free, no account, no download limit. A paid plan for accounting firms and high volumes is planned.
+- Privacy: no server, no analytics, no data sent to the developer or third parties. The page is only read when the user clicks the extension icon (activeTab). Site access is requested per site, at click time, only when needed.
+- Works on: Stripe customer billing portals (billing.stripe.com), pages listing PDF invoices, pages whose invoice links have no file extension. When a service offers no PDF, the receipt page is saved as a single .mhtml file.
+- Every downloaded file is checked (size and type); empty or wrong downloads are flagged.
+- Publisher: Talal Swalha, Belgian company number BE 1042.078.027, Ixelles. Contact: paperkeep.contact@gmail.com
+
+## Links
+- [Chrome Web Store listing](https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi)
+- [Home (French)](https://paperkeep-app.github.io/paperkeep/)
+- [Home (English)](https://paperkeep-app.github.io/paperkeep/en.html)
+- [Home (Dutch)](https://paperkeep-app.github.io/paperkeep/nl.html)
+- [Help, FAQ and contact](https://paperkeep-app.github.io/paperkeep/aide.html)
+- [Guide: collecting the invoices of online subscriptions (French)](https://paperkeep-app.github.io/paperkeep/guide-factures-abonnements.html)
+- [Guide: keeping a receipt when there is no PDF invoice (French)](https://paperkeep-app.github.io/paperkeep/guide-recu-sans-pdf.html)
+- [Guide in Dutch](https://paperkeep-app.github.io/paperkeep/gids-facturen-abonnementen.html)
+- [Privacy policy](https://paperkeep-app.github.io/paperkeep/privacy.html)
