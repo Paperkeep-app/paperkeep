@@ -2,47 +2,224 @@
 <html lang="nl">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paperkeep — download en hernoem je leveranciersfacturen met één klik (Chrome-extensie)</title>
-<meta name="description" content="Gratis Chrome-extensie die de facturen op een facturatiepagina vindt, downloadt en hernoemt op datum, leverancier en bedrag. Er verlaat niets je browser.">
+<title>Paperkeep — je leveranciersfacturen opgehaald en hernoemd met één klik</title>
+<meta name="description" content="Gratis Chrome-extensie: op de facturatiepagina van je abonnementen downloadt één klik je facturen en hernoemt ze op datum, leverancier en bedrag. Er verlaat niets je computer.">
 <link rel="canonical" href="https://paperkeep.be/nl.html">
 <link rel="alternate" hreflang="fr" href="https://paperkeep.be/">
 <link rel="alternate" hreflang="en" href="https://paperkeep.be/en.html">
 <link rel="alternate" hreflang="nl" href="https://paperkeep.be/nl.html">
 <link rel="alternate" hreflang="x-default" href="https://paperkeep.be/en.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Paperkeep — download en hernoem je leveranciersfacturen met één klik (Chrome-extensie)">
-<meta property="og:description" content="Gratis Chrome-extensie die de facturen op een facturatiepagina vindt, downloadt en hernoemt op datum, leverancier en bedrag. Er verlaat niets je browser.">
+<meta property="og:title" content="Paperkeep — je leveranciersfacturen opgehaald en hernoemd met één klik">
+<meta property="og:description" content="Gratis Chrome-extensie: op de facturatiepagina van je abonnementen downloadt één klik je facturen en hernoemt ze op datum, leverancier en bedrag. Er verlaat niets je computer.">
 <meta property="og:url" content="https://paperkeep.be/nl.html">
 <meta property="og:site_name" content="Paperkeep">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Paperkeep", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Browser extension", "operatingSystem": "Chrome", "inLanguage": ["fr", "nl", "en"], "description": "Gratis Chrome-extensie die de facturen op een facturatiepagina vindt, downloadt en hernoemt op datum, leverancier en bedrag. Er verlaat niets je browser.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "downloadUrl": "https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi", "installUrl": "https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi", "url": "https://paperkeep.be/", "publisher": {"@type": "Organization", "name": "Paperkeep", "email": "paperkeep.contact@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "addressCountry": "BE"}}}</script>
+<meta property="og:image" content="https://paperkeep.be/img/capture-detection.png">
+<meta name="theme-color" content="#0c2a21">
+<link rel="icon" href="img/logo-512.png">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Paperkeep", "applicationCategory": "BusinessApplication", "applicationSubCategory": "Browser extension", "operatingSystem": "Chrome", "inLanguage": ["fr", "nl", "en"], "description": "Gratis Chrome-extensie: op de facturatiepagina van je abonnementen downloadt één klik je facturen en hernoemt ze op datum, leverancier en bedrag. Er verlaat niets je computer.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "downloadUrl": "https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi", "installUrl": "https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi", "url": "https://paperkeep.be/", "image": "https://paperkeep.be/img/logo-512.png", "screenshot": "https://paperkeep.be/img/capture-detection.png", "publisher": {"@type": "Organization", "name": "Paperkeep", "url": "https://paperkeep.be/", "email": "paperkeep.contact@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "addressCountry": "BE"}}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is het gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, zonder account en zonder downloadlimiet. Een betaalde formule voor grote volumes en boekhoudkantoren volgt later; wat je al hebt opgehaald, blijft van jou."}}, {"@type": "Question", "name": "Op welke diensten werkt het?", "acceptedAnswer": {"@type": "Answer", "text": "Op Stripe-portalen, op pagina's met facturen in pdf en op pagina's waarvan de links geen extensie hebben. Wordt een dienst niet herkend, schrijf ons dan: we voegen hem toe."}}, {"@type": "Question", "name": "Waar komen mijn facturen terecht?", "acceptedAnswer": {"@type": "Answer", "text": "In de map Downloads › Factures op je computer, met de naam 2026-09-06_leverancier_15-00EUR.pdf."}}, {"@type": "Question", "name": "Worden mijn gegevens ergens naartoe gestuurd?", "acceptedAnswer": {"@type": "Answer", "text": "Nee. Geen server, geen statistieken. De bestanden gaan rechtstreeks naar je map Downloads."}}]}]</script>
 <style>
-  :root { color-scheme: light; }
-  body { margin: 0; font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #16211d; background: #F4F6F5; }
-  .wrap { max-width: 660px; margin: 0 auto; padding: 48px 24px 80px; }
-  .marque { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; text-decoration: none; color: inherit; }
-  h1 { font-size: 32px; line-height: 1.15; margin: 0 0 14px; letter-spacing: -.02em; }
-  h2 { font-size: 21px; margin: 40px 0 10px; letter-spacing: -.01em; }
-  h3 { font-size: 17px; margin: 24px 0 6px; }
-  p { margin: 0 0 14px; } ul, ol { padding-left: 22px; margin: 0 0 14px; } li { margin-bottom: 6px; }
-  code { background: #E6EAE8; padding: 2px 6px; border-radius: 3px; font-size: 15px; }
-  a { color: #1E5142; }
-  .cta { display: inline-block; margin: 8px 0; padding: 13px 24px; border-radius: 10px; background: #1E5142; color: #fff; font-weight: 600; text-decoration: none; }
-  .langues { font-size: 15px; margin-bottom: 20px; }
-  .contact { background: #fff; border: 1px solid #DDE2E0; border-radius: 10px; padding: 16px 18px; margin: 18px 0; }
-  details { background: #fff; border: 1px solid #DDE2E0; border-radius: 10px; padding: 12px 16px; margin-bottom: 8px; }
-  summary { font-weight: 600; cursor: pointer; } details p { margin: 10px 0 2px; }
-  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #DDE2E0; font-size: 15px; color: #5b6660; }
+:root{--encre:#0f1f1a;--vert:#1E5142;--vert-nuit:#0c2a21;--menthe:#bff0d6;--citron:#d9f36a;--creme:#f6f4ee;--papier:#fff;--gris:#5d6964;--trait:#e2e5e0;--rayon:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:var(--encre);background:var(--creme);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+.w{max-width:1120px;margin:0 auto;padding-inline:24px}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.08;margin:0}
+.oeil{font-size:13px;font-weight:650;letter-spacing:.09em;text-transform:uppercase;color:var(--vert);margin:0 0 14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--citron);color:var(--encre);font-weight:650;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(217,243,106,.9)}
+.btn small{font-weight:500;opacity:.7;font-size:14px}
+.btn.sombre{background:var(--vert);color:#fff}.btn.sombre:hover{box-shadow:0 10px 24px -10px rgba(30,81,66,.8)}
+.lien{font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:1px}
+
+/* barre */
+.barre{position:sticky;top:0;z-index:20;background:rgba(12,42,33,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);color:#fff}
+.barre .w{display:flex;align-items:center;gap:22px;height:66px}
+.marque{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;text-decoration:none;letter-spacing:-.02em}
+.barre nav{display:flex;gap:22px;margin-left:auto;font-size:15px}
+.barre nav a{text-decoration:none;opacity:.78}.barre nav a:hover{opacity:1}
+.langues{display:flex;gap:4px;font-size:13px;font-weight:600}
+.langues a{text-decoration:none;padding:5px 8px;border-radius:8px;opacity:.6}.langues a[aria-current]{background:rgba(255,255,255,.14);opacity:1}
+.barre .btn{padding:10px 16px;font-size:15px}
+
+/* accroche */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(900px 500px at 78% 8%,rgba(191,240,214,.22),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(217,243,106,.10),transparent 60%),linear-gradient(180deg,var(--vert-nuit),#12382d 70%,#17463a)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse at 60% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 60% 30%,#000 10%,transparent 70%)}
+.hero .w{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center;padding-block:78px 120px}
+.hero .oeil{color:var(--menthe);display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 13px;border-radius:999px;letter-spacing:.06em}
+.hero .oeil i{width:7px;height:7px;border-radius:50%;background:var(--citron);box-shadow:0 0 0 4px rgba(217,243,106,.2)}
+.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:auto}
+.hero h1 span{display:block}.hero h1 .b{color:var(--menthe)}
+.hero p.chapo{font-size:19px;line-height:1.55;color:rgba(255,255,255,.8);max-width:33em;margin:22px 0 30px}
+.actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.actions .lien{color:#fff;opacity:.9}
+.gages{display:flex;flex-wrap:wrap;gap:8px 20px;margin:34px 0 0;padding:0;list-style:none;font-size:14.5px;color:rgba(255,255,255,.72)}
+.gages li{display:flex;align-items:center;gap:8px}.gages li:before{content:"";width:16px;height:16px;border-radius:50%;background:rgba(191,240,214,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.2 2.3 2.3 4.7-5' fill='none' stroke='%23bff0d6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px}
+
+/* démonstration animée */
+.demo{position:relative;perspective:1400px}
+.fenetre{background:#fff;color:var(--encre);border-radius:16px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.1);overflow:hidden;transform:rotateY(-7deg) rotateX(3deg);transform-origin:left center}
+.chrome{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#eef1ee;border-bottom:1px solid var(--trait)}
+.chrome i{width:10px;height:10px;border-radius:50%;background:#d5dad6}.chrome b{flex:1;margin-left:8px;background:#fff;border-radius:7px;height:22px;font:500 11px/22px ui-monospace,Menlo,monospace;color:#8a948f;padding-left:10px;overflow:hidden;white-space:nowrap}
+.chrome em{width:22px;height:22px;border-radius:6px;background:var(--vert);animation:pouls 8s infinite}
+.page{padding:18px 20px 64px}
+.page h4{margin:0 0 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a948f;font-weight:650}
+.ligne{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:11px 0;border-top:1px solid var(--trait);font-size:14px}
+.ligne span:nth-child(2){font-variant-numeric:tabular-nums;font-weight:600}
+.ligne .ok{font-size:11px;font-weight:650;color:#1f7a4d;background:#e3f6ea;padding:3px 8px;border-radius:999px}
+.bulle{position:absolute;right:-22px;top:58px;width:232px;background:#fff;color:var(--encre);border-radius:14px;padding:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55),0 0 0 1px rgba(15,31,26,.06);animation:bulle 8s infinite}
+.bulle strong{display:block;font-size:13.5px;margin-bottom:9px}
+.bulle label{display:flex;align-items:center;gap:8px;font-size:12px;padding:6px 8px;border:1px solid var(--trait);border-radius:7px;margin-bottom:5px}
+.bulle label:before{content:"";width:13px;height:13px;border-radius:3px;background:var(--vert) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 8.3 2.6 2.6L12 5.3' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px}
+.bulle label span{margin-left:auto;color:#8a948f;font-variant-numeric:tabular-nums}
+.bulle button{width:100%;margin-top:5px;border:0;border-radius:8px;padding:9px;font:650 12.5px/1 inherit;background:var(--vert);color:#fff;animation:appui 8s infinite}
+.fichiers{position:absolute;left:-18px;bottom:-66px;width:min(330px,82%);background:var(--encre);color:#eaf3ee;border-radius:14px;padding:13px 15px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);font:500 12px/1.9 ui-monospace,Menlo,monospace}
+.fichiers small{display:block;font:650 10.5px/1 -apple-system,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--menthe);margin-bottom:6px}
+.fichiers div{opacity:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:fichier 8s infinite}
+.fichiers div:nth-of-type(2){animation-delay:.35s}.fichiers div:nth-of-type(3){animation-delay:.7s}
+.fichiers div:before{content:"↓ ";color:var(--citron)}
+@keyframes bulle{0%,6%{opacity:0;transform:translateY(-8px) scale(.97)}12%,92%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-8px) scale(.97)}}
+@keyframes appui{0%,38%{transform:none;background:var(--vert)}42%{transform:scale(.96);background:#17463a}46%,100%{transform:none;background:var(--vert)}}
+@keyframes fichier{0%,46%{opacity:0;transform:translateX(-10px)}54%,92%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes pouls{0%,4%{box-shadow:0 0 0 0 rgba(30,81,66,.5)}9%{box-shadow:0 0 0 9px rgba(30,81,66,0)}100%{box-shadow:0 0 0 0 rgba(30,81,66,0)}}
+
+/* sections */
+section{padding-block:96px}
+.entete{max-width:36em;margin-bottom:46px}
+.entete h2{font-size:clamp(30px,3.8vw,46px);font-weight:700}
+.entete p{color:var(--gris);font-size:18.5px;margin:18px 0 0}
+.avantapres{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}
+.pile{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:22px 24px;font:500 14px/2.1 ui-monospace,Menlo,monospace}
+.pile b{display:block;font:650 12px/1 -apple-system,sans-serif;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px;color:var(--gris)}
+.pile div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#9aa39e}
+.pile.propre{background:var(--encre);border-color:var(--encre)}.pile.propre b{color:var(--menthe)}.pile.propre div{color:#eaf3ee}
+.fleche{width:46px;height:46px;border-radius:50%;background:var(--citron);display:grid;place-items:center;font-size:22px;font-weight:700}
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:e}
+.etape{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:28px 26px 30px;counter-increment:e;transition:transform .25s,box-shadow .25s}
+.etape:hover,.atout:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(15,31,26,.45)}
+.etape:before{content:counter(e);display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--vert);color:#fff;font-weight:700;font-size:18px;margin-bottom:20px}
+.etape h3,.atout h3{font-size:20px;margin-bottom:8px}.etape p,.atout p{margin:0;color:var(--gris);font-size:16px}
+.capture{margin:56px 0 0;border-radius:var(--rayon);overflow:hidden;border:1px solid var(--trait);background:#fff;box-shadow:0 40px 80px -50px rgba(15,31,26,.55)}
+.capture img{width:100%;aspect-ratio:1280/540;object-fit:cover;object-position:top}
+.capture figcaption{font-size:14px;color:var(--gris);padding:12px 18px;border-top:1px solid var(--trait)}
+.atouts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.atout{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:26px;transition:transform .25s,box-shadow .25s}
+.atout svg{width:26px;height:26px;stroke:var(--vert);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;background:#e6f3ec;border-radius:10px;padding:9px;box-sizing:content-box;margin-bottom:18px}
+.sombre-s{background:var(--vert-nuit);color:#fff;border-radius:34px;margin-inline:16px;padding-block:84px}
+.sombre-s .oeil{color:var(--menthe)}.sombre-s .entete p{color:rgba(255,255,255,.74)}
+.prive{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:34px}
+.prive div{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:var(--rayon);padding:24px}
+.prive h3{font-size:19px;margin-bottom:8px}.prive p{margin:0;color:rgba(255,255,255,.72);font-size:16px}
+.sombre-s .lien{color:var(--menthe)}
+.compta{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;background:var(--papier);border:1px solid var(--trait);border-radius:28px;padding:48px}
+.compta h2{font-size:clamp(28px,3.2vw,40px);font-weight:700;margin-bottom:16px}.compta p{color:var(--gris);margin:0 0 26px}
+.carte-lien{background:var(--creme);border-radius:var(--rayon);padding:22px;font:500 13.5px/1.7 ui-monospace,Menlo,monospace;word-break:break-all;border:1px dashed #c9cfc9}
+.carte-lien b{display:block;font:650 12px/1 -apple-system,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--gris);margin-bottom:10px}
+.faq{max-width:780px}
+details{background:var(--papier);border:1px solid var(--trait);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+summary{font-weight:650;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:22px;line-height:1;color:var(--vert);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}details p{margin:12px 0 2px;color:var(--gris)}
+.fin{text-align:center;padding-block:40px 110px}
+.fin h2{font-size:clamp(30px,4.2vw,52px);font-weight:700;max-width:16em;margin:0 auto 14px}.fin p{color:var(--gris);font-size:19px;margin:0 0 30px}
+footer{border-top:1px solid var(--trait);padding-block:34px 44px;font-size:15px;color:var(--gris)}
+footer .w{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center}footer a{text-decoration:none}footer a:hover{color:var(--encre)}
+footer p{margin:0;flex-basis:100%;font-size:14px}
+
+/* apparition au défilement */
+.js .r{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.js .r.vu{opacity:1;transform:none}
+.js .etapes .r:nth-child(2),.js .atouts .r:nth-child(3n+2),.js .prive .r:nth-child(2){transition-delay:.09s}
+.js .etapes .r:nth-child(3),.js .atouts .r:nth-child(3n),.js .prive .r:nth-child(3){transition-delay:.18s}
+
+@media (max-width:920px){
+  .hero .w{grid-template-columns:1fr;padding-block:52px 96px;gap:60px}
+  .fenetre{transform:none}.bulle{right:8px}.fichiers{left:8px}
+  .etapes,.atouts,.prive{grid-template-columns:1fr}
+  .avantapres{grid-template-columns:1fr}.fleche{margin:0 auto;transform:rotate(90deg)}
+  .compta{grid-template-columns:1fr;padding:30px}
+  .barre nav{display:none}.langues{margin-left:auto}
+  section{padding-block:68px}.sombre-s{margin-inline:8px;border-radius:26px}
+}
+@media (max-width:520px){.barre .btn{display:none}.barre .w{gap:12px}.bulle{width:196px;right:4px}.fichiers{left:4px}.hero h1{font-size:31px}.hero p.chapo{font-size:17.5px}.w{padding-inline:20px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.bulle,.fichiers div{opacity:1}.js .r{opacity:1;transform:none}}
 </style>
-<div class="wrap">
-  <a class="marque" href="nl.html"><svg width="40" height="40" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><strong style="font-size:20px">Paperkeep</strong></a>
-  <p class="langues"><a href="index.html">Français</a> · <a href="nl.html">Nederlands</a> · <a href="en.html">English</a></p>
-  <h1>Je leveranciersfacturen, opgehaald met één klik</h1>
-  <p>Paperkeep is een gratis Chrome-extensie. Op de facturatiepagina die je bekijkt, vindt ze je facturen, downloadt ze en hernoemt ze:</p>
-  <p><code>2026-09-06_leverancier_29-00EUR.pdf</code></p>
-  <p>Alles komt in <code>Downloads › Factures</code> terecht, klaar voor je boekhouder.</p>
-  <p><a class="cta" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi">Installeren via de Chrome Web Store</a></p>
-  <p style="font-size:15px;color:#5b6660">Gratis, zonder account, zonder downloadlimiet.</p>
-  <ul><li>Werkt op Stripe-portalen, gebruikt door heel veel online diensten, en op pagina's met facturen in pdf.</li><li>Haalt de pdf op, ook wanneer die achter een knop verborgen zit.</li><li>Bewaart de bonpagina wanneer een dienst geen pdf aanbiedt.</li><li>Controleert elk bestand: een lege of verkeerde download wordt gemeld.</li><li>Leest de pagina alleen wanneer je op het icoon klikt. Geen account, geen server.</li><li>Beschikbaar in het Nederlands, Frans en Engels.</li></ul>
-  <footer><p><a href="aide.html#nl">Hulp en contact</a> · <a href="gids-facturen-abonnementen.html">Gids</a> · <a href="privacy.html">Privacy</a> · <a href="mailto:paperkeep.contact@gmail.com">paperkeep.contact@gmail.com</a></p><p>Paperkeep — Talal Swalha, ondernemingsnummer BE 1042.078.027, Elsene (België).</p></footer>
-</div>
+
+<header class="barre"><div class="w">
+  <a class="marque" href="nl.html"><svg width="34" height="34" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Paperkeep</a>
+  <nav><a href="#fonctionnement">Hoe het werkt</a><a href="#confidentialite">Privacy</a><a href="#comptables">Boekhouders</a><a href="aide.html#nl">Hulp</a></nav>
+  <div class="langues"><a href="index.html" lang="fr">FR</a><a href="nl.html" aria-current="true" lang="nl">NL</a><a href="en.html" lang="en">EN</a></div>
+  <a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Toevoegen aan Chrome <small>— gratis</small></a>
+</div></header>
+
+<main>
+<div class="hero"><div class="w">
+  <div>
+    <p class="oeil"><i></i>Gratis Chrome-extensie</p>
+    <h1><span>Je leveranciersfacturen,</span><span class="b">opgehaald met één klik.</span></h1>
+    <p class="chapo">Hosting, software, online tools: Paperkeep vindt de facturen op de facturatiepagina, downloadt ze en hernoemt ze voor je boekhouder.</p>
+    <div class="actions"><a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Toevoegen aan Chrome <small>— gratis</small></a><a class="lien" href="#fonctionnement">Bekijk hoe het werkt</a></div>
+    <ul class="gages"><li>Geen account</li><li>Er verlaat niets je computer</li><li>Nederlands · Français · English</li></ul>
+  </div>
+  <div class="demo" aria-hidden="true">
+    <div class="fenetre">
+      <div class="chrome"><i></i><i></i><i></i><b>billing.leverancier.example</b><em></em></div>
+      <div class="page"><h4>Factuurgeschiedenis</h4>
+        <div class="ligne"><span>6 Sep 2026</span><span>29,00 €</span><span class="ok">Betaald</span></div><div class="ligne"><span>6 Aug 2026</span><span>29,00 €</span><span class="ok">Betaald</span></div><div class="ligne"><span>6 Jul 2026</span><span>19,00 €</span><span class="ok">Betaald</span></div>
+      </div>
+    </div>
+    <div class="bulle"><strong>Paperkeep</strong>
+      <label>leverancier<span>6 Sep 2026</span></label><label>leverancier<span>6 Aug 2026</span></label><label>leverancier<span>6 Jul 2026</span></label>
+      <button tabindex="-1">Downloaden (3)</button></div>
+    <div class="fichiers"><small>Downloads › Factures</small><div>2026-09-06_leverancier_29-00EUR.pdf</div><div>2026-08-06_leverancier_29-00EUR.pdf</div><div>2026-07-06_leverancier_19-00EUR.pdf</div></div>
+  </div>
+</div></div>
+
+<section><div class="w">
+  <div class="entete r"><p class="oeil">Het probleem</p><h2>Bestanden die niemand kan lezen.</h2><p>Elke dienst geeft zijn facturen een eigen naam. Paperkeep geeft ze allemaal dezelfde: datum, leverancier, bedrag. De map sorteert zichzelf.</p></div>
+  <div class="avantapres r">
+    <div class="pile"><b>Voor</b><div>invoice_4821.pdf</div><div>Receipt-2291-7743.pdf</div><div>document (3).pdf</div><div>F0091-2026.pdf</div></div>
+    <div class="fleche" aria-hidden="true">→</div>
+    <div class="pile propre"><b>Na</b><div>2026-06-06_leverancier_19-00EUR.pdf</div><div>2026-07-06_leverancier_19-00EUR.pdf</div><div>2026-08-06_leverancier_29-00EUR.pdf</div><div>2026-09-06_leverancier_29-00EUR.pdf</div></div>
+  </div>
+</div></section>
+
+<section id="fonctionnement" style="padding-top:0"><div class="w">
+  <div class="entete r"><p class="oeil">Hoe het werkt</p><h2>Drie stappen, niet één meer.</h2></div>
+  <div class="etapes"><div class="etape r"><h3>Open de facturatiepagina</h3><p>De pagina waar je dienst je facturen toont: “Facturatie”, “Betaalgeschiedenis”, “Facturen”.</p></div><div class="etape r"><h3>Klik op het Paperkeep-icoon</h3><p>De extensie vindt de facturen op de pagina, met datum en bedrag. Vink uit wat je al hebt.</p></div><div class="etape r"><h3>Haal de map op</h3><p>Alles komt in Downloads › Factures terecht, hernoemd en gecontroleerd, klaar om door te geven.</p></div></div>
+  <figure class="capture r"><img src="img/capture-detection.png" width="1280" height="800" loading="lazy" alt="Paperkeep geopend op een facturatiepagina: vier facturen gevonden met hun datum"><figcaption>De extensie op een facturatiepagina.</figcaption></figure>
+</div></section>
+
+<section style="padding-top:0"><div class="w">
+  <div class="entete r"><p class="oeil">Wat Paperkeep doet</p><h2>Gemaakt voor pagina's die tegenwerken.</h2></div>
+  <div class="atouts"><div class="atout r"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><h3>Stripe-portalen</h3><p>Het facturatieportaal dat heel veel online diensten gebruiken, wordt meteen herkend.</p></div><div class="atout r"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m-4-4 4 4 4-4M5 20h14"/></svg><h3>Pdf achter een knop</h3><p>Is de factuur geen gewone link, dan haalt Paperkeep ze toch op.</p></div><div class="atout r"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h4"/></svg><h3>Bonnen zonder pdf</h3><p>Sommige diensten tonen alleen een bon op het scherm. De pagina wordt bewaard zoals ze is, in één bestand.</p></div><div class="atout r"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4 10-10"/></svg><h3>Elk bestand gecontroleerd</h3><p>Een lege download, of een die geen document is, wordt gemeld in plaats van door te gaan voor een factuur.</p></div><div class="atout r"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h3v3H4zM4 15h3v3H4zM11 7h9M11 16h9"/></svg><h3>Jij kiest</h3><p>Alle gevonden facturen zijn aangevinkt; vink uit wat je niet nodig hebt.</p></div><div class="atout r"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><h3>Drie talen</h3><p>Interface in het Nederlands, Frans en Engels, volgens de taal van je browser.</p></div></div>
+</div></section>
+
+<section class="sombre-s" id="confidentialite"><div class="w">
+  <div class="entete r"><p class="oeil">Privacy</p><h2>Er verlaat niets je computer.</h2><p>Paperkeep heeft geen account, geen server en geen statistieken. Je facturen gaan van de pagina naar je map, zonder langs ons te gaan.</p></div>
+  <div class="prive"><div class="r"><h3>Geen account</h3><p>Niets aan te maken, niets te koppelen.</p></div><div class="r"><h3>Lezen bij de klik</h3><p>De pagina wordt alleen gelezen wanneer je op het icoon klikt.</p></div><div class="r"><h3>Toegang per site gevraagd</h3><p>Bij de installatie wordt niets gevraagd. Je kunt altijd weigeren.</p></div></div>
+  <a class="lien r" href="privacy.html">Lees het privacybeleid</a>
+</div></section>
+
+<section id="comptables"><div class="w"><div class="compta r">
+  <div><p class="oeil">Voor boekhouders</p><h2>Klanten die hun aankoopfacturen vergeten?</h2><p>Bezorg hun de link. Met één klik halen ze de facturen van hun abonnementen op en bezorgen ze u een nette map. Ontbreekt er een leverancier? Laat het ons weten: we voegen eerst toe wat uw klanten gebruiken.</p><a class="btn sombre" href="mailto:paperkeep.contact@gmail.com">Schrijf ons</a></div>
+  <div class="carte-lien"><b>Chrome Web Store</b>chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi</div>
+</div></div></section>
+
+<section style="padding-top:0"><div class="w faq">
+  <div class="entete r"><h2>Veelgestelde vragen</h2></div>
+  <details class="r"><summary>Is het gratis?</summary><p>Ja, zonder account en zonder downloadlimiet. Een betaalde formule voor grote volumes en boekhoudkantoren volgt later; wat je al hebt opgehaald, blijft van jou.</p></details><details class="r"><summary>Op welke diensten werkt het?</summary><p>Op Stripe-portalen, op pagina's met facturen in pdf en op pagina's waarvan de links geen extensie hebben. Wordt een dienst niet herkend, schrijf ons dan: we voegen hem toe.</p></details><details class="r"><summary>Waar komen mijn facturen terecht?</summary><p>In de map Downloads › Factures op je computer, met de naam 2026-09-06_leverancier_15-00EUR.pdf.</p></details><details class="r"><summary>Worden mijn gegevens ergens naartoe gestuurd?</summary><p>Nee. Geen server, geen statistieken. De bestanden gaan rechtstreeks naar je map Downloads.</p></details>
+  <p class="r" style="margin-top:22px"><a class="lien" href="aide.html#nl">Alle vragen en contact</a></p>
+</div></section>
+
+<section class="fin"><div class="w r"><h2>Tien minuten per maand, en de map is klaar.</h2><p>Installeer Paperkeep, open een facturatiepagina, klik.</p><a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Toevoegen aan Chrome <small>— gratis</small></a></div></section>
+</main>
+
+<footer><div class="w">
+  <a class="marque" href="nl.html" style="color:var(--encre);font-size:17px"><svg width="26" height="26" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Paperkeep</a>
+  <a href="aide.html#nl">Hulp en contact</a><a href="gids-facturen-abonnementen.html">Gids</a><a href="privacy.html">Privacy</a>
+  <a href="mailto:paperkeep.contact@gmail.com">paperkeep.contact@gmail.com</a>
+  <p>Paperkeep — Talal Swalha, ondernemingsnummer BE 1042.078.027, Elsene (België).</p>
+</div></footer>
+<script>document.documentElement.classList.add('js');if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vu');o.unobserve(x.target)}})},{threshold:.12});document.querySelectorAll('.r').forEach(function(n){o.observe(n)})}else{document.querySelectorAll('.r').forEach(function(n){n.classList.add('vu')})}</script>
 </html>
