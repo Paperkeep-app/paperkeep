@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://paperkeep-app.github.io/paperkeep/sitemap.xml
+Sitemap: https://paperkeep.be/sitemap.xml
