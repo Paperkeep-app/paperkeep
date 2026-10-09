@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Récupérer les factures de vos abonnements en ligne — guide pratique</title>
+<meta name="description" content="Où trouver les factures de vos abonnements en ligne (logiciels, hébergement, outils) et comment les transmettre proprement à votre comptable.">
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #16211d; background: #F4F6F5; }
+  .wrap { max-width: 660px; margin: 0 auto; padding: 48px 24px 80px; }
+  .marque { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; text-decoration: none; color: inherit; }
+  h1 { font-size: 32px; line-height: 1.15; margin: 0 0 14px; letter-spacing: -.02em; }
+  h2 { font-size: 21px; margin: 40px 0 10px; letter-spacing: -.01em; }
+  h3 { font-size: 17px; margin: 24px 0 6px; }
+  p { margin: 0 0 14px; } ul, ol { padding-left: 22px; margin: 0 0 14px; } li { margin-bottom: 6px; }
+  code { background: #E6EAE8; padding: 2px 6px; border-radius: 3px; font-size: 15px; }
+  a { color: #1E5142; }
+  .cta { display: inline-block; margin: 8px 0; padding: 13px 24px; border-radius: 10px; background: #1E5142; color: #fff; font-weight: 600; text-decoration: none; }
+  .langues { font-size: 15px; margin-bottom: 20px; }
+  .contact { background: #fff; border: 1px solid #DDE2E0; border-radius: 10px; padding: 16px 18px; margin: 18px 0; }
+  details { background: #fff; border: 1px solid #DDE2E0; border-radius: 10px; padding: 12px 16px; margin-bottom: 8px; }
+  summary { font-weight: 600; cursor: pointer; } details p { margin: 10px 0 2px; }
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid #DDE2E0; font-size: 15px; color: #5b6660; }
+</style>
+<div class="wrap">
+  <a class="marque" href="index.html"><svg width="40" height="40" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><strong style="font-size:20px">Paperkeep</strong></a>
+
+  <h1>Récupérer les factures de vos abonnements en ligne</h1>
+  <p>Hébergement, logiciels, outils en ligne : ces abonnements sont payés par carte chaque mois, et la facture ne vous est presque jamais envoyée en pièce jointe. Elle attend dans un « espace de facturation ». Résultat : au moment de la déclaration TVA ou de la clôture, votre comptable vous réclame des documents que vous n'avez pas.</p>
+  <p>Ce guide explique où les trouver et comment les récupérer sans y passer une soirée.</p>
+
+  <h2>1. Où se cachent ces factures</h2>
+  <ul>
+    <li><strong>Dans les paramètres du compte</strong>, sous un intitulé comme « Facturation », « Abonnement », « Billing » ou « Historique de paiement ».</li>
+    <li><strong>Sur un portail de paiement séparé.</strong> Beaucoup de services confient leur facturation à Stripe : un bouton « Gérer l'abonnement » ouvre alors une page à l'adresse <code>billing.stripe.com</code>, où figure l'historique.</li>
+    <li><strong>Nulle part en PDF.</strong> Certains services n'émettent qu'une page de reçu à l'écran. Il faut alors l'enregistrer ou l'imprimer en PDF.</li>
+  </ul>
+
+  <h2>2. La méthode à la main</h2>
+  <ol>
+    <li>Connectez-vous au service et ouvrez la page de facturation.</li>
+    <li>Ouvrez chaque facture, téléchargez le PDF.</li>
+    <li>Renommez le fichier : les noms d'origine (<code>invoice_4821.pdf</code>, <code>Receipt-2291-7743.pdf</code>) ne disent ni la date ni le fournisseur.</li>
+    <li>Rangez le tout dans un dossier par mois ou par trimestre.</li>
+  </ol>
+  <p>Un bon nom de fichier contient trois choses : la <strong>date</strong>, le <strong>fournisseur</strong> et le <strong>montant</strong>. Par exemple <code>2026-09-06_hebergeur_15-00EUR.pdf</code>. Classés ainsi, les fichiers se trient tout seuls par ordre chronologique et votre comptable sait ce qu'il ouvre.</p>
+
+  <h2>3. La méthode en un clic</h2>
+  <p>Paperkeep est une extension gratuite pour Chrome qui fait les étapes 2 à 4 à votre place. Sur la page de facturation, vous cliquez sur son icône : elle repère les factures, les télécharge et les nomme selon le modèle ci-dessus, dans <code>Téléchargements › Factures</code>.</p>
+  <ul>
+    <li>Elle fonctionne sur les portails Stripe, utilisés par un très grand nombre de services, et sur les pages qui listent des factures en PDF.</li>
+    <li>Quand un service ne fournit qu'un reçu à l'écran, elle enregistre la page complète.</li>
+    <li>Rien ne quitte votre ordinateur : pas de compte, pas de serveur.</li>
+  </ul>
+  <p><a class="cta" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi">Installer Paperkeep (gratuit)</a></p>
+
+  <h2>4. Prendre l'habitude une fois par mois</h2>
+  <p>Le plus simple est de bloquer dix minutes en début de mois : vous passez sur l'espace de facturation de chaque abonnement, vous récupérez la facture du mois écoulé, et vous envoyez le dossier à votre comptable. Sans facture, il ne peut en principe pas déduire la TVA de l'achat ni justifier la dépense : mieux vaut ne pas attendre la fin du trimestre.</p>
+
+  <h2>Un service n'est pas reconnu ?</h2>
+  <p>Écrivez-nous à <a href="mailto:paperkeep.contact@gmail.com">paperkeep.contact@gmail.com</a> avec le nom du service. Les questions courantes sont sur la page <a href="aide.html">Aide et contact</a>.</p>
+
+<footer><p><a href="index.html">Accueil</a> · <a href="aide.html">Aide et contact</a> · <a href="guide-factures-abonnements.html">Guide</a> · <a href="privacy.html">Confidentialité</a> · <a href="mailto:paperkeep.contact@gmail.com">paperkeep.contact@gmail.com</a></p><p>Paperkeep — Talal Swalha, numéro d'entreprise BE 1042.078.027, Ixelles (Belgique).</p></footer>
+</div>
+</html>
