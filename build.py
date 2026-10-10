@@ -6,10 +6,13 @@ Les textes vivent dans T ; le gabarit ne contient aucune phrase. Lancer
 """
 import json
 import pathlib
+import re
 
 BASE = "https://paperkeep.be/"
 STORE = "https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi"
-MAIL = "paperkeep.contact@gmail.com"
+MAIL = "contact@paperkeep.be"
+FACEBOOK = "https://www.facebook.com/1273897999150933"
+AUJOURDHUI = __import__("datetime").date.today().isoformat()
 FICHIER = {"fr": "index.html", "en": "en.html", "nl": "nl.html"}
 
 T = {
@@ -56,7 +59,7 @@ T = {
              ("Mes données sont-elles envoyées quelque part ?", "Non. Aucun serveur, aucune statistique. Les fichiers vont directement dans votre dossier Téléchargements.")],
         faq_plus="Toutes les questions et le contact",
         fin_h="Dix minutes par mois, et le dossier est prêt.", fin_p="Installez Paperkeep, ouvrez une page de facturation, cliquez.",
-        pied=["Aide et contact", "Guides", "Confidentialité"], pied_liens=["aide.html", "guides.html", "privacy.html"],
+        pied=["Aide et contact", "Guides", "À propos", "Confidentialité"], pied_liens=["aide.html", "guides.html", "a-propos.html", "privacy.html"],
         mention="Paperkeep — Talal Swalha, numéro d'entreprise BE 1042.078.027, Ixelles (Belgique).",
         fournisseur="fournisseur",
     ),
@@ -304,6 +307,16 @@ JS = ("document.documentElement.classList.add('js');"
 CHROME_ICO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>'
 
 
+ORGANISATION = {
+    "@context": "https://schema.org", "@type": "Organization", "@id": BASE + "#organisation", "name": "Paperkeep", "url": BASE,
+    "logo": BASE + "img/logo-512.png", "email": MAIL, "vatID": "BE1042078027",
+    "founder": {"@type": "Person", "name": "Talal Swalha"},
+    "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "postalCode": "1050", "addressCountry": "BE"},
+    "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": MAIL, "availableLanguage": ["fr", "nl", "en"]},
+    "sameAs": [STORE, FACEBOOK],
+}
+
+
 def page(lang):
     t = T[lang]
     f = FICHIER[lang]
@@ -311,12 +324,15 @@ def page(lang):
     alt = "".join(f'<link rel="alternate" hreflang="{l}" href="{BASE}{"" if l == "fr" else FICHIER[l]}">\n' for l in ("fr", "en", "nl"))
     alt += f'<link rel="alternate" hreflang="x-default" href="{BASE}en.html">\n'
     ld = [
+        ORGANISATION,
+        {"@context": "https://schema.org", "@type": "WebSite", "name": "Paperkeep", "url": BASE, "inLanguage": ["fr", "nl", "en"],
+         "publisher": {"@id": BASE + "#organisation"}},
         {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Paperkeep", "applicationCategory": "BusinessApplication",
+         "dateModified": AUJOURDHUI, "author": {"@id": BASE + "#organisation"},
          "applicationSubCategory": "Browser extension", "operatingSystem": "Chrome", "inLanguage": ["fr", "nl", "en"], "description": t["desc"],
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "downloadUrl": STORE, "installUrl": STORE, "url": BASE,
          "image": BASE + "img/logo-512.png", "screenshot": BASE + "img/capture-detection.png",
-         "publisher": {"@type": "Organization", "name": "Paperkeep", "url": BASE, "email": MAIL,
-                       "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "addressCountry": "BE"}}},
+         "publisher": {"@id": BASE + "#organisation"}},
         {"@context": "https://schema.org", "@type": "FAQPage",
          "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": r}} for q, r in t["faq"]]},
     ]
@@ -331,6 +347,7 @@ def page(lang):
     aide = "aide.html" if lang == "fr" else f"aide.html#{lang}"
     h = f"""<!doctype html>
 <html lang="{lang}">
+<head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{t["titre"]}</title>
@@ -346,6 +363,8 @@ def page(lang):
 <link rel="icon" href="img/logo-512.png">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <style>{CSS}</style>
+</head>
+<body>
 
 <header class="barre"><div class="w">
   <a class="marque" href="{f}">{LOGO}Paperkeep</a>
@@ -424,12 +443,119 @@ def page(lang):
   <p>{t["mention"]}</p>
 </div></footer>
 <script>{JS}</script>
+</body>
 </html>
 """
     pathlib.Path(f).write_text(h, encoding="utf-8")
     return f, len(h)
 
 
+CSS_ARTICLE = r"""
+.article{padding-block:64px 90px}.etroit{max-width:760px}
+.article h1{font-size:clamp(30px,4.2vw,46px);font-weight:700;margin-bottom:18px}
+.article h2{font-size:25px;margin:46px 0 12px}.article h3{font-size:19px;margin:26px 0 8px}
+.article p{margin:0 0 16px}.article ul,.article ol{padding-left:22px;margin:0 0 18px}.article li{margin-bottom:8px}
+.article a{color:var(--vert);font-weight:550}.article hr{border:0;border-top:1px solid var(--trait);margin:54px 0}
+.article code{background:#e6eae6;padding:2px 7px;border-radius:5px;font:500 14.5px/1.5 ui-monospace,Menlo,monospace;overflow-wrap:anywhere}
+.article .cta{display:inline-block;margin:10px 0;padding:13px 22px;border-radius:999px;background:var(--vert);color:#fff;font-weight:650;text-decoration:none}
+.article .contact{background:var(--papier);border:1px solid var(--trait);border-radius:14px;padding:18px 20px;margin:18px 0}
+.article .ancres{font-size:15px}.article .date,.maj{color:var(--gris);font-size:14.5px}
+.article details{margin-bottom:8px}
+"""
+
+# fichier : (langue, titre, description, type, équivalent dans l'autre langue)
+PAGES = {
+    "aide.html": ("fr", "Aide et contact — Paperkeep", "Questions fréquentes sur Paperkeep, l'extension Chrome qui récupère vos factures fournisseurs, et comment nous contacter.", "faq", None),
+    "guides.html": ("fr", "Guides — récupérer, nommer et transmettre ses factures | Paperkeep", "Guides pratiques pour récupérer, nommer et transmettre ses factures d'achat en ligne à son comptable.", "page", None),
+    "guide-factures-abonnements.html": ("fr", "Récupérer les factures de vos abonnements en ligne — guide pratique", "Où trouver les factures de vos abonnements en ligne (logiciels, hébergement, outils) et comment les transmettre proprement à votre comptable.", "article", "gids-facturen-abonnementen.html"),
+    "guide-factures-stripe.html": ("fr", "Télécharger toutes ses factures Stripe en une fois (portail client)", "Vos factures d'abonnement sont sur un portail client Stripe ? Où les trouver, comment les télécharger une par une, et comment toutes les récupérer en un clic.", "article", None),
+    "guide-nommer-factures.html": ("fr", "Comment nommer ses factures pour son comptable : la convention date, fournisseur, montant", "Une convention simple pour nommer ses factures d'achat : date, fournisseur, montant. Le dossier se trie tout seul et votre comptable s'y retrouve.", "article", None),
+    "guide-recu-sans-pdf.html": ("fr", "Pas de facture PDF ? Comment conserver un reçu en ligne pour sa comptabilité", "Certains services en ligne ne fournissent qu'un reçu à l'écran. Trois façons de le conserver proprement et de le transmettre à son comptable.", "article", None),
+    "gids-facturen-abonnementen.html": ("nl", "De facturen van je online abonnementen terugvinden — praktische gids", "Waar je de facturen van je online abonnementen (software, hosting, tools) vindt en hoe je ze netjes aan je boekhouder bezorgt.", "article", "guide-factures-abonnements.html"),
+    "a-propos.html": ("fr", "À propos de Paperkeep — qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
+    "privacy.html": ("fr", "Paperkeep — Politique de confidentialité / Privacy policy", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
+}
+MAJ = {"fr": "Mis à jour le", "nl": "Bijgewerkt op", "en": "Updated on"}
+
+
+def secondaire(f):
+    lang, titre, desc, genre, autre = PAGES[f]
+    t = T[lang]
+    corps = pathlib.Path("contenu/" + f).read_text(encoding="utf-8")
+    url = BASE + f
+    alt = ""
+    if autre:
+        la = PAGES[autre][0]
+        alt = f'<link rel="alternate" hreflang="{lang}" href="{url}">\n<link rel="alternate" hreflang="{la}" href="{BASE}{autre}">\n<link rel="alternate" hreflang="x-default" href="{url if lang == "fr" else BASE + autre}">\n'
+    ld = [ORGANISATION]
+    if genre == "article":
+        h1 = re.search(r"<h1>(.*?)</h1>", corps, re.S).group(1)
+        ld.append({"@context": "https://schema.org", "@type": "Article", "headline": re.sub("<[^>]+>", "", h1), "description": desc, "inLanguage": lang,
+                   "datePublished": "2026-10-09", "dateModified": AUJOURDHUI, "mainEntityOfPage": url, "image": BASE + "img/capture-detection.png",
+                   "author": {"@id": BASE + "#organisation"}, "publisher": {"@id": BASE + "#organisation"}})
+        corps = corps.replace("</h1>", f'</h1>\n  <p class="maj">{MAJ[lang]} {AUJOURDHUI} · Paperkeep</p>', 1)
+    if genre == "faq":
+        bloc = corps.split('<h2 id="en">')[0]
+        qa = re.findall(r"<summary>(.*?)</summary><p>(.*?)</p>", bloc, re.S)
+        ld.append({"@context": "https://schema.org", "@type": "FAQPage", "dateModified": AUJOURDHUI,
+                   "mainEntity": [{"@type": "Question", "name": re.sub("<[^>]+>", "", q), "acceptedAnswer": {"@type": "Answer", "text": re.sub("<[^>]+>", "", r)}} for q, r in qa]})
+    accueil = FICHIER[lang]
+    aide = "aide.html" if lang == "fr" else f"aide.html#{lang}"
+    courant = ' aria-current="true"'
+    langues = "".join(f'<a href="{FICHIER[l]}"{courant if l == lang else ""} lang="{l}">{l.upper()}</a>' for l in ("fr", "nl", "en"))
+    h = f"""<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{titre}</title>
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{url}">
+{alt}<meta property="og:type" content="{"article" if genre == "article" else "website"}">
+<meta property="og:title" content="{titre}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{url}">
+<meta property="og:site_name" content="Paperkeep">
+<meta property="og:image" content="{BASE}img/capture-detection.png">
+<meta name="theme-color" content="#0c2a21">
+<link rel="icon" href="img/logo-512.png">
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+<style>{CSS}{CSS_ARTICLE}</style>
+</head>
+<body>
+<header class="barre"><div class="w">
+  <a class="marque" href="{accueil}">{LOGO}Paperkeep</a>
+  <nav><a href="{accueil}#fonctionnement">{t["nav"][0]}</a><a href="{accueil}#confidentialite">{t["nav"][1]}</a><a href="{accueil}#comptables">{t["nav"][2]}</a><a href="{aide}">{t["nav"][3]}</a></nav>
+  <div class="langues">{langues}</div>
+  <a class="btn" href="{STORE}">{CHROME_ICO}{t["cta"]} <small>— {t["cta_sub"]}</small></a>
+</div></header>
+<main class="article"><div class="w etroit">
+{corps}
+</div></main>
+<footer><div class="w">
+  <a class="marque" href="{accueil}" style="color:var(--encre);font-size:17px">{LOGO.replace('width="34" height="34"', 'width="26" height="26"')}Paperkeep</a>
+  {"".join(f'<a href="{u}">{n}</a>' for n, u in zip(t["pied"], t["pied_liens"]))}
+  <a href="mailto:{MAIL}">{MAIL}</a>
+  <p>{t["mention"]}</p>
+</div></footer>
+</body>
+</html>
+"""
+    pathlib.Path(f).write_text(h, encoding="utf-8")
+    return f, len(h)
+
+
+def plan_du_site():
+    urls = [""] + ["en.html", "nl.html"] + list(PAGES)
+    x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    x += "".join(f"  <url><loc>{BASE}{u}</loc><lastmod>{AUJOURDHUI}</lastmod></url>\n" for u in urls) + "</urlset>\n"
+    pathlib.Path("sitemap.xml").write_text(x, encoding="utf-8")
+    return urls
+
+
 if __name__ == "__main__":
     for lang in T:
         print(*page(lang))
+    for f in PAGES:
+        print(*secondaire(f))
+    print("plan du site :", len(plan_du_site()), "adresses")

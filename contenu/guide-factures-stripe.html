@@ -1,0 +1,28 @@
+<h1>Télécharger toutes ses factures Stripe en une fois</h1>
+  <p>Un très grand nombre de services en ligne confient leur facturation à Stripe. Résultat : vos factures ne sont pas sur le site du service, mais sur un « portail client » Stripe, où il faut les ouvrir une par une. Voici où les trouver et comment les récupérer d'un coup.</p>
+  <p><em>Ce guide s'adresse aux clients qui paient un abonnement, pas aux commerçants qui encaissent avec Stripe.</em></p>
+
+  <h2>1. Reconnaître un portail Stripe</h2>
+  <p>Dans les paramètres de votre compte, cherchez « Facturation », « Abonnement » ou « Gérer l'abonnement ». Si ce bouton vous envoie sur une adresse qui commence par <code>billing.stripe.com</code>, vous êtes sur le portail client Stripe du service.</p>
+  <p>La page affiche votre abonnement en cours, votre moyen de paiement et, en bas, un <strong>historique de facturation</strong> : une ligne par paiement, avec la date et le montant.</p>
+
+  <h2>2. La méthode à la main</h2>
+  <ol>
+    <li>Cliquez sur une ligne de l'historique : une page de facture s'ouvre sur <code>invoice.stripe.com</code>.</li>
+    <li>Cliquez sur « Télécharger la facture ».</li>
+    <li>Revenez en arrière et recommencez pour chaque ligne.</li>
+    <li>Renommez les fichiers : ils portent tous un nom du type <code>Invoice-A1B2C3D4-0007.pdf</code>.</li>
+  </ol>
+  <p>Le portail ne propose pas de bouton « tout télécharger ». Pour douze mois d'abonnement, cela fait douze allers-retours.</p>
+
+  <h2>3. La méthode en un clic</h2>
+  <p>Paperkeep est une extension gratuite pour Chrome. Sur le portail Stripe, cliquez sur son icône : elle liste toutes les factures de l'historique, va chercher chaque PDF et l'enregistre sous un nom lisible, par exemple <code>2026-09-06_service_15-00EUR.pdf</code>, dans <code>Téléchargements › Factures</code>.</p>
+  <ul>
+    <li>Au premier usage, Chrome vous demande d'autoriser l'accès à <code>invoice.stripe.com</code> : c'est là que se trouvent les PDF.</li>
+    <li>Vous pouvez décocher les factures que vous avez déjà.</li>
+    <li>Aucune donnée ne quitte votre ordinateur : Paperkeep n'a ni compte, ni serveur, ni statistiques.</li>
+  </ul>
+  <p><a class="cta" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi">Installer Paperkeep (gratuit)</a></p>
+
+  <h2>Et si le service n'utilise pas Stripe ?</h2>
+  <p>Paperkeep fonctionne aussi sur les pages qui listent des factures en PDF. Voir <a href="guide-factures-abonnements.html">Récupérer les factures de vos abonnements en ligne</a> et <a href="guide-recu-sans-pdf.html">Pas de facture PDF ? Comment conserver un reçu</a>.</p>
