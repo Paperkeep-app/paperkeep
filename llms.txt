@@ -14,6 +14,7 @@ What it does not do: it does not read your e-mail, does not log into accounts fo
 Privacy in one sentence: Paperkeep has no server and no analytics; invoice files go straight from the billing page to the user's own Downloads folder.
 
 ## Links
+- [Source code (public, for verification)](https://github.com/Paperkeep-app/paperkeep-extension)
 - [Chrome Web Store listing](https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi)
 - [Home (French)](https://paperkeep.be/)
 - [Home (English)](https://paperkeep.be/en.html)
