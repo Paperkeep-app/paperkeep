@@ -27,6 +27,7 @@ Privacy in one sentence: Paperkeep has no server and no analytics; invoice files
 - [Guide: Peppol and invoices from foreign suppliers, which still have to be downloaded (French)](https://paperkeep.be/guide-peppol-factures-etrangeres.html)
 - [Guide: Peppol and invoices from foreign suppliers (Dutch)](https://paperkeep.be/gids-peppol-buitenlandse-facturen.html)
 - [Guide: Peppol in Belgium and invoices from foreign suppliers (English)](https://paperkeep.be/guide-peppol-foreign-invoices.html)
+- [Where to find the invoices of ChatGPT, Google Workspace, Adobe, Notion and Meta Ads (French)](https://paperkeep.be/ou-trouver-factures-abonnements.html)
 - [About the publisher](https://paperkeep.be/a-propos.html)
 - [Guide in Dutch](https://paperkeep.be/gids-facturen-abonnementen.html)
 - [Privacy policy](https://paperkeep.be/privacy.html)

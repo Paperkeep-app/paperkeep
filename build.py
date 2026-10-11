@@ -472,6 +472,7 @@ PAGES = {
     "guide-factures-stripe.html": ("fr", "Télécharger toutes ses factures Stripe en une fois (portail client)", "Vos factures d'abonnement sont sur un portail client Stripe ? Où les trouver, comment les télécharger une par une, et comment toutes les récupérer en un clic.", "article", None),
     "guide-nommer-factures.html": ("fr", "Comment nommer ses factures pour son comptable : la convention date, fournisseur, montant", "Une convention simple pour nommer ses factures d'achat : date, fournisseur, montant. Le dossier se trie tout seul et votre comptable s'y retrouve.", "article", None),
     "guide-recu-sans-pdf.html": ("fr", "Pas de facture PDF ? Comment conserver un reçu en ligne pour sa comptabilité", "Certains services en ligne ne fournissent qu'un reçu à l'écran. Trois façons de le conserver proprement et de le transmettre à son comptable.", "article", None),
+    "ou-trouver-factures-abonnements.html": ("fr", "Où trouver la facture de ChatGPT, Google Workspace, Adobe, Notion, Meta Ads", "Le chemin exact pour télécharger vos factures ChatGPT, Google Workspace, Adobe, Notion et Meta Ads, d'après l'aide officielle de chaque service.", "article", None),
     "guide-peppol-factures-etrangeres.html": ("fr", "Peppol : les factures de vos abonnements étrangers n'arrivent pas toutes seules", "Depuis 2026, les factures belges arrivent par Peppol. Celles des fournisseurs établis à l'étranger restent des PDF à télécharger : ce que dit la règle et comment s'organiser.", "article", ("gids-peppol-buitenlandse-facturen.html", "guide-peppol-foreign-invoices.html")),
     "gids-peppol-buitenlandse-facturen.html": ("nl", "Peppol: de facturen van je buitenlandse abonnementen komen niet vanzelf binnen", "Sinds 2026 komen Belgische facturen via Peppol binnen. Die van buitenlandse leveranciers blijven pdf's om te downloaden: wat de regel zegt en hoe je het aanpakt.", "article", ("guide-peppol-factures-etrangeres.html", "guide-peppol-foreign-invoices.html")),
     "guide-peppol-foreign-invoices.html": ("en", "Peppol in Belgium: invoices from foreign subscriptions still don't arrive on their own", "Since 2026, Belgian invoices arrive through Peppol. Invoices from suppliers established abroad remain PDFs to download: what the rule says and how to organise yourself.", "article", ("guide-peppol-factures-etrangeres.html", "gids-peppol-buitenlandse-facturen.html")),
@@ -479,7 +480,7 @@ PAGES = {
     "a-propos.html": ("fr", "À propos de Paperkeep — qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
     "privacy.html": ("fr", "Paperkeep — Politique de confidentialité / Privacy policy", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
 }
-PUBLIE = {"guide-peppol-factures-etrangeres.html": "2026-10-11", "gids-peppol-buitenlandse-facturen.html": "2026-10-11", "guide-peppol-foreign-invoices.html": "2026-10-11"}
+PUBLIE = {"guide-peppol-factures-etrangeres.html": "2026-10-11", "gids-peppol-buitenlandse-facturen.html": "2026-10-11", "guide-peppol-foreign-invoices.html": "2026-10-11", "ou-trouver-factures-abonnements.html": "2026-10-12"}
 MAJ = {"fr": "Mis à jour le", "nl": "Bijgewerkt op", "en": "Updated on"}
 
 
