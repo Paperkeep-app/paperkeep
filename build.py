@@ -354,7 +354,7 @@ def page(lang):
 <title>{t["titre"]}</title>
 <meta name="description" content="{t["desc"]}">
 <link rel="canonical" href="{url}">
-{alt}<meta property="og:type" content="website">
+{'<meta name="robots" content="noindex">' + chr(10) if f in NOINDEX else ""}{alt}<meta property="og:type" content="website">
 <meta property="og:title" content="{t["titre"]}">
 <meta property="og:description" content="{t["desc"]}">
 <meta property="og:url" content="{url}">
@@ -452,6 +452,10 @@ def page(lang):
 
 
 CSS_ARTICLE = r"""
+.article blockquote{margin:18px 0;padding:6px 22px;border-left:3px solid var(--vert);background:var(--papier);border-radius:0 14px 14px 0}
+.article table{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;display:block;overflow-x:auto}
+.article th,.article td{border:1px solid var(--trait);padding:9px 11px;text-align:left;vertical-align:top}
+.article thead th{background:var(--papier)}
 .article{padding-block:64px 90px}.etroit{max-width:760px}
 .article h1{font-size:clamp(30px,4.2vw,46px);font-weight:700;margin-bottom:18px}
 .article h2{font-size:25px;margin:46px 0 12px}.article h3{font-size:19px;margin:26px 0 8px}
@@ -478,10 +482,16 @@ PAGES = {
     "gids-peppol-buitenlandse-facturen.html": ("nl", "Peppol: de facturen van je buitenlandse abonnementen komen niet vanzelf binnen", "Sinds 2026 komen Belgische facturen via Peppol binnen. Die van buitenlandse leveranciers blijven pdf's om te downloaden: wat de regel zegt en hoe je het aanpakt.", "article", ("guide-peppol-factures-etrangeres.html", "guide-peppol-foreign-invoices.html")),
     "guide-peppol-foreign-invoices.html": ("en", "Peppol in Belgium: invoices from foreign subscriptions still don't arrive on their own", "Since 2026, Belgian invoices arrive through Peppol. Invoices from suppliers established abroad remain PDFs to download: what the rule says and how to organise yourself.", "article", ("guide-peppol-factures-etrangeres.html", "gids-peppol-buitenlandse-facturen.html")),
     "gids-facturen-abonnementen.html": ("nl", "De facturen van je online abonnementen terugvinden — praktische gids", "Waar je de facturen van je online abonnementen (software, hosting, tools) vindt en hoe je ze netjes aan je boekhouder bezorgt.", "article", "guide-factures-abonnements.html"),
+    "kit-comptables.html": ("fr", "Kit pour comptables : faire récupérer leurs factures d'abonnements à vos clients", "Un message prêt à envoyer à vos clients pour qu'ils récupèrent eux-mêmes les factures de leurs abonnements en ligne, et les réponses à leurs questions.", "faq", "kit-boekhouders.html"),
+    "kit-boekhouders.html": ("nl", "Kit voor boekhouders: laat je klanten hun abonnementsfacturen ophalen", "Een bericht dat je zo naar je klanten kunt sturen zodat ze zelf de facturen van hun online abonnementen ophalen, met de antwoorden op hun vragen.", "faq", "kit-comptables.html"),
+    "comparatif-collecte-factures.html": ("fr", "Paperkeep, GetMyInvoices, Invoice Radar ou Tailride : lequel choisir ?", "Comparaison honnête des outils qui récupèrent vos factures en ligne : ce que chacun fait, ce qu'il demande, et à qui il convient.", "article", None),
+    "bienvenue.html": ("fr", "Paperkeep est installé — premiers pas", "Trois étapes pour récupérer vos premières factures avec Paperkeep.", "page", None),
+    "au-revoir.html": ("fr", "Paperkeep est désinstallé", "Dites-nous ce qui n'allait pas.", "page", None),
     "a-propos.html": ("fr", "À propos de Paperkeep — qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
     "privacy.html": ("fr", "Paperkeep — Politique de confidentialité / Privacy policy", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
 }
-PUBLIE = {"guide-peppol-factures-etrangeres.html": "2026-10-11", "gids-peppol-buitenlandse-facturen.html": "2026-10-11", "guide-peppol-foreign-invoices.html": "2026-10-11", "ou-trouver-factures-abonnements.html": "2026-10-12", "waar-vind-ik-facturen-abonnementen.html": "2026-10-12"}
+PUBLIE = {"guide-peppol-factures-etrangeres.html": "2026-10-11", "gids-peppol-buitenlandse-facturen.html": "2026-10-11", "guide-peppol-foreign-invoices.html": "2026-10-11", "comparatif-collecte-factures.html": "2026-10-12", "ou-trouver-factures-abonnements.html": "2026-10-12", "waar-vind-ik-facturen-abonnementen.html": "2026-10-12"}
+NOINDEX = {"bienvenue.html", "au-revoir.html"}
 MAJ = {"fr": "Mis à jour le", "nl": "Bijgewerkt op", "en": "Updated on"}
 
 
@@ -508,6 +518,7 @@ def secondaire(f):
         qa = re.findall(r"<summary>(.*?)</summary><p>(.*?)</p>", bloc, re.S)
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "dateModified": AUJOURDHUI,
                    "mainEntity": [{"@type": "Question", "name": re.sub("<[^>]+>", "", q), "acceptedAnswer": {"@type": "Answer", "text": re.sub("<[^>]+>", "", r)}} for q, r in qa]})
+    robots = '<meta name="robots" content="noindex">\n' if f in NOINDEX else ""
     accueil = FICHIER[lang]
     aide = "aide.html" if lang == "fr" else f"aide.html#{lang}"
     courant = ' aria-current="true"'
@@ -520,7 +531,7 @@ def secondaire(f):
 <title>{titre}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
-{alt}<meta property="og:type" content="{"article" if genre == "article" else "website"}">
+{robots}{alt}<meta property="og:type" content="{"article" if genre == "article" else "website"}">
 <meta property="og:title" content="{titre}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
@@ -555,7 +566,7 @@ def secondaire(f):
 
 
 def plan_du_site():
-    urls = [""] + ["en.html", "nl.html"] + list(PAGES)
+    urls = [""] + ["en.html", "nl.html"] + [p for p in PAGES if p not in NOINDEX]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     x += "".join(f"  <url><loc>{BASE}{u}</loc><lastmod>{AUJOURDHUI}</lastmod></url>\n" for u in urls) + "</urlset>\n"
     pathlib.Path("sitemap.xml").write_text(x, encoding="utf-8")
