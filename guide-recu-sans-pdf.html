@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://paperkeep.be/img/capture-detection.png">
 <meta name="theme-color" content="#0c2a21">
 <link rel="icon" href="img/logo-512.png">
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://paperkeep.be/#organisation", "name": "Paperkeep", "url": "https://paperkeep.be/", "logo": "https://paperkeep.be/img/logo-512.png", "email": "contact@paperkeep.be", "vatID": "BE1042078027", "founder": {"@type": "Person", "name": "Talal Swalha"}, "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "postalCode": "1050", "addressCountry": "BE"}, "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "contact@paperkeep.be", "availableLanguage": ["fr", "nl", "en"]}, "sameAs": ["https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi", "https://www.facebook.com/1273897999150933", "https://github.com/Paperkeep-app/paperkeep-extension"]}, {"@context": "https://schema.org", "@type": "Article", "headline": "Pas de facture PDF ? Comment conserver un reçu en ligne", "description": "Certains services en ligne ne fournissent qu'un reçu à l'écran. Trois façons de le conserver proprement et de le transmettre à son comptable.", "inLanguage": "fr", "datePublished": "2026-10-09", "dateModified": "2026-10-13", "mainEntityOfPage": "https://paperkeep.be/guide-recu-sans-pdf.html", "image": "https://paperkeep.be/img/capture-detection.png", "author": {"@id": "https://paperkeep.be/#organisation"}, "publisher": {"@id": "https://paperkeep.be/#organisation"}}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://paperkeep.be/#organisation", "name": "Paperkeep", "url": "https://paperkeep.be/", "logo": "https://paperkeep.be/img/logo-512.png", "email": "contact@paperkeep.be", "vatID": "BE1042078027", "founder": {"@type": "Person", "name": "Talal Swalha"}, "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "postalCode": "1050", "addressCountry": "BE"}, "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "contact@paperkeep.be", "availableLanguage": ["fr", "nl", "en"]}, "sameAs": ["https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi", "https://www.facebook.com/1273897999150933", "https://github.com/Paperkeep-app/paperkeep-extension"]}, {"@context": "https://schema.org", "@type": "Article", "headline": "Pas de facture PDF ? Comment conserver un reçu en ligne", "description": "Certains services en ligne ne fournissent qu'un reçu à l'écran. Trois façons de le conserver proprement et de le transmettre à son comptable.", "inLanguage": "fr", "datePublished": "2026-10-09", "dateModified": "2026-10-14", "mainEntityOfPage": "https://paperkeep.be/guide-recu-sans-pdf.html", "image": "https://paperkeep.be/img/capture-detection.png", "author": {"@id": "https://paperkeep.be/#organisation"}, "publisher": {"@id": "https://paperkeep.be/#organisation"}}]</script>
 <style>
 :root{--encre:#0f1f1a;--vert:#1E5142;--vert-nuit:#0c2a21;--menthe:#bff0d6;--citron:#d9f36a;--creme:#f6f4ee;--papier:#fff;--gris:#5d6964;--trait:#e2e5e0;--rayon:18px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -95,6 +95,8 @@ section{padding-block:96px}
 .etape{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:28px 26px 30px;counter-increment:e;transition:transform .25s,box-shadow .25s}
 .etape:hover,.atout:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(15,31,26,.45)}
 .etape:before{content:counter(e);display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--vert);color:#fff;font-weight:700;font-size:18px;margin-bottom:20px}
+.etapes.deux{grid-template-columns:repeat(2,1fr)}.etapes.deux .etape:before{content:none}.etapes.deux .etape:last-child{border-color:var(--vert)}
+@media(max-width:820px){.etapes.deux{grid-template-columns:1fr}}
 .etape h3,.atout h3{font-size:20px;margin-bottom:8px}.etape p,.atout p{margin:0;color:var(--gris);font-size:16px}
 .capture{margin:56px 0 0;border-radius:var(--rayon);overflow:hidden;border:1px solid var(--trait);background:#fff;box-shadow:0 40px 80px -50px rgba(15,31,26,.55)}
 .capture img{width:100%;aspect-ratio:1280/540;object-fit:cover;object-position:top}
@@ -166,7 +168,7 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
 </div></header>
 <main class="article"><div class="w etroit">
 <h1>Pas de facture PDF ? Comment conserver un reçu en ligne</h1>
-  <p class="maj">Mis à jour le 2026-10-13 · Paperkeep</p>
+  <p class="maj">Mis à jour le 2026-10-14 · Paperkeep</p>
   <p>Vous cherchez la facture d'un abonnement et vous ne trouvez qu'une page « Reçu » ou « Détail du paiement », sans bouton de téléchargement. C'est fréquent, surtout pour les services grand public. Voici comment en garder une trace exploitable.</p>
   <h2>1. Vérifiez d'abord qu'il n'existe vraiment pas de PDF</h2>
   <ul>

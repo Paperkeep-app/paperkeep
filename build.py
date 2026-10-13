@@ -29,6 +29,12 @@ T = {
         gages=["Sans compte", "Rien ne quitte votre ordinateur", "Français · Nederlands · English"],
         demo_titre="Historique de facturation", demo_payee="Payée", demo_bouton="Télécharger (3)", demo_dossier="Téléchargements › Factures",
         avant="Avant", apres="Après",
+        pep_oeil="Et Peppol ?", pep_h="Peppol ne vous apporte pas toutes vos factures.",
+        pep_p="Depuis 2026, les factures de vos fournisseurs belges arrivent directement dans votre logiciel comptable. Celles des services facturés depuis l'étranger n'y passent pas : elles restent dans votre compte, sur le site de chaque fournisseur.",
+        pep_points=[("Fournisseur belge", "Téléphonie, énergie, fiduciaire : la facture arrive par Peppol. Rien à faire."),
+                    ("Fournisseur établi à l'étranger", "Logiciels, outils en ligne, publicité : la facture reste un PDF à aller chercher. C'est là que Paperkeep sert.")],
+        pep_lien="Ce que dit la règle, source officielle à l'appui", pep_url="guide-peppol-factures-etrangeres.html",
+        kit_lien="Le message prêt à envoyer à vos clients", kit_url="kit-comptables.html",
         s1_oeil="Le problème", s1_h="Des fichiers que personne ne sait lire.",
         s1_p="Chaque service nomme ses factures à sa façon. Paperkeep leur donne à toutes le même nom : la date, le fournisseur, le montant. Le dossier se trie tout seul.",
         s2_oeil="Fonctionnement", s2_h="Trois gestes, pas un de plus.",
@@ -54,7 +60,8 @@ T = {
         capture_alt="Paperkeep ouvert sur une page de facturation : quatre factures détectées avec leur date",
         capture_leg="L'extension sur une page de facturation.",
         faq_h="Questions fréquentes",
-        faq=[("Est-ce gratuit ?", "Oui, sans compte et sans limite de téléchargements. Une formule payante pour les gros volumes et les cabinets comptables viendra plus tard ; ce que vous avez déjà récupéré reste à vous."),
+        faq=[("Avec Peppol, à quoi sert encore Paperkeep ?", "Peppol ne concerne que les factures entre entreprises belges. Les fournisseurs établis à l'étranger n'y sont pas soumis : leurs factures restent des PDF à télécharger sur leur site. Paperkeep récupère et nomme celles-là."),
+             ("Est-ce gratuit ?", "Oui, sans compte et sans limite de téléchargements. Une formule payante pour les gros volumes et les cabinets comptables viendra plus tard ; ce que vous avez déjà récupéré reste à vous."),
              ("Sur quels services ça marche ?", "Sur les portails de facturation Stripe, sur les pages qui listent des factures en PDF et sur celles dont les liens n'ont pas d'extension. Si un service n'est pas reconnu, écrivez-nous : nous l'ajoutons."),
              ("Où arrivent mes factures ?", "Dans le dossier Téléchargements › Factures de votre ordinateur, sous la forme 2026-09-06_fournisseur_15-00EUR.pdf."),
              ("Mes données sont-elles envoyées quelque part ?", "Non. Aucun serveur, aucune statistique. Les fichiers vont directement dans votre dossier Téléchargements.")],
@@ -76,6 +83,12 @@ T = {
         gages=["No account", "Nothing leaves your computer", "English · Français · Nederlands"],
         demo_titre="Billing history", demo_payee="Paid", demo_bouton="Download (3)", demo_dossier="Downloads › Factures",
         avant="Before", apres="After",
+        pep_oeil="What about Peppol?", pep_h="Peppol does not bring you all your invoices.",
+        pep_p="Since 2026, invoices from your Belgian suppliers arrive directly in your accounting software. Invoices from services billed from abroad do not: they stay in your account, on each supplier's website.",
+        pep_points=[("Belgian supplier", "Telecom, energy, accountant: the invoice arrives through Peppol. Nothing to do."),
+                    ("Supplier established abroad", "Software, online tools, advertising: the invoice remains a PDF you have to fetch. That is where Paperkeep helps.")],
+        pep_lien="What the rule says, with the official source", pep_url="guide-peppol-foreign-invoices.html",
+        kit_lien="A ready-to-send message for your clients (in French)", kit_url="kit-comptables.html",
         s1_oeil="The problem", s1_h="Files nobody can read.",
         s1_p="Every service names its invoices its own way. Paperkeep gives them all the same name: date, vendor, amount. The folder sorts itself.",
         s2_oeil="How it works", s2_h="Three steps, not one more.",
@@ -101,7 +114,8 @@ T = {
         capture_alt="Paperkeep open on a billing page: four invoices detected with their date",
         capture_leg="The extension on a billing page.",
         faq_h="Frequently asked questions",
-        faq=[("Is it free?", "Yes, with no account and no download limit. A paid plan for high volumes and accounting firms will come later; what you have already collected stays yours."),
+        faq=[("With Peppol, what is Paperkeep still for?", "Peppol only covers invoices between Belgian businesses. Suppliers established abroad are not subject to it: their invoices remain PDFs to download from their website. Paperkeep collects and names those."),
+             ("Is it free?", "Yes, with no account and no download limit. A paid plan for high volumes and accounting firms will come later; what you have already collected stays yours."),
              ("Which services does it work on?", "On Stripe billing portals, on pages listing PDF invoices and on pages whose links have no file extension. If a service is not recognised, write to us: we add it."),
              ("Where do my invoices go?", "To the Downloads › Factures folder on your computer, named 2026-09-06_vendor_15-00EUR.pdf."),
              ("Is my data sent anywhere?", "No. No server, no analytics. Files go straight to your Downloads folder.")],
@@ -123,6 +137,12 @@ T = {
         gages=["Geen account", "Er verlaat niets je computer", "Nederlands · Français · English"],
         demo_titre="Factuurgeschiedenis", demo_payee="Betaald", demo_bouton="Downloaden (3)", demo_dossier="Downloads › Factures",
         avant="Voor", apres="Na",
+        pep_oeil="En Peppol?", pep_h="Peppol bezorgt je niet al je facturen.",
+        pep_p="Sinds 2026 komen de facturen van je Belgische leveranciers rechtstreeks in je boekhoudsoftware. Die van diensten die vanuit het buitenland worden gefactureerd niet: ze blijven in je account staan, op de website van elke leverancier.",
+        pep_points=[("Belgische leverancier", "Telefonie, energie, boekhoudkantoor: de factuur komt via Peppol binnen. Niets te doen."),
+                    ("Leverancier gevestigd in het buitenland", "Software, online tools, advertenties: de factuur blijft een pdf die je zelf moet ophalen. Daar helpt Paperkeep.")],
+        pep_lien="Wat de regel zegt, met de officiële bron", pep_url="gids-peppol-buitenlandse-facturen.html",
+        kit_lien="Het bericht dat je zo naar je klanten stuurt", kit_url="kit-boekhouders.html",
         s1_oeil="Het probleem", s1_h="Bestanden die niemand kan lezen.",
         s1_p="Elke dienst geeft zijn facturen een eigen naam. Paperkeep geeft ze allemaal dezelfde: datum, leverancier, bedrag. De map sorteert zichzelf.",
         s2_oeil="Hoe het werkt", s2_h="Drie stappen, niet één meer.",
@@ -148,7 +168,8 @@ T = {
         capture_alt="Paperkeep geopend op een facturatiepagina: vier facturen gevonden met hun datum",
         capture_leg="De extensie op een facturatiepagina.",
         faq_h="Veelgestelde vragen",
-        faq=[("Is het gratis?", "Ja, zonder account en zonder downloadlimiet. Een betaalde formule voor grote volumes en boekhoudkantoren volgt later; wat je al hebt opgehaald, blijft van jou."),
+        faq=[("Waarvoor dient Paperkeep nog, nu er Peppol is?", "Peppol geldt alleen voor facturen tussen Belgische ondernemingen. Leveranciers die in het buitenland gevestigd zijn, vallen er niet onder: hun facturen blijven pdf's die je op hun website moet downloaden. Paperkeep haalt die op en geeft ze een naam."),
+             ("Is het gratis?", "Ja, zonder account en zonder downloadlimiet. Een betaalde formule voor grote volumes en boekhoudkantoren volgt later; wat je al hebt opgehaald, blijft van jou."),
              ("Op welke diensten werkt het?", "Op Stripe-portalen, op pagina's met facturen in pdf en op pagina's waarvan de links geen extensie hebben. Wordt een dienst niet herkend, schrijf ons dan: we voegen hem toe."),
              ("Waar komen mijn facturen terecht?", "In de map Downloads › Factures op je computer, met de naam 2026-09-06_leverancier_15-00EUR.pdf."),
              ("Worden mijn gegevens ergens naartoe gestuurd?", "Nee. Geen server, geen statistieken. De bestanden gaan rechtstreeks naar je map Downloads.")],
@@ -254,6 +275,8 @@ section{padding-block:96px}
 .etape{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:28px 26px 30px;counter-increment:e;transition:transform .25s,box-shadow .25s}
 .etape:hover,.atout:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(15,31,26,.45)}
 .etape:before{content:counter(e);display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--vert);color:#fff;font-weight:700;font-size:18px;margin-bottom:20px}
+.etapes.deux{grid-template-columns:repeat(2,1fr)}.etapes.deux .etape:before{content:none}.etapes.deux .etape:last-child{border-color:var(--vert)}
+@media(max-width:820px){.etapes.deux{grid-template-columns:1fr}}
 .etape h3,.atout h3{font-size:20px;margin-bottom:8px}.etape p,.atout p{margin:0;color:var(--gris);font-size:16px}
 .capture{margin:56px 0 0;border-radius:var(--rayon);overflow:hidden;border:1px solid var(--trait);background:#fff;box-shadow:0 40px 80px -50px rgba(15,31,26,.55)}
 .capture img{width:100%;aspect-ratio:1280/540;object-fit:cover;object-position:top}
@@ -397,7 +420,13 @@ def page(lang):
   </div>
 </div></div>
 
-<section><div class="w">
+<section id="peppol"><div class="w">
+  <div class="entete r"><p class="oeil">{t["pep_oeil"]}</p><h2>{t["pep_h"]}</h2><p>{t["pep_p"]}</p></div>
+  <div class="etapes deux">{"".join(f'<div class="etape r"><h3>{a}</h3><p>{b}</p></div>' for a, b in t["pep_points"])}</div>
+  <p class="r" style="margin:26px 0 0"><a class="lien" href="{t["pep_url"]}">{t["pep_lien"]}</a></p>
+</div></section>
+
+<section style="padding-top:0"><div class="w">
   <div class="entete r"><p class="oeil">{t["s1_oeil"]}</p><h2>{t["s1_h"]}</h2><p>{t["s1_p"]}</p></div>
   <div class="avantapres r">
     <div class="pile"><b>{t["avant"]}</b>{"".join(f"<div>{n}</div>" for n in sales)}</div>
@@ -424,7 +453,7 @@ def page(lang):
 </div></section>
 
 <section id="comptables"><div class="w"><div class="compta r">
-  <div><p class="oeil">{t["s5_oeil"]}</p><h2>{t["s5_h"]}</h2><p>{t["s5_p"]}</p><a class="btn sombre" href="mailto:{MAIL}">{t["s5_cta"]}</a></div>
+  <div><p class="oeil">{t["s5_oeil"]}</p><h2>{t["s5_h"]}</h2><p>{t["s5_p"]}</p><a class="btn sombre" href="mailto:{MAIL}">{t["s5_cta"]}</a><p style="margin:16px 0 0"><a class="lien" href="{t["kit_url"]}">{t["kit_lien"]}</a></p></div>
   <div class="carte-lien"><b>Chrome Web Store</b>{STORE.replace("https://", "")}</div>
 </div></div></section>
 

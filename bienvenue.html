@@ -96,6 +96,8 @@ section{padding-block:96px}
 .etape{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:28px 26px 30px;counter-increment:e;transition:transform .25s,box-shadow .25s}
 .etape:hover,.atout:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(15,31,26,.45)}
 .etape:before{content:counter(e);display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--vert);color:#fff;font-weight:700;font-size:18px;margin-bottom:20px}
+.etapes.deux{grid-template-columns:repeat(2,1fr)}.etapes.deux .etape:before{content:none}.etapes.deux .etape:last-child{border-color:var(--vert)}
+@media(max-width:820px){.etapes.deux{grid-template-columns:1fr}}
 .etape h3,.atout h3{font-size:20px;margin-bottom:8px}.etape p,.atout p{margin:0;color:var(--gris);font-size:16px}
 .capture{margin:56px 0 0;border-radius:var(--rayon);overflow:hidden;border:1px solid var(--trait);background:#fff;box-shadow:0 40px 80px -50px rgba(15,31,26,.55)}
 .capture img{width:100%;aspect-ratio:1280/540;object-fit:cover;object-position:top}
