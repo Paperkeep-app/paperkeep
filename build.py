@@ -67,7 +67,7 @@ T = {
              ("Mes données sont-elles envoyées quelque part ?", "Non. Aucun serveur, aucune statistique. Les fichiers vont directement dans votre dossier Téléchargements.")],
         faq_plus="Toutes les questions et le contact",
         fin_h="Dix minutes par mois, et le dossier est prêt.", fin_p="Installez Paperkeep, ouvrez une page de facturation, cliquez.",
-        pied=["Aide et contact", "Guides", "À propos", "Confidentialité"], pied_liens=["aide.html", "guides.html", "a-propos.html", "privacy.html"],
+        pied=["Aide et contact", "Guides", "Paperkeep Pro", "À propos", "Confidentialité", "Conditions de vente"], pied_liens=["aide.html", "guides.html", "pro.html", "a-propos.html", "privacy.html", "conditions.html"],
         mention="Paperkeep — Talal Swalha, numéro d'entreprise BE 1042.078.027, Ixelles (Belgique).",
         fournisseur="fournisseur",
     ),
@@ -516,6 +516,8 @@ PAGES = {
     "comparatif-collecte-factures.html": ("fr", "Paperkeep, GetMyInvoices, Invoice Radar ou Tailride : lequel choisir ?", "Comparaison honnête des outils qui récupèrent vos factures en ligne : ce que chacun fait, ce qu'il demande, et à qui il convient.", "article", None),
     "bienvenue.html": ("fr", "Paperkeep est installé — premiers pas", "Trois étapes pour récupérer vos premières factures avec Paperkeep.", "page", None),
     "au-revoir.html": ("fr", "Paperkeep est désinstallé", "Dites-nous ce qui n'allait pas.", "page", None),
+    "pro.html": ("fr", "Paperkeep Pro — la tournée du mois et le récapitulatif pour le comptable", "Paperkeep Pro : tournée du mois, factures manquantes, récapitulatif pour le comptable et classement par trimestre. 39 € par an, essai gratuit de 14 jours.", "faq", None),
+    "conditions.html": ("fr", "Conditions de vente — Paperkeep Pro", "Conditions de vente de l'abonnement Paperkeep Pro : prix, essai, résiliation, remboursement, factures.", "page", None),
     "a-propos.html": ("fr", "À propos de Paperkeep — qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
     "privacy.html": ("fr", "Paperkeep — Politique de confidentialité / Privacy policy", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
 }
