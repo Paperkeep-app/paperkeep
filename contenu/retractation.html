@@ -1,0 +1,20 @@
+<h1>Renoncer au contrat (rétractation)</h1>
+  <p>Vous avez souscrit Paperkeep Pro il y a moins de 14 jours ? Vous pouvez vous rétracter ici, sans donner de motif. Vous serez remboursé(e) intégralement. Voir l'article 6 des <a href="conditions.html">conditions de vente</a>.</p>
+  <p><button type="button" id="ouvrir" class="bouton">Renoncer au contrat ici</button></p>
+  <form id="declaration" method="post" action="{{RETRACTATION_URL}}" hidden>
+    <h2>Votre déclaration de rétractation</h2>
+    <p>Je me rétracte du contrat d'abonnement Paperkeep Pro.</p>
+    <p><label for="nom">Nom et prénom</label><br><input id="nom" name="nom" required maxlength="120" autocomplete="name"></p>
+    <p><label for="email">Adresse e-mail utilisée pour l'abonnement (l'accusé de réception y sera envoyé)</label><br><input id="email" name="email" type="email" required maxlength="200" autocomplete="email"></p>
+    <p><label for="contrat">Date du paiement ou numéro du reçu (facultatif)</label><br><input id="contrat" name="contrat" maxlength="300"></p>
+    <p style="position:absolute;left:-9999px" aria-hidden="true"><label for="site">Ne pas remplir</label><input id="site" name="site" tabindex="-1" autocomplete="off"></p>
+    <p><button type="submit" class="bouton">Confirmer la rétractation</button></p>
+  </form>
+  <p>Vous pouvez aussi écrire à <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a> ou utiliser le formulaire type en annexe des conditions de vente.</p>
+  <script>
+    document.getElementById("ouvrir").addEventListener("click", function () {
+      var f = document.getElementById("declaration");
+      f.hidden = false;
+      document.getElementById("nom").focus();
+    });
+  </script>
