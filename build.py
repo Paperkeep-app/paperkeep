@@ -14,6 +14,11 @@ MAIL = "contact@paperkeep.be"
 FACEBOOK = "https://www.facebook.com/1273897999150933"
 GITHUB = "https://github.com/Paperkeep-app/paperkeep-extension"
 AUJOURDHUI = __import__("datetime").date.today().isoformat()
+# Adresse de l'application Web Google Apps Script qui accuse réception des
+# rétractations (facturo/store/retractation). Tant qu'elle est vide, la page
+# retractation.html n'est pas produite : un formulaire qui n'envoie rien
+# serait pire que pas de formulaire.
+RETRACTATION_URL = ""
 FICHIER = {"fr": "index.html", "en": "en.html", "nl": "nl.html"}
 
 T = {
@@ -67,7 +72,7 @@ T = {
              ("Mes données sont-elles envoyées quelque part ?", "Non. Aucun serveur, aucune statistique. Les fichiers vont directement dans votre dossier Téléchargements.")],
         faq_plus="Toutes les questions et le contact",
         fin_h="Dix minutes par mois, et le dossier est prêt.", fin_p="Installez Paperkeep, ouvrez une page de facturation, cliquez.",
-        pied=["Aide et contact", "Guides", "Paperkeep Pro", "À propos", "Confidentialité", "Conditions de vente"], pied_liens=["aide.html", "guides.html", "pro.html", "a-propos.html", "privacy.html", "conditions.html"],
+        pied=["Aide et contact", "Guides", "Paperkeep Pro", "À propos", "Confidentialité", "Conditions de vente"] + (["Renoncer au contrat"] if RETRACTATION_URL else []), pied_liens=["aide.html", "guides.html", "pro.html", "a-propos.html", "privacy.html", "conditions.html"] + (["retractation.html"] if RETRACTATION_URL else []),
         mention="Paperkeep — Talal Swalha, numéro d'entreprise BE 1042.078.027, Ixelles (Belgique).",
         fournisseur="fournisseur",
     ),
@@ -495,6 +500,9 @@ CSS_ARTICLE = r"""
 .article .contact{background:var(--papier);border:1px solid var(--trait);border-radius:14px;padding:18px 20px;margin:18px 0}
 .article .ancres{font-size:15px}.article .date,.maj{color:var(--gris);font-size:14.5px}
 .article details{margin-bottom:8px}
+.article .encadre{background:var(--papier);border:2px solid var(--vert);border-radius:14px;padding:16px 20px;margin:18px 0}
+.article .bouton{display:inline-block;padding:13px 22px;border-radius:999px;border:0;background:var(--vert);color:#fff;font:650 16px/1.2 inherit;cursor:pointer}
+.article input{width:100%;max-width:460px;padding:10px 12px;border:1px solid var(--trait);border-radius:10px;font:inherit}
 """
 
 # fichier : (langue, titre, description, type, équivalent dans l'autre langue)
@@ -528,6 +536,7 @@ PAGES = {
     "bienvenue.html": ("fr", "Paperkeep est installé — premiers pas", "Trois étapes pour récupérer vos premières factures avec Paperkeep.", "page", None),
     "au-revoir.html": ("fr", "Paperkeep est désinstallé", "Dites-nous ce qui n'allait pas.", "page", None),
     "pro.html": ("fr", "Paperkeep Pro — la tournée du mois et le récapitulatif pour le comptable", "Paperkeep Pro : tournée du mois, factures manquantes, récapitulatif pour le comptable et classement par trimestre. 39 € par an, essai gratuit de 14 jours.", "faq", None),
+    "retractation.html": ("fr", "Renoncer au contrat — Paperkeep Pro", "Rétractation de l'abonnement Paperkeep Pro dans les 14 jours : formulaire en ligne et accusé de réception immédiat.", "page", None),
     "conditions.html": ("fr", "Conditions de vente — Paperkeep Pro", "Conditions de vente de l'abonnement Paperkeep Pro : prix, essai, résiliation, remboursement, factures.", "page", None),
     "a-propos.html": ("fr", "À propos de Paperkeep — qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
     "privacy.html": ("fr", "Paperkeep — Politique de confidentialité / Privacy policy", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
@@ -540,7 +549,7 @@ MAJ = {"fr": "Mis à jour le", "nl": "Bijgewerkt op", "en": "Updated on"}
 def secondaire(f):
     lang, titre, desc, genre, autre = PAGES[f]
     t = T[lang]
-    corps = pathlib.Path("contenu/" + f).read_text(encoding="utf-8")
+    corps = pathlib.Path("contenu/" + f).read_text(encoding="utf-8").replace("{{RETRACTATION_URL}}", RETRACTATION_URL)
     url = BASE + f
     alt = ""
     if autre:
@@ -608,7 +617,7 @@ def secondaire(f):
 
 
 def plan_du_site():
-    urls = [""] + ["en.html", "nl.html"] + [p for p in PAGES if p not in NOINDEX]
+    urls = [""] + ["en.html", "nl.html"] + [p for p in PAGES if p not in NOINDEX and (p != "retractation.html" or RETRACTATION_URL)]
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     x += "".join(f"  <url><loc>{BASE}{u}</loc><lastmod>{AUJOURDHUI}</lastmod></url>\n" for u in urls) + "</urlset>\n"
     pathlib.Path("sitemap.xml").write_text(x, encoding="utf-8")
@@ -619,5 +628,8 @@ if __name__ == "__main__":
     for lang in T:
         print(*page(lang))
     for f in PAGES:
+        if f == "retractation.html" and not RETRACTATION_URL:
+            print("retractation.html : en attente de l'adresse Apps Script, page non produite")
+            continue
         print(*secondaire(f))
     print("plan du site :", len(plan_du_site()), "adresses")

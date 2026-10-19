@@ -157,6 +157,9 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
 .article .contact{background:var(--papier);border:1px solid var(--trait);border-radius:14px;padding:18px 20px;margin:18px 0}
 .article .ancres{font-size:15px}.article .date,.maj{color:var(--gris);font-size:14.5px}
 .article details{margin-bottom:8px}
+.article .encadre{background:var(--papier);border:2px solid var(--vert);border-radius:14px;padding:16px 20px;margin:18px 0}
+.article .bouton{display:inline-block;padding:13px 22px;border-radius:999px;border:0;background:var(--vert);color:#fff;font:650 16px/1.2 inherit;cursor:pointer}
+.article input{width:100%;max-width:460px;padding:10px 12px;border:1px solid var(--trait);border-radius:10px;font:inherit}
 </style>
 </head>
 <body>
@@ -168,13 +171,13 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
 </div></header>
 <main class="article"><div class="w etroit">
 <h1>Conditions de vente — Paperkeep Pro</h1>
-  <p>Version du 16 octobre 2026.</p>
+  <p>Version du 17 octobre 2026.</p>
 
   <h2>1. Vendeur</h2>
   <p>Talal Swalha, entreprise individuelle, rue du Viaduc 88 bte 1, 1050 Ixelles, Belgique. Numéro d'entreprise et de TVA : BE 1042.078.027. Contact : <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>.</p>
 
   <h2>2. Objet</h2>
-  <p>Paperkeep est une extension pour le navigateur Google Chrome. Sa version gratuite reste gratuite. Paperkeep Pro est un abonnement qui donne accès à des fonctions supplémentaires décrites sur la page <a href="pro.html">Paperkeep Pro</a>. Les fonctions s'exécutent sur l'ordinateur de l'utilisateur ; aucune facture n'est envoyée au vendeur.</p>
+  <p>Paperkeep est une extension de navigateur (Google Chrome et navigateurs compatibles indiqués sur ce site). Sa version gratuite reste gratuite. Paperkeep Pro est un abonnement qui donne accès à des fonctions supplémentaires décrites sur la page <a href="pro.html">Paperkeep Pro</a>. Les fonctions s'exécutent sur l'ordinateur de l'utilisateur ; aucune facture n'est envoyée au vendeur.</p>
 
   <h2>3. Prix et paiement</h2>
   <p>Le prix est de 39 € par an, TVA belge de 21 % comprise pour les clients particuliers. Un client assujetti à la TVA établi dans un autre État membre de l'Union européenne qui communique un numéro de TVA valide est facturé hors TVA (autoliquidation). Le paiement se fait par carte, à l'avance, pour une année. Il est traité par Stripe au moyen du service ExtensionPay ; le vendeur n'a jamais accès aux données de la carte.</p>
@@ -183,22 +186,42 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
   <p>Un essai de 14 jours est proposé, sans carte de paiement. À sa fin, les fonctions Pro se désactivent si aucun abonnement n'est souscrit. Les fichiers déjà enregistrés restent sur l'ordinateur de l'utilisateur.</p>
 
   <h2>5. Durée, renouvellement et résiliation</h2>
-  <p>L'abonnement dure un an et se renouvelle chaque année par paiement automatique. Il peut être résilié à tout moment depuis l'extension (« Gérer mon abonnement ») ; il prend alors fin à l'échéance de l'année payée, sans renouvellement. Toute modification de prix est annoncée par e-mail au moins 30 jours avant l'échéance.</p>
+  <div class="encadre"><p><strong>Renouvellement automatique.</strong> L'abonnement dure un an et se renouvelle chaque année, au même prix, par paiement automatique, sauf si vous le résiliez avant la date de renouvellement indiquée dans « Gérer mon abonnement » (dans l'extension) et dans le reçu de paiement. Un e-mail vous rappelle cette date avant chaque renouvellement. Après un renouvellement, vous pouvez encore résilier à tout moment, sans frais ni indemnité : la partie non utilisée de l'année vous est remboursée au prorata des mois entiers restants.</p></div>
+  <p>L'abonnement peut être résilié à tout moment depuis l'extension (« Gérer mon abonnement ») ou par e-mail à contact@paperkeep.be. Sans autre demande de votre part, il prend fin à l'échéance de l'année payée et n'est pas renouvelé. Toute modification de prix est annoncée par e-mail au moins 30 jours avant l'échéance ; si vous la refusez, il vous suffit de résilier avant cette date.</p>
 
-  <h2>6. Remboursement et droit de rétractation</h2>
-  <p>Le client est remboursé intégralement sur simple demande adressée à contact@paperkeep.be dans les 14 jours qui suivent un paiement, y compris un paiement de renouvellement. Cette garantie couvre et dépasse le droit de rétractation de 14 jours prévu pour les consommateurs. Au-delà de ce délai, l'année entamée n'est pas remboursée.</p>
+  <h2>6. Droit de rétractation et remboursement</h2>
+  <p><strong>Droit de rétractation.</strong> Si vous êtes un consommateur, vous avez le droit de vous rétracter du contrat sans donner de motif dans un délai de 14 jours à compter du jour de sa conclusion, c'est-à-dire du paiement. Pour l'exercer, il suffit, avant la fin de ce délai :</p>
+  <ul>
+    <li>d'utiliser la fonction en ligne <a href="retractation.html">« Renoncer au contrat ici »</a> (lien aussi présent en bas de chaque page de ce site) : vous recevez aussitôt un accusé de réception par e-mail, avec la date et l'heure de votre demande ;</li>
+    <li>ou de nous envoyer une déclaration claire à contact@paperkeep.be ou par courrier à l'adresse indiquée à l'article 1, par exemple au moyen du formulaire de rétractation reproduit ci-dessous (son utilisation n'est pas obligatoire).</li>
+  </ul>
+  <p><strong>Effets.</strong> En cas de rétractation, nous vous remboursons la totalité du paiement, sans frais, au plus tard 14 jours après avoir reçu votre décision, par le même moyen de paiement que celui utilisé. Les fonctions Pro sont alors désactivées. Comme le service commence dès le paiement, à votre demande, la loi nous permettrait de retenir un montant proportionnel au temps écoulé : nous y renonçons.</p>
+  <p><strong>Garantie supplémentaire.</strong> Le même remboursement intégral s'applique, pour tous les clients, à une demande faite dans les 14 jours qui suivent un paiement de renouvellement. Ensuite, la résiliation se fait comme indiqué à l'article 5.</p>
 
   <h2>7. Factures</h2>
   <p>Un reçu est envoyé par e-mail à chaque paiement. Un client assujetti à la TVA reçoit une facture ; pour un client assujetti belge, elle est transmise par le réseau Peppol.</p>
 
   <h2>8. Fonctionnement et responsabilité</h2>
-  <p>Paperkeep reconnaît un grand nombre de pages de facturation, mais pas toutes, et les sites des fournisseurs peuvent changer sans préavis. Le vendeur s'efforce de corriger rapidement les cas signalés, sans pouvoir garantir qu'un service donné sera toujours reconnu. L'utilisateur reste responsable de la conservation de ses pièces comptables. La responsabilité du vendeur est limitée au montant payé pour l'année en cours, sauf faute intentionnelle ou faute lourde.</p>
+  <p>Paperkeep reconnaît un grand nombre de pages de facturation, mais pas toutes, et les sites des fournisseurs peuvent changer sans préavis. Le vendeur s'efforce de corriger rapidement les cas signalés, sans pouvoir garantir qu'un service donné sera toujours reconnu. L'utilisateur reste responsable de la conservation de ses pièces comptables. Sans préjudice des droits que la loi accorde au consommateur, notamment la garantie légale de conformité des contenus et services numériques, la responsabilité du vendeur envers un client professionnel est limitée au montant payé pour l'année en cours, sauf faute intentionnelle ou faute lourde.</p>
 
   <h2>9. Données personnelles</h2>
   <p>Voir la <a href="privacy.html">politique de confidentialité</a>.</p>
 
   <h2>10. Droit applicable et litiges</h2>
   <p>Ces conditions sont soumises au droit belge. En cas de difficulté, écrivez d'abord à contact@paperkeep.be. Un consommateur peut aussi s'adresser au Service de médiation pour le consommateur (mediationconsommateur.be). Les dispositions impératives protégeant le consommateur dans son pays de résidence restent applicables.</p>
+
+  <h2>Annexe — Formulaire de rétractation</h2>
+  <p>(Veuillez compléter et renvoyer le présent formulaire uniquement si vous souhaitez vous rétracter du contrat.)</p>
+  <div class="encadre">
+  <p>À l'attention de Talal Swalha (Paperkeep), rue du Viaduc 88 bte 1, 1050 Ixelles, Belgique — contact@paperkeep.be :</p>
+  <p>Je vous notifie par la présente ma rétractation du contrat portant sur la prestation de services ci-dessous : abonnement Paperkeep Pro.</p>
+  <p>Commandé le : …………… / reçu le : ……………</p>
+  <p>Nom du consommateur : ……………</p>
+  <p>Adresse du consommateur : ……………</p>
+  <p>Adresse e-mail utilisée pour l'abonnement : ……………</p>
+  <p>Signature du consommateur (uniquement en cas de notification du présent formulaire sur papier) : ……………</p>
+  <p>Date : ……………</p>
+  </div>
 
 </div></main>
 <footer><div class="w">
