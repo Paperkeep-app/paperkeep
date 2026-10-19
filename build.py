@@ -18,7 +18,7 @@ AUJOURDHUI = __import__("datetime").date.today().isoformat()
 # rétractations (facturo/store/retractation). Tant qu'elle est vide, la page
 # retractation.html n'est pas produite : un formulaire qui n'envoie rien
 # serait pire que pas de formulaire.
-RETRACTATION_URL = ""
+RETRACTATION_URL = "https://script.google.com/macros/s/AKfycbwJKtU0iQk2Nq6uC7PdjLSX4xePoD7IN7rZLvm3LJS1DB0jzMr3i0plOtnBCInL7Os/exec"
 FICHIER = {"fr": "index.html", "en": "en.html", "nl": "nl.html"}
 
 T = {
@@ -126,7 +126,7 @@ T = {
              ("Is my data sent anywhere?", "No. No server, no analytics. Files go straight to your Downloads folder.")],
         faq_plus="All questions and contact",
         fin_h="Ten minutes a month, and the folder is ready.", fin_p="Install Paperkeep, open a billing page, click.",
-        pied=["Help and contact", "Privacy"], pied_liens=["aide.html#en", "privacy.html"],
+        pied=["Help and contact", "Privacy", "Withdraw from a contract"], pied_liens=["aide.html#en", "privacy.html", "retractation.html"],
         mention="Paperkeep — Talal Swalha, company number BE 1042.078.027, Ixelles (Belgium).",
         fournisseur="vendor",
     ),
@@ -180,7 +180,7 @@ T = {
              ("Worden mijn gegevens ergens naartoe gestuurd?", "Nee. Geen server, geen statistieken. De bestanden gaan rechtstreeks naar je map Downloads.")],
         faq_plus="Alle vragen en contact",
         fin_h="Tien minuten per maand, en de map is klaar.", fin_p="Installeer Paperkeep, open een facturatiepagina, klik.",
-        pied=["Hulp en contact", "Gids", "Privacy"], pied_liens=["aide.html#nl", "gids-facturen-abonnementen.html", "privacy.html"],
+        pied=["Hulp en contact", "Gids", "Privacy", "Overeenkomst herroepen"], pied_liens=["aide.html#nl", "gids-facturen-abonnementen.html", "privacy.html", "retractation.html"],
         mention="Paperkeep — Talal Swalha, ondernemingsnummer BE 1042.078.027, Elsene (België).",
         fournisseur="leverancier",
     ),
