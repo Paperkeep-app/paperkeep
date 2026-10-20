@@ -10,6 +10,15 @@ import re
 
 BASE = "https://paperkeep.be/"
 STORE = "https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi"
+
+
+def marquer(h, f):
+    """Liens vers le Store marqués par page d'origine : le tableau de bord du
+    Chrome Web Store montre alors d'où viennent les installations (aucun
+    traceur sur le site, juste des paramètres dans l'adresse)."""
+    campagne = f.rsplit(".", 1)[0] or "accueil"
+    return re.sub(r'(https://chromewebstore\.google\.com/detail/mmllhnjkdpilogbaokplljippcnmdopi)(?![?\w])',
+                  rf"\1?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign={campagne}", h)
 MAIL = "contact@paperkeep.be"
 FACEBOOK = "https://www.facebook.com/1273897999150933"
 GITHUB = "https://github.com/Paperkeep-app/paperkeep-extension"
@@ -481,7 +490,7 @@ def page(lang):
 </body>
 </html>
 """
-    pathlib.Path(f).write_text(h, encoding="utf-8")
+    pathlib.Path(f).write_text(marquer(h, f), encoding="utf-8")
     return f, len(h)
 
 
@@ -613,7 +622,7 @@ def secondaire(f):
 </body>
 </html>
 """
-    pathlib.Path(f).write_text(h, encoding="utf-8")
+    pathlib.Path(f).write_text(marquer(h, f), encoding="utf-8")
     return f, len(h)
 
 
