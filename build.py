@@ -10,6 +10,7 @@ import re
 
 BASE = "https://paperkeep.be/"
 STORE = "https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi"
+EDGE = "https://microsoftedge.microsoft.com/addons/detail/ekoobifejmegpmndflgdcepbldfbegki"
 
 
 def marquer(h, f):
@@ -39,7 +40,8 @@ T = {
         oeil="Extension Chrome gratuite",
         h1a="Les factures oubliées,", h1b="récupérées en un clic.",
         chapo="Canva, ChatGPT, Google, Meta Ads, votre hébergeur… Ces abonnements ne vous envoient pas leur facture : elle reste dans votre compte en ligne, et Peppol ne l'apporte pas non plus. Ouvrez la page de facturation, cliquez sur Paperkeep : les factures sont téléchargées et nommées pour votre comptable.",
-        voir="Voir comment ça marche",
+        voir="Essayer en 10 secondes",
+        autres="Aussi pour Microsoft Edge",
         gages=["Sans compte", "Rien ne quitte votre ordinateur", "Français · Nederlands · English"],
         demo_titre="Historique de facturation", demo_payee="Payée", demo_bouton="Télécharger (3)", demo_dossier="Téléchargements › Factures",
         avant="Avant", apres="Après",
@@ -93,7 +95,8 @@ T = {
         oeil="Free Chrome extension",
         h1a="Forgotten invoices,", h1b="collected in one click.",
         chapo="Canva, ChatGPT, Google, Meta Ads, your web host… These subscriptions don't send you their invoice: it stays in your online account, and Peppol doesn't bring it either. Open the billing page, click Paperkeep: invoices are downloaded and named for your accountant.",
-        voir="See how it works",
+        voir="Try it in 10 seconds",
+        autres="Also for Microsoft Edge",
         gages=["No account", "Nothing leaves your computer", "English · Français · Nederlands"],
         demo_titre="Billing history", demo_payee="Paid", demo_bouton="Download (3)", demo_dossier="Downloads › Factures",
         avant="Before", apres="After",
@@ -147,7 +150,8 @@ T = {
         oeil="Gratis Chrome-extensie",
         h1a="Vergeten facturen,", h1b="opgehaald met één klik.",
         chapo="Canva, ChatGPT, Google, Meta Ads, je hostingfirma… Die abonnementen sturen je hun factuur niet: ze blijft in je online account staan, en ook Peppol brengt ze niet. Open de facturatiepagina, klik op Paperkeep: de facturen worden gedownload en benoemd voor je boekhouder.",
-        voir="Bekijk hoe het werkt",
+        voir="Probeer het in 10 seconden",
+        autres="Ook voor Microsoft Edge",
         gages=["Geen account", "Er verlaat niets je computer", "Nederlands · Français · English"],
         demo_titre="Factuurgeschiedenis", demo_payee="Betaald", demo_bouton="Downloaden (3)", demo_dossier="Downloads › Factures",
         avant="Voor", apres="Na",
@@ -244,6 +248,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.08;margin:0}
 .hero p.chapo{font-size:19px;line-height:1.55;color:rgba(255,255,255,.8);max-width:33em;margin:22px 0 30px}
 .actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
 .actions .lien{color:#fff;opacity:.9}
+.autres{margin:14px 0 0;font-size:15px}.autres a{color:#fff;opacity:.75}
 .gages{display:flex;flex-wrap:wrap;gap:8px 20px;margin:34px 0 0;padding:0;list-style:none;font-size:14.5px;color:rgba(255,255,255,.72)}
 .gages li{display:flex;align-items:center;gap:8px}.gages li:before{content:"";width:16px;height:16px;border-radius:50%;background:rgba(191,240,214,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.2 2.3 2.3 4.7-5' fill='none' stroke='%23bff0d6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px}
 
@@ -351,7 +356,7 @@ ORGANISATION = {
     "founder": {"@type": "Person", "name": "Talal Swalha"},
     "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "postalCode": "1050", "addressCountry": "BE"},
     "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": MAIL, "availableLanguage": ["fr", "nl", "en"]},
-    "sameAs": [STORE, FACEBOOK, GITHUB],
+    "sameAs": [STORE, EDGE, FACEBOOK, GITHUB],
 }
 
 
@@ -417,7 +422,8 @@ def page(lang):
     <p class="oeil"><i></i>{t["oeil"]}</p>
     <h1><span>{t["h1a"]}</span><span class="b">{t["h1b"]}</span></h1>
     <p class="chapo">{t["chapo"]}</p>
-    <div class="actions">{btn}<a class="lien" href="#fonctionnement">{t["voir"]}</a></div>
+    <div class="actions">{btn}<a class="lien" href="essai.html">{t["voir"]}</a></div>
+    <p class="autres"><a href="{EDGE}">{t["autres"]}</a></p>
     <ul class="gages">{"".join(f"<li>{g}</li>" for g in t["gages"])}</ul>
   </div>
   <div class="demo" aria-hidden="true">
