@@ -85,7 +85,7 @@ T = {
         faq_plus="Toutes les questions et le contact",
         fin_h="Dix minutes par mois, et le dossier est prêt.", fin_p="Installez Paperkeep, ouvrez une page de facturation, cliquez.",
         pied=["Aide et contact", "Mode d’emploi", "Guides", "Paperkeep Pro", "À propos", "Confidentialité", "Conditions de vente"] + (["Renoncer au contrat"] if RETRACTATION_URL else []), pied_liens=["aide.html", "mode-emploi.html", "guides.html", "pro.html", "a-propos.html", "privacy.html", "conditions.html"] + (["retractation.html"] if RETRACTATION_URL else []),
-        mention="Paperkeep — Talal Swalha, numéro d'entreprise BE 1042.078.027, Ixelles (Belgique).",
+        mention="Paperkeep · BE 1042.078.027 · <a href=\"mentions-legales.html\">Mentions légales</a>",
         fournisseur="fournisseur",
     ),
     "en": dict(
@@ -140,7 +140,7 @@ T = {
         faq_plus="All questions and contact",
         fin_h="Ten minutes a month, and the folder is ready.", fin_p="Install Paperkeep, open a billing page, click.",
         pied=["Help and contact", "Privacy", "Withdraw from a contract"], pied_liens=["aide.html#en", "privacy.html", "retractation.html"],
-        mention="Paperkeep — Talal Swalha, company number BE 1042.078.027, Ixelles (Belgium).",
+        mention="Paperkeep · BE 1042.078.027 · <a href=\"mentions-legales.html\">Legal notice</a>",
         fournisseur="vendor",
     ),
     "nl": dict(
@@ -195,7 +195,7 @@ T = {
         faq_plus="Alle vragen en contact",
         fin_h="Tien minuten per maand, en de map is klaar.", fin_p="Installeer Paperkeep, open een facturatiepagina, klik.",
         pied=["Hulp en contact", "Gids", "Privacy", "Overeenkomst herroepen"], pied_liens=["aide.html#nl", "gids-facturen-abonnementen.html", "privacy.html", "retractation.html"],
-        mention="Paperkeep — Talal Swalha, ondernemingsnummer BE 1042.078.027, Elsene (België).",
+        mention="Paperkeep · BE 1042.078.027 · <a href=\"mentions-legales.html\">Wettelijke vermeldingen</a>",
         fournisseur="leverancier",
     ),
 }
@@ -354,8 +354,7 @@ CHROME_ICO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke
 ORGANISATION = {
     "@context": "https://schema.org", "@type": "Organization", "@id": BASE + "#organisation", "name": "Paperkeep", "url": BASE,
     "logo": BASE + "img/logo-512.png", "email": MAIL, "vatID": "BE1042078027",
-    "founder": {"@type": "Person", "name": "Talal Swalha"},
-    "address": {"@type": "PostalAddress", "addressLocality": "Ixelles", "postalCode": "1050", "addressCountry": "BE"},
+        "address": {"@type": "PostalAddress", "addressCountry": "BE"},
     "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": MAIL, "availableLanguage": ["fr", "nl", "en"]},
     "sameAs": [STORE, EDGE, FIREFOX, FACEBOOK, GITHUB],
 }
@@ -556,10 +555,11 @@ PAGES = {
     "retractation.html": ("fr", "Renoncer au contrat — Paperkeep Pro", "Rétractation de l'abonnement Paperkeep Pro dans les 14 jours : formulaire en ligne et accusé de réception immédiat.", "page", None),
     "conditions.html": ("fr", "Conditions de vente — Paperkeep Pro", "Conditions de vente de l'abonnement Paperkeep Pro : prix, essai, résiliation, remboursement, factures.", "page", None),
     "a-propos.html": ("fr", "À propos de Paperkeep — qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
+    "mentions-legales.html": ("fr", "Mentions légales — Paperkeep", "Mentions légales de Paperkeep : éditeur, numéro d'entreprise, contact.", "page", None),
     "privacy.html": ("fr", "Paperkeep — Politique de confidentialité / Privacy policy", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
 }
 PUBLIE = {"facture-chatgpt.html": "2026-10-18", "facture-google-workspace.html": "2026-10-18", "facture-adobe.html": "2026-10-18", "facture-notion.html": "2026-10-18", "facture-meta-ads.html": "2026-10-18", "facture-canva.html": "2026-10-18", "facture-microsoft-365.html": "2026-10-18", "facture-ovhcloud.html": "2026-10-18", "facture-zoom.html": "2026-10-18", "facture-dropbox.html": "2026-10-18", "guide-peppol-factures-etrangeres.html": "2026-10-11", "gids-peppol-buitenlandse-facturen.html": "2026-10-11", "guide-peppol-foreign-invoices.html": "2026-10-11", "comparatif-collecte-factures.html": "2026-10-12", "ou-trouver-factures-abonnements.html": "2026-10-12", "waar-vind-ik-facturen-abonnementen.html": "2026-10-12"}
-NOINDEX = {"bienvenue.html", "au-revoir.html"}
+NOINDEX = {"bienvenue.html", "au-revoir.html", "mentions-legales.html"}
 MAJ = {"fr": "Mis à jour le", "nl": "Bijgewerkt op", "en": "Updated on"}
 
 

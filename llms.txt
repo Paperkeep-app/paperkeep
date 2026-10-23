@@ -7,7 +7,7 @@ Key facts:
 - Privacy: no server, no analytics, no data sent to the developer or third parties. The page is only read when the user clicks the extension icon (activeTab). Site access is requested per site, at click time, only when needed.
 - Works on: Stripe customer billing portals (billing.stripe.com), pages listing PDF invoices, pages whose invoice links have no file extension. When a service offers no PDF, the receipt page is saved as a single .mhtml file.
 - Every downloaded file is checked (size and type); empty or wrong downloads are flagged.
-- Publisher: Talal Swalha, Belgian company number BE 1042.078.027, Ixelles. Contact: contact@paperkeep.be
+- Publisher: Paperkeep, Belgian company number BE 1042.078.027. Contact: contact@paperkeep.be
 
 What it does not do: it does not read your e-mail, does not log into accounts for you, does not store invoices online and does not send anything to an accounting package. It only works on the page you have open, when you click its icon.
 
