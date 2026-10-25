@@ -24,6 +24,8 @@ def marquer(h, f):
 MAIL = "contact@paperkeep.be"
 FACEBOOK = "https://www.facebook.com/1273897999150933"
 GITHUB = "https://github.com/Paperkeep-app/paperkeep-extension"
+INSTAGRAM = "https://www.instagram.com/paperkeepbe/"
+YOUTUBE = "https://www.youtube.com/@paperkeepbe"
 AUJOURDHUI = __import__("datetime").date.today().isoformat()
 # Adresse de l'application Web Google Apps Script qui accuse réception des
 # rétractations (facturo/store/retractation). Tant qu'elle est vide, la page
@@ -360,7 +362,7 @@ ORGANISATION = {
     "logo": BASE + "img/logo-512.png", "email": MAIL, "vatID": "BE1042078027",
         "address": {"@type": "PostalAddress", "addressCountry": "BE"},
     "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": MAIL, "availableLanguage": ["fr", "nl", "en"]},
-    "sameAs": [STORE, EDGE, FIREFOX, FACEBOOK, GITHUB],
+    "sameAs": [STORE, EDGE, FIREFOX, FACEBOOK, INSTAGRAM, YOUTUBE, GITHUB],
 }
 
 
