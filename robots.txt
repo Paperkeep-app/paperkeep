@@ -1,5 +1,3 @@
 User-agent: *
-Disallow: /video/meta/
-Disallow: /video/stories/
 Allow: /
 Sitemap: https://paperkeep.be/sitemap.xml
