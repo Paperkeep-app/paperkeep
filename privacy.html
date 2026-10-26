@@ -155,6 +155,11 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
 .article a{color:var(--vert);font-weight:550}.article hr{border:0;border-top:1px solid var(--trait);margin:54px 0}
 .article code{background:#e6eae6;padding:2px 7px;border-radius:5px;font:500 14.5px/1.5 ui-monospace,Menlo,monospace;overflow-wrap:anywhere}
 .article .cta{display:inline-block;margin:10px 0;padding:13px 22px;border-radius:999px;background:var(--vert);color:#fff;font-weight:650;text-decoration:none}
+.article form.inscription{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0;padding:18px;border:1px solid #d9dfda;border-radius:14px;background:#fff}
+.article form.inscription label{flex-basis:100%;font-weight:650}
+.article form.inscription input[type=email]{flex:1 1 240px;min-width:0;padding:12px 14px;border:1px solid #b9c4bd;border-radius:10px;font:inherit}
+.article form.inscription button{border:0;cursor:pointer;font:inherit;margin:0}
+.article .petit{font-size:.9em;color:#5b6660}
 .article .contact{background:var(--papier);border:1px solid var(--trait);border-radius:14px;padding:18px 20px;margin:18px 0}
 .article .ancres{font-size:15px}.article .date,.maj{color:var(--gris);font-size:14.5px}
 .article details{margin-bottom:8px}
@@ -206,6 +211,8 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
 <h2>Suppression</h2>
 <p>Désinstaller l'extension supprime son stockage local. Les fichiers déjà téléchargés restent dans votre dossier, sous votre contrôle.</p>
 
+<h2>Rappels TVA par e-mail</h2>
+  <p>Si vous vous inscrivez aux rappels TVA sur <a href="rappels-tva.html">cette page</a>, votre adresse e-mail est enregistrée chez Kit (ConvertKit LLC, États-Unis), le service qui envoie ces e-mails pour nous. Elle sert uniquement à vous envoyer un e-mail avant chaque échéance TVA trimestrielle. L'inscription est confirmée par un e-mail (double confirmation) ; chaque e-mail contient un lien de désinscription, et vous pouvez demander la suppression de votre adresse à contact@paperkeep.be. Base légale : votre consentement. Le calendrier TVA à ajouter à votre agenda, lui, ne collecte aucune donnée.</p>
 <h2>Paperkeep Pro, rétractation et e-mails</h2>
   <p><strong>Abonnement Pro.</strong> Si vous démarrez l'essai gratuit ou souscrivez Paperkeep Pro, l'extension communique avec ExtensionPay (extensionpay.com), le service qui gère les abonnements pour notre compte ; le paiement est traité par Stripe. Ces services reçoivent votre adresse e-mail, un identifiant propre à votre installation et, lors d'un paiement, les données saisies sur la page sécurisée de Stripe (nous n'y avons jamais accès). L'extension leur demande seulement si votre abonnement ou votre essai est actif. Vos factures, vos pages de facturation et la liste de vos fournisseurs ne quittent jamais votre ordinateur. Base légale : exécution du contrat. Conservation : durée de l'abonnement, puis 7 ans pour les pièces comptables liées aux paiements.</p>
   <p><strong>Rétractation en ligne.</strong> Le formulaire « Renoncer au contrat » transmet votre nom, votre adresse e-mail et la référence indiquée à un script hébergé par Google (Apps Script), qui vous envoie l'accusé de réception et nous en adresse une copie. Base légale : obligation légale (droit de rétractation).</p>
@@ -252,6 +259,8 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
 <h2>Deletion</h2>
 <p>Uninstalling the extension deletes its local storage. Files already downloaded remain in your folder, under your control.</p>
 
+<h2>VAT reminders by e-mail</h2>
+  <p>If you sign up for VAT reminders, your e-mail address is stored by Kit (ConvertKit LLC, United States), the service that sends these e-mails on our behalf. It is only used to send you an e-mail before each quarterly VAT deadline. Sign-up is confirmed by e-mail (double opt-in); every e-mail has an unsubscribe link, and you can ask for your address to be deleted at contact@paperkeep.be. Legal basis: your consent. The VAT calendar you add to your agenda collects no data.</p>
 <h2>Paperkeep Pro, withdrawal and e-mails</h2>
   <p><strong>Pro subscription.</strong> If you start the free trial or subscribe to Paperkeep Pro, the extension talks to ExtensionPay (extensionpay.com), which manages subscriptions on our behalf; payments are processed by Stripe. These services receive your e-mail address, an identifier specific to your installation and, when you pay, the details entered on Stripe's secure page (we never see them). The extension only asks them whether your subscription or trial is active. Your invoices, billing pages and list of suppliers never leave your computer. Legal basis: performance of the contract. Retention: duration of the subscription, then 7 years for payment-related accounting records.</p>
   <p><strong>Online withdrawal.</strong> The withdrawal form sends your name, e-mail address and reference to a script hosted by Google (Apps Script), which e-mails you the acknowledgement and sends us a copy. Legal basis: legal obligation.</p>

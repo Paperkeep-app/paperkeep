@@ -1,23 +1,25 @@
 # Paperkeep
 
-> Paperkeep is a free Chrome extension (Manifest V3) that finds the invoices on the billing page the user is viewing, downloads them and renames them as DATE_VENDOR_AMOUNT (for example 2026-09-06_vendor_15-00EUR.pdf) into Downloads/Factures. It is built for freelancers and small businesses who must hand their purchase invoices to an accountant. Interface in French, Dutch and English. Published from Belgium.
+> Paperkeep is a browser extension for Chrome, Edge and Firefox (Manifest V3) that finds the invoices on the billing page the user is viewing, downloads them and renames them as DATE_VENDOR_AMOUNT (for example 2026-09-06_vendor_15-00EUR.pdf) into Downloads/Factures. It is built for freelancers and small businesses who must hand their purchase invoices to an accountant. Interface in French, Dutch and English. Published from Belgium.
 
 Key facts:
-- Price: free, no account, no download limit. A paid plan for accounting firms and high volumes is planned.
-- Privacy: no server, no analytics, no data sent to the developer or third parties. The page is only read when the user clicks the extension icon (activeTab). Site access is requested per site, at click time, only when needed.
+- Price: the free version has no account and no download limit. Paperkeep Pro costs 39 EUR per year, VAT included, with a 14-day free trial and a 30-day money-back guarantee; the first 50 subscribers keep 39 EUR per year for as long as their subscription stays active. Pro adds the monthly round of all your billing pages, missing-invoice detection, a quarterly VAT reminder, a summary for the accountant, classification by quarter and invoices from the Gmail message you have open.
+- Privacy: no server, no analytics, no invoice ever sent to the developer or third parties. Only the Pro subscription status is checked with ExtensionPay, the payment service. The page is only read when the user clicks the extension icon (activeTab). Site access is requested per site, at click time, only when needed.
 - Works on: Stripe customer billing portals (billing.stripe.com), pages listing PDF invoices, pages whose invoice links have no file extension. When a service offers no PDF, the receipt page is saved as a single .mhtml file.
 - Every downloaded file is checked (size and type); empty or wrong downloads are flagged.
 - Publisher: Paperkeep, Belgian company number BE 1042.078.027. Contact: contact@paperkeep.be
 
-What it does not do: it does not read your e-mail, does not log into accounts for you, does not store invoices online and does not send anything to an accounting package. It only works on the page you have open, when you click its icon.
+What it does not do: the free version does not read your e-mail (Pro reads only the Gmail message you have open, when you click), does not log into accounts for you, does not store invoices online and does not send anything to an accounting package. It only works on the page you have open, when you click its icon.
 
-Privacy in one sentence: Paperkeep has no server and no analytics; invoice files go straight from the billing page to the user's own Downloads folder.
+Privacy in one sentence: Paperkeep has no server of its own and no analytics; invoice files go straight from the billing page to the user's own Downloads folder.
 
 ## Links
 - [Source code (public, for verification)](https://github.com/Paperkeep-app/paperkeep-extension)
 - [Chrome Web Store listing](https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi)
 - [Home (French)](https://paperkeep.be/)
 - [Home (English)](https://paperkeep.be/en.html)
+- [Paperkeep Pro (French)](https://paperkeep.be/pro.html)
+- [Free Belgian VAT deadline reminders: calendar and e-mail (French)](https://paperkeep.be/rappels-tva.html) / [(Dutch)](https://paperkeep.be/btw-herinneringen.html)
 - [Home (Dutch)](https://paperkeep.be/nl.html)
 - [Help, FAQ and contact](https://paperkeep.be/aide.html)
 - [Guide: collecting the invoices of online subscriptions (French)](https://paperkeep.be/guide-factures-abonnements.html)
@@ -31,6 +33,12 @@ Privacy in one sentence: Paperkeep has no server and no analytics; invoice files
 - [Where to find the invoices of ten common services (Dutch)](https://paperkeep.be/waar-vind-ik-facturen-abonnementen.html)
 - [Where is my invoice? One page per service in English (ChatGPT, Canva, Meta Ads, Google Workspace, Microsoft 365, Adobe, Notion, Zoom, Dropbox, OVHcloud)](https://paperkeep.be/en.html#invoices)
 - Pages per service: French facture-<service>.html, Dutch factuur-<service>.html, English invoice-<service>.html (for example https://paperkeep.be/invoice-chatgpt.html)
+- [Sending purchase invoices to Belgian accounting software: Accountable, Billit, Yuki, Odoo (French)](https://paperkeep.be/factures-achat-accountable.html) — also factures-achat-billit.html, factures-achat-yuki.html, factures-achat-odoo.html
+- [Same guides in Dutch](https://paperkeep.be/aankoopfacturen-accountable.html) — also aankoopfacturen-billit.html, aankoopfacturen-yuki.html, aankoopfacturen-odoo.html
+- [Adding a VAT number at Google Workspace, Google Ads, Apple and Uber (French)](https://paperkeep.be/ajouter-numero-tva.html) and [Dutch](https://paperkeep.be/btw-nummer-toevoegen.html)
+- [How long to keep invoices in Belgium: seven years again since the law of 18 December 2025 (French)](https://paperkeep.be/conserver-factures-belgique.html) and [Dutch](https://paperkeep.be/facturen-bewaren-belgie.html)
+- [Peppol: why Telenet, BASE, Luminus, Eneco, Mega and Engie invoices no longer arrive by e-mail (French)](https://paperkeep.be/guide-peppol-telecom-energie.html) and [Dutch](https://paperkeep.be/gids-peppol-telecom-energie.html)
+- Belgian and other suppliers, French and Dutch: facture-/factuur-engie.html, -orange.html, -scarlet.html, -uber.html, -linkedin-premium.html (LinkedIn Premium is not yet supported by Paperkeep)
 - [Kit for accountants: a ready-to-send message for their clients (French)](https://paperkeep.be/kit-comptables.html)
 - [Kit for accountants (Dutch)](https://paperkeep.be/kit-boekhouders.html)
 - [Honest comparison: Paperkeep vs GetMyInvoices, Invoice Radar, Tailride (French)](https://paperkeep.be/comparatif-collecte-factures.html)

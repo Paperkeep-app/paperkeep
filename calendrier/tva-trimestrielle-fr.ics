@@ -1,0 +1,163 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Paperkeep//Calendrier TVA//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Échéances TVA trimestrielles (Paperkeep)
+X-WR-TIMEZONE:Europe/Brussels
+REFRESH-INTERVAL;VALUE=DURATION:P7D
+X-PUBLISHED-TTL:P7D
+BEGIN:VEVENT
+UID:tva-2026-T4-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20270125
+DTEND;VALUE=DATE:20270126
+SUMMARY:TVA : dernier jour pour la déclaration du 4e trimestre 2026
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2027-T1-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20270425
+DTEND;VALUE=DATE:20270426
+SUMMARY:TVA : dernier jour pour la déclaration du 1er trimestre 2027
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2027-T2-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20270725
+DTEND;VALUE=DATE:20270726
+SUMMARY:TVA : dernier jour pour la déclaration du 2e trimestre 2027
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2027-T3-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20271025
+DTEND;VALUE=DATE:20271026
+SUMMARY:TVA : dernier jour pour la déclaration du 3e trimestre 2027
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2027-T4-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20280125
+DTEND;VALUE=DATE:20280126
+SUMMARY:TVA : dernier jour pour la déclaration du 4e trimestre 2027
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2028-T1-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20280425
+DTEND;VALUE=DATE:20280426
+SUMMARY:TVA : dernier jour pour la déclaration du 1er trimestre 2028
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2028-T2-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20280725
+DTEND;VALUE=DATE:20280726
+SUMMARY:TVA : dernier jour pour la déclaration du 2e trimestre 2028
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2028-T3-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20281025
+DTEND;VALUE=DATE:20281026
+SUMMARY:TVA : dernier jour pour la déclaration du 3e trimestre 2028
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:tva-2028-T4-fr@paperkeep.be
+DTSTAMP:20261025T201259Z
+DTSTART;VALUE=DATE:20290125
+DTEND;VALUE=DATE:20290126
+SUMMARY:TVA : dernier jour pour la déclaration du 4e trimestre 2028
+DESCRIPTION:Déclaration périodique trimestrielle : dépôt au plus tard c
+ e jour (SPF Finances). Vérifiez le paiement et votre propre échéance da
+ ns MyMinfin. Rassemblez d'abord vos factures d'achat du trimestre : https:
+ //paperkeep.be/guide-factures-abonnements.html?utm_source=calendrier
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Déclaration TVA dans 7 jours : rassemblez vos factures.
+TRIGGER:-P7D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

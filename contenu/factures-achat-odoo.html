@@ -1,0 +1,36 @@
+<h1>Odoo : comment y envoyer vos factures fournisseurs (et celles qui n'arrivent pas toutes seules)</h1>
+  <p>Odoo Comptabilité reçoit vos factures fournisseurs par Peppol, par l'alias e-mail d'un journal d'achats ou par simple glisser-déposer. Les factures de vos abonnements en ligne facturés depuis l'étranger, elles, ne viennent que si quelqu'un va les chercher. Voici les étapes d'après la documentation officielle d'Odoo (version 20.0), puis la façon de combler ce manque.</p>
+  <p class="ancres">Aller à : <a href="#peppol">Peppol</a> · <a href="#email">Par e-mail</a> · <a href="#import">Import manuel</a> · <a href="#manque">Ce qui n'arrive pas tout seul</a> · <a href="#paperkeep">Avec Paperkeep</a></p>
+
+  <h2 id="peppol">1. Par Peppol : les factures de vos fournisseurs belges</h2>
+  <p>La documentation indique qu'Odoo « agit à la fois comme point d'accès et comme SMP », et que l'enregistrement Peppol est gratuit, y compris dans Odoo Community. On s'inscrit avec le bouton <strong>Activer Peppol</strong> ; l'inscription est en principe activée dans la journée. Une partie des écrans de configuration Peppol reste en anglais dans la documentation française : nous ne les reprenons pas ici.</p>
+  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/customer_invoices/electronic_invoicing.html">documentation officielle d'Odoo, facturation électronique</a>, consultée le 25/10/2026.</p>
+
+  <h2 id="email">2. Par e-mail : l'alias du journal Factures fournisseurs</h2>
+  <ol>
+    <li>Un domaine d'alias doit être configuré dans votre base.</li>
+    <li>L'adresse par défaut <code>vendor-bills@</code> suivie de votre domaine d'alias est créée automatiquement, dans l'onglet <strong>Paramètres avancés</strong> du journal <strong>Factures fournisseurs</strong>.</li>
+    <li>Pour la modifier : <strong>Comptabilité ‣ Configuration ‣ Journaux</strong>, choisissez le journal, puis changez l'<strong>Alias d'e-mail</strong> dans l'onglet <strong>Paramètres avancés</strong>.</li>
+  </ol>
+  <p>Chaque PDF joint à l'e-mail devient un brouillon de facture fournisseur. Seuls les PDF et les XML sont traités par l'alias d'un journal ; les JPEG passent par l'application Documents. La reconnaissance automatique du contenu (numérisation) consomme des crédits payants, sauf pour les fichiers XML.</p>
+  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/vendor_bills/invoice_digitization.html">documentation officielle d'Odoo, numérisation des factures</a>, consultée le 25/10/2026.</p>
+
+  <h2 id="import">3. Import manuel : un PDF déjà sur votre ordinateur</h2>
+  <p>Dans le tableau de bord de Comptabilité, glissez-déposez les factures dans le journal d'achats voulu, ou cliquez sur le bouton de téléchargement de ce journal (« Télécharger » dans la documentation française).</p>
+  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/vendor_bills/invoice_digitization.html">documentation officielle d'Odoo</a>, consultée le 25/10/2026.</p>
+
+  <h2 id="manque">4. Ce qui n'arrive pas tout seul</h2>
+  <p>Peppol n'apporte que les factures de fournisseurs qui y sont soumis. Les fournisseurs établis à l'étranger sans établissement stable en Belgique ne le sont pas (voir <a href="guide-peppol-factures-etrangeres.html">ce que dit la règle</a>). Et beaucoup d'abonnements en ligne n'envoient pas leur facture en pièce jointe : elle attend dans l'espace « Facturation » du compte. L'alias <code>vendor-bills@</code> ne reçoit donc rien de leur part.</p>
+  <p>Exemples : <a href="facture-chatgpt.html">ChatGPT</a>, <a href="facture-canva.html">Canva</a>, <a href="facture-meta-ads.html">Meta Ads</a>, <a href="facture-google-workspace.html">Google Workspace</a>, <a href="facture-adobe.html">Adobe</a>, <a href="facture-linkedin-premium.html">LinkedIn Premium</a>. Le chemin exact pour chacun est dans <a href="ou-trouver-factures-abonnements.html">Où trouver la facture de ChatGPT, Canva, Google Workspace…</a></p>
+
+  <h2 id="paperkeep">5. Avec Paperkeep</h2>
+  <ol>
+    <li>Ouvrez la page de facturation du service.</li>
+    <li>Cliquez sur l'icône Paperkeep, puis sur « Télécharger » : les factures arrivent en PDF dans <code>Téléchargements › Factures</code>, nommées par date, fournisseur et montant.</li>
+    <li>Glissez-les dans le journal d'achats d'Odoo, ou envoyez-les en pièces jointes à l'alias <code>vendor-bills@</code> : un PDF, un brouillon de facture.</li>
+  </ol>
+  <p>Ce que Paperkeep ne fait pas : il ne se connecte pas à Odoo, n'envoie rien tout seul et ne demande aucun mot de passe. Il n'a aucun partenariat avec Odoo. Rien ne quitte votre ordinateur.</p>
+  <p>Paperkeep est gratuit, sans limite de téléchargement. <a href="pro.html">Paperkeep Pro</a> (39 € par an TVA comprise, essai gratuit de 14 jours, satisfait ou remboursé 30 jours) ajoute la tournée du mois, les factures manquantes et le récapitulatif pour le comptable.</p>
+  <p><a class="cta" href="{{STORE}}">Ajouter Paperkeep à Chrome</a></p>
+  <p>Les autres logiciels : <a href="factures-achat-accountable.html">Accountable</a> · <a href="factures-achat-billit.html">Billit</a> · <a href="factures-achat-yuki.html">Yuki</a>.</p>
+  <p><em>Cette page donne une information générale et ne remplace pas l'avis de votre comptable. Les menus viennent de la documentation d'Odoo 20.0 et peuvent différer dans votre version.</em></p>
