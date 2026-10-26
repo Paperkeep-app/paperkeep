@@ -14,7 +14,6 @@ What it does not do: the free version does not read your e-mail (Pro reads only 
 Privacy in one sentence: Paperkeep has no server of its own and no analytics; invoice files go straight from the billing page to the user's own Downloads folder.
 
 ## Links
-- [Source code (public, for verification; as of 2026-10-26 the repository holds version 1.2.1, later versions not yet published there)](https://github.com/Paperkeep-app/paperkeep-extension)
 - [Chrome Web Store listing](https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi)
 - [Home (French)](https://paperkeep.be/)
 - [Home (English)](https://paperkeep.be/en.html)

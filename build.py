@@ -72,7 +72,7 @@ T = {
         prive=[("Aucun compte", "Rien à créer, rien à connecter."),
                ("Lecture au clic", "La page n'est lue qu'au moment où vous cliquez sur l'icône."),
                ("Accès demandé site par site", "Rien n'est demandé à l'installation. Vous pouvez toujours refuser.")],
-        prive_lien="Lire la politique de confidentialité", code_lien="Vérifier dans le code source",
+        prive_lien="Lire la politique de confidentialité", code_lien="Vérifier par vous-même",
         s5_oeil="Pour les comptables", s5_h="Vos clients oublient leurs factures d'achat ?",
         s5_p="Envoyez-leur le lien. Ils récupèrent en un clic les factures de leurs abonnements et vous transmettent un dossier propre. Un fournisseur manque ? Dites-le-nous, nous ajoutons en priorité ceux que vos clients utilisent.",
         s5_cta="Nous écrire",
@@ -129,7 +129,7 @@ T = {
         prive=[("No account", "Nothing to create, nothing to connect."),
                ("Read on click", "The page is only read when you click the icon."),
                ("Access asked site by site", "Nothing is requested at install. You can always decline.")],
-        prive_lien="Read the privacy policy", code_lien="Check it in the source code",
+        prive_lien="Read the privacy policy", code_lien="Check it yourself (in French)",
         s5_oeil="For accountants", s5_h="Clients who forget their purchase invoices?",
         s5_p="Send them the link. In one click they collect the invoices of their subscriptions and hand you a clean folder. A provider is missing? Tell us: we add the ones your clients use first.",
         s5_cta="Write to us",
@@ -188,7 +188,7 @@ T = {
         prive=[("Geen account", "Niets aan te maken, niets te koppelen."),
                ("Lezen bij de klik", "De pagina wordt alleen gelezen wanneer je op het icoon klikt."),
                ("Toegang per site gevraagd", "Bij de installatie wordt niets gevraagd. Je kunt altijd weigeren.")],
-        prive_lien="Lees het privacybeleid", code_lien="Controleer het in de broncode",
+        prive_lien="Lees het privacybeleid", code_lien="Controleer het zelf", verif="vertrouwen.html",
         s5_oeil="Voor boekhouders", s5_h="Klanten die hun aankoopfacturen vergeten?",
         s5_p="Bezorg hun de link. Met één klik halen ze de facturen van hun abonnementen op en bezorgen ze u een nette map. Ontbreekt er een leverancier? Laat het ons weten: we voegen eerst toe wat uw klanten gebruiken.",
         s5_cta="Schrijf ons",
@@ -365,7 +365,7 @@ ORGANISATION = {
     "logo": BASE + "img/logo-512.png", "email": MAIL, "vatID": "BE1042078027",
         "address": {"@type": "PostalAddress", "addressCountry": "BE"},
     "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": MAIL, "availableLanguage": ["fr", "nl", "en"]},
-    "sameAs": [STORE, EDGE, FIREFOX, FACEBOOK, INSTAGRAM, YOUTUBE, GITHUB],
+    "sameAs": [STORE, EDGE, FIREFOX, FACEBOOK, INSTAGRAM, YOUTUBE],
 }
 
 
@@ -478,7 +478,7 @@ def page(lang):
 <section class="sombre-s" id="confidentialite"><div class="w">
   <div class="entete r"><p class="oeil">{t["s4_oeil"]}</p><h2>{t["s4_h"]}</h2><p>{t["s4_p"]}</p></div>
   <div class="prive">{"".join(f'<div class="r"><h3>{a}</h3><p>{b}</p></div>' for a, b in t["prive"])}</div>
-  <p class="r" style="margin:0;display:flex;flex-wrap:wrap;gap:12px 28px"><a class="lien" href="privacy.html">{t["prive_lien"]}</a><a class="lien" href="{GITHUB}">{t["code_lien"]}</a></p>
+  <p class="r" style="margin:0;display:flex;flex-wrap:wrap;gap:12px 28px"><a class="lien" href="privacy.html">{t["prive_lien"]}</a><a class="lien" href="{t.get("verif", "confiance.html")}">{t["code_lien"]}</a></p>
 </div></section>
 
 <section id="comptables"><div class="w"><div class="compta r">
