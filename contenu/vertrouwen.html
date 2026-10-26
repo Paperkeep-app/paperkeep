@@ -1,0 +1,84 @@
+<h1>Controleer Paperkeep zelf</h1>
+  <p>Een extensie die je facturatiepagina's leest, moet je kunnen controleren zonder ons op ons woord te geloven. Hier lees je wat Paperkeep leest, wat niet, welke machtigingen het vraagt en waarom, en hoe je dat zelf in je browser nakijkt.</p>
+  <p class="maj">Deze pagina beschrijft versie 1.5.3 van de extensie, op basis van de code zoals nagelezen op 26/10/2026. Het nummer van de versie die bij jou geïnstalleerd is, staat op de extensiepagina van je browser.</p>
+  <p class="ancres">Ga naar: <a href="#leest">Wat het leest</a> · <a href="#leest-niet">Wat het niet leest</a> · <a href="#lokaal">Wat bij jou blijft</a> · <a href="#machtigingen">De machtigingen</a> · <a href="#pro">Pro en ExtensionPay</a> · <a href="#code">De broncode</a> · <a href="#controleren">Controleren in de browser</a></p>
+
+  <h2 id="leest">1. Wat Paperkeep leest</h2>
+  <ul>
+    <li><strong>Niets, zolang je niet op het icoon klikt.</strong> De extensie heeft geen script dat permanent op websites draait en vraagt bij de installatie geen toegang tot websites.</li>
+    <li><strong>Bij een klik: de open pagina, en alleen die.</strong> Paperkeep zoekt daar factuurlinks, datums, bedragen en de naam van de leverancier, om de lijst met te downloaden facturen te tonen.</li>
+    <li><strong>Met Pro, in Gmail:</strong> het bericht dat open staat op het moment van de klik (afzender, onderwerp, datum, pdf-bijlagen). Niet de andere berichten in je mailbox.</li>
+    <li><strong>De factuurbestanden zelf:</strong> die gaan rechtstreeks van de site van de leverancier naar je map <code>Downloads › Factures</code>. Paperkeep controleert daarna de grootte en het type van elk bestand, zodat een lege of verkeerde download opvalt.</li>
+  </ul>
+
+  <h2 id="leest-niet">2. Wat Paperkeep niet leest en niet doet</h2>
+  <ul>
+    <li>Het leest je andere tabbladen, je geschiedenis en je wachtwoorden niet. Het logt nergens in jouw plaats in.</li>
+    <li>De gratis versie leest je e-mails niet.</li>
+    <li>Het stuurt geen facturen, geen pagina-inhoud en geen lijst met leveranciers door, niet naar ons en niet naar derden. Paperkeep heeft geen server en de extensie bevat geen statistiekentool.</li>
+    <li>Het stuurt niets naar een boekhoudpakket: dat doe je zelf.</li>
+  </ul>
+  <p>Twee pagina's van deze site openen vanzelf: <a href="bienvenue.html#nl">een welkomstpagina</a> bij de installatie en <a href="au-revoir.html">een afscheidspagina</a> bij het verwijderen. Het zijn statische pagina's, zonder verborgen formulier en zonder parameters in het adres.</p>
+
+  <h2 id="lokaal">3. Wat op je computer blijft</h2>
+  <p>Paperkeep bewaart enkele gegevens in de lokale opslag van de extensie, op je computer:</p>
+  <ul>
+    <li>het logboek van je laatste 500 downloads (leverancier, bestandsnaam, resultaat van de controle);</li>
+    <li>de lijst van je leveranciers, met het adres van hun facturatiepagina <strong>zonder parameters</strong> (die bevatten vaak een token), voor de maandelijkse ronde;</li>
+    <li>je instellingen en een teller van downloads per maand;</li>
+    <li>met Pro: de laatst gekende status van je abonnement.</li>
+  </ul>
+  <p>De betaalbibliotheek ExtensionPay bewaart daarnaast, in de gesynchroniseerde opslag van de browser, de installatiedatum en, zodra je op een Pro-aanbod geklikt hebt, je licentie-ID. Staat synchronisatie in je browser aan, dan volgen die twee waarden je browseraccount.</p>
+
+  <h2 id="machtigingen">4. De machtigingen, één voor één</h2>
+  <p>Bij de installatie vraagt Paperkeep vier machtigingen. De andere zijn <strong>optioneel</strong>: ze worden pas gevraagd wanneer je op « Downloaden » klikt, en alleen als de pagina ze nodig heeft. Weiger je, dan wordt er niets gedownload en verandert er verder niets.</p>
+  <table>
+    <thead><tr><th>Machtiging</th><th>Waarom Paperkeep ze nodig heeft</th><th>Waarschuwing van Chrome</th></tr></thead>
+    <tbody>
+      <tr><td><code>downloads</code></td><td>De facturen opslaan in <code>Downloads › Factures</code>, ze hernoemen op datum, leverancier en bedrag, en elk bestand controleren.</td><td>« Manage your downloads » (je downloads beheren)</td></tr>
+      <tr><td><code>storage</code></td><td>Het logboek, de instellingen en de leverancierslijst op je computer bewaren.</td><td>Geen</td></tr>
+      <tr><td><code>activeTab</code></td><td>De open pagina lezen, alleen wanneer je op het icoon klikt. De toegang stopt zodra je de pagina verlaat of het tabblad sluit.</td><td>Geen</td></tr>
+      <tr><td><code>scripting</code></td><td>Bij een klik het kleine programma starten dat de facturen op die pagina zoekt.</td><td>Geen</td></tr>
+      <tr><td><code>pageCapture</code> (optioneel, Chrome en Edge)</td><td>Een betalingsbewijs dat niet als pdf bestaat, opslaan als één <code>.mhtml</code>-bestand. Alleen gevraagd bij zo'n bewijs. De Firefox-versie vraagt ze niet.</td><td>« Read and change all your data on all websites ». Dat is de ruimste waarschuwing van Chrome: daarom wordt ze nooit bij de installatie gevraagd.</td></tr>
+      <tr><td><code>invoice.stripe.com</code> en <code>pay.stripe.com</code> (optioneel)</td><td>Sommige Stripe-portalen tonen alleen de factuurpagina. Om er de pdf uit te halen, moet Paperkeep die pagina openen, dus toegang krijgen tot dat domein. Alleen gevraagd als je zo'n factuur downloadt.</td><td>Getoond op het moment van de vraag</td></tr>
+      <tr><td><code>*.hbomax.com</code> (optioneel)</td><td>HBO Max maakt geen pdf-facturen. De betalingsgeschiedenis verwijst naar pagina's met betalingsbewijzen, elk op een eigen adres. Om die bewijzen vanuit de geschiedenis op te slaan, moet Paperkeep elke pagina openen, dus toegang krijgen tot hbomax.com. Die toegang wordt alleen gevraagd als je vanuit je HBO Max-geschiedenis op « Downloaden » klikt. Open je zelf een bewijs, dan volstaat de toegang bij de klik en wordt er niets gevraagd. Gebruik je HBO Max niet? Dan zie je deze vraag nooit.</td><td>Getoond op het moment van de vraag</td></tr>
+    </tbody>
+  </table>
+  <p>Een technisch detail, voor de volledigheid: de bestanden die facturen zoeken, zijn « toegankelijk voor webpagina's » verklaard, omdat het programma dat in de pagina draait ze moet kunnen laden. Een website zou dus kunnen zien dat Paperkeep geïnstalleerd is. Dat geeft die site geen toegang tot je gegevens.</p>
+  <p class="maj">Bronnen: officiële documentatie van Chrome, <a href="https://developer.chrome.com/docs/extensions/reference/permissions-list">lijst van machtigingen en waarschuwingen</a> (bijgewerkt op 09/09/2026) en <a href="https://developer.chrome.com/docs/extensions/develop/concepts/activeTab">werking van activeTab</a>, geraadpleegd op 26/10/2026.</p>
+
+  <h2 id="pro">5. Paperkeep Pro: alleen de abonnementsstatus wordt gecontroleerd</h2>
+  <ul>
+    <li>Het <a href="pro.html">Pro</a>-abonnement loopt via <strong>ExtensionPay</strong>, met betaling bij Stripe. De extensie vraagt extensionpay.com maar één ding: de status van je abonnement (betaald, proefperiode loopt). Er worden geen facturen en geen pagina-inhoud naartoe gestuurd.</li>
+    <li>Zolang je op geen enkel Pro-aanbod geklikt hebt (proefperiode, betaling of aanmelden), bestaat er bij ExtensionPay geen ID voor jou en stuurt de extensie er geen enkel verzoek naartoe.</li>
+    <li>Zonder internetverbinding blijft de laatst gekende status 7 dagen geldig.</li>
+    <li><strong>Op Firefox alleen na je toestemming.</strong> De Firefox-versie meldt twee optionele soorten gegevens: identiteit (e-mail en ID bij ExtensionPay) en betaling (bij Stripe). Firefox toont ze niet bij de installatie: ze worden gevraagd bij de eerste klik op Pro. Zonder die toestemming wordt er niets naar ExtensionPay gestuurd. Je kunt ze altijd intrekken in <code>about:addons</code>, in het deel over machtigingen en gegevens van de extensie (« Permissions and data » in de documentatie van Mozilla).</li>
+  </ul>
+  <p class="maj">Bron: <a href="https://extensionworkshop.com/documentation/develop/firefox-builtin-data-consent/">Extension Workshop, toestemming voor gegevensverzameling in Firefox</a> (bijgewerkt op 18/10/2026), geraadpleegd op 26/10/2026.</p>
+
+  <h2 id="code">6. De broncode is openbaar</h2>
+  <p>De code van de extensie staat op GitHub: <a href="https://github.com/Paperkeep-app/paperkeep-extension">github.com/Paperkeep-app/paperkeep-extension</a>. Iedereen kan lezen hoe facturen gezocht, benoemd en gecontroleerd worden.</p>
+  <p><strong>Goed om te weten op 26/10/2026:</strong> de repository bevat versie 1.2.1 van 10/10/2026, zonder de Pro-functies. De latere versies staan er nog niet in. We schrijven het liever hier dan dat je het zelf moet ontdekken.</p>
+
+  <h2 id="controleren">7. Zelf controleren in de browser</h2>
+  <h3>De toegekende machtigingen (Chrome)</h3>
+  <ol>
+    <li>Open in Chrome het menu <strong>Meer</strong>, dan <strong>Extensies</strong>, dan <strong>Extensies beheren</strong>.</li>
+    <li>Klik bij Paperkeep op <strong>Details</strong>.</li>
+    <li>Bij de machtigingen zie je wat toegekend is. Voor sitetoegang biedt Chrome « Bij selectie », « Op specifieke sites » en « Op alle sites ».</li>
+  </ol>
+  <p>In Firefox vind je de machtigingen en de toestemming voor de Pro-gegevens in <code>about:addons</code>, in de instellingen van de extensie.</p>
+  <h3>De verstuurde verzoeken (Chrome)</h3>
+  <ol>
+    <li>Typ <code>chrome://extensions</code> in een nieuw tabblad.</li>
+    <li>Zet de schakelaar <strong>Ontwikkelaarsmodus</strong> (« Developer mode ») aan.</li>
+    <li>Klik op de kaart van Paperkeep op de blauwe link naast <strong>Inspect views</strong> (« Weergaven inspecteren »). De ontwikkelaarstools gaan open: kies het tabblad <strong>Network</strong> (Netwerk).</li>
+    <li>Voor het venster van Paperkeep zelf: inspecteer het (rechtsklik in het venster, dan <strong>Inspecteren</strong>) en laad opnieuw vanuit het tabblad <strong>Network</strong>.</li>
+    <li>Gebruik Paperkeep zoals altijd. Je ziet alleen verzoeken naar de site van de leverancier van wie je de facturen downloadt en, als je Pro gebruikt, naar extensionpay.com.</li>
+  </ol>
+  <p class="maj">Bronnen: officiële documentatie van Chrome, <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world">extensiepagina en ontwikkelaarsmodus</a> en <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/debug">service worker, venster en netwerk inspecteren</a>; <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=nl">hulp van de Chrome Web Store, extensies beheren</a>. Geraadpleegd op 26/10/2026. De Nederlandse labels van de ontwikkelaarstools kunnen verschillen volgens de taal van je browser.</p>
+
+  <h2>Wie Paperkeep uitgeeft</h2>
+  <p>Paperkeep is een Belgische onderneming, nummer BE 1042.078.027, actief in de Kruispuntbank van Ondernemingen sinds 1 oktober 2026. Een vraag of twijfel over veiligheid: <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>. Zie ook het <a href="privacy.html">privacybeleid</a>.</p>
+  <p><a class="cta" href="{{STORE}}">Paperkeep toevoegen aan Chrome</a></p>
+  <p class="petit">Ook voor <a href="{{EDGE}}">Microsoft Edge</a> en <a href="{{FIREFOX}}">Firefox</a>.</p>

@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Déployer Paperkeep sur les ordinateurs d'un cabinet (Chrome et Edge)</title>
+<meta name="description" content="Installer Paperkeep d'office sur les postes d'un cabinet avec la règle ExtensionInstallForcelist de Chrome et d'Edge, d'après les documentations de Google et de Microsoft. Aucune donnée centralisée.">
+<link rel="canonical" href="https://paperkeep.be/deployer-paperkeep-cabinet.html">
+<link rel="alternate" hreflang="fr" href="https://paperkeep.be/deployer-paperkeep-cabinet.html">
+<link rel="alternate" hreflang="nl" href="https://paperkeep.be/paperkeep-uitrollen-kantoor.html">
+<link rel="alternate" hreflang="x-default" href="https://paperkeep.be/deployer-paperkeep-cabinet.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Déployer Paperkeep sur les ordinateurs d'un cabinet (Chrome et Edge)">
+<meta property="og:description" content="Installer Paperkeep d'office sur les postes d'un cabinet avec la règle ExtensionInstallForcelist de Chrome et d'Edge, d'après les documentations de Google et de Microsoft. Aucune donnée centralisée.">
+<meta property="og:url" content="https://paperkeep.be/deployer-paperkeep-cabinet.html">
+<meta property="og:site_name" content="Paperkeep">
+<meta property="og:image" content="https://paperkeep.be/img/capture-detection.png">
+<meta name="theme-color" content="#0c2a21">
+<link rel="icon" href="img/logo-512.png">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://paperkeep.be/#organisation", "name": "Paperkeep", "url": "https://paperkeep.be/", "logo": "https://paperkeep.be/img/logo-512.png", "email": "contact@paperkeep.be", "vatID": "BE1042078027", "address": {"@type": "PostalAddress", "addressCountry": "BE"}, "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "contact@paperkeep.be", "availableLanguage": ["fr", "nl", "en"]}, "sameAs": ["https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign=deployer-paperkeep-cabinet", "https://microsoftedge.microsoft.com/addons/detail/ekoobifejmegpmndflgdcepbldfbegki", "https://addons.mozilla.org/firefox/addon/paperkeep/", "https://www.facebook.com/1273897999150933", "https://www.instagram.com/paperkeepbe/", "https://www.youtube.com/@paperkeepbe", "https://github.com/Paperkeep-app/paperkeep-extension"]}, {"@context": "https://schema.org", "@type": "Article", "headline": "Déployer Paperkeep sur les ordinateurs d'un cabinet (Chrome et Edge)", "description": "Installer Paperkeep d'office sur les postes d'un cabinet avec la règle ExtensionInstallForcelist de Chrome et d'Edge, d'après les documentations de Google et de Microsoft. Aucune donnée centralisée.", "inLanguage": "fr", "datePublished": "2026-10-26", "dateModified": "2026-10-26", "mainEntityOfPage": "https://paperkeep.be/deployer-paperkeep-cabinet.html", "image": "https://paperkeep.be/img/capture-detection.png", "author": {"@id": "https://paperkeep.be/#organisation"}, "publisher": {"@id": "https://paperkeep.be/#organisation"}}]</script>
+<style>
+:root{--encre:#0f1f1a;--vert:#1E5142;--vert-nuit:#0c2a21;--menthe:#bff0d6;--citron:#d9f36a;--creme:#f6f4ee;--papier:#fff;--gris:#5d6964;--trait:#e2e5e0;--rayon:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;color:var(--encre);background:var(--creme);-webkit-font-smoothing:antialiased}
+a{color:inherit}img{max-width:100%;display:block}
+.w{max-width:1120px;margin:0 auto;padding-inline:24px}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.08;margin:0}
+.oeil{font-size:13px;font-weight:650;letter-spacing:.09em;text-transform:uppercase;color:var(--vert);margin:0 0 14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--citron);color:var(--encre);font-weight:650;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(217,243,106,.9)}
+.btn small{font-weight:500;opacity:.7;font-size:14px}
+.btn.sombre{background:var(--vert);color:#fff}.btn.sombre:hover{box-shadow:0 10px 24px -10px rgba(30,81,66,.8)}
+.lien{font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:1px}
+
+/* barre */
+.barre{position:sticky;top:0;z-index:20;background:rgba(12,42,33,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);color:#fff}
+.barre .w{display:flex;align-items:center;gap:22px;height:66px}
+.marque{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;text-decoration:none;letter-spacing:-.02em}
+.barre nav{display:flex;gap:22px;margin-left:auto;font-size:15px}
+.barre nav a{text-decoration:none;opacity:.78}.barre nav a:hover{opacity:1}
+.langues{display:flex;gap:4px;font-size:13px;font-weight:600}
+.langues a{text-decoration:none;padding:5px 8px;border-radius:8px;opacity:.6}.langues a[aria-current]{background:rgba(255,255,255,.14);opacity:1}
+.barre .btn{padding:10px 16px;font-size:15px}
+
+/* accroche */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(900px 500px at 78% 8%,rgba(191,240,214,.22),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(217,243,106,.10),transparent 60%),linear-gradient(180deg,var(--vert-nuit),#12382d 70%,#17463a)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse at 60% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 60% 30%,#000 10%,transparent 70%)}
+.hero .w{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center;padding-block:78px 120px}
+.hero .oeil{color:var(--menthe);display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 13px;border-radius:999px;letter-spacing:.06em}
+.hero .oeil i{width:7px;height:7px;border-radius:50%;background:var(--citron);box-shadow:0 0 0 4px rgba(217,243,106,.2)}
+.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:auto}
+.hero h1 span{display:block}.hero h1 .b{color:var(--menthe)}
+.hero p.chapo{font-size:19px;line-height:1.55;color:rgba(255,255,255,.8);max-width:33em;margin:22px 0 30px}
+.actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.actions .lien{color:#fff;opacity:.9}
+.autres{margin:14px 0 0;font-size:15px}.autres a{color:#fff;opacity:.75}
+.gages{display:flex;flex-wrap:wrap;gap:8px 20px;margin:34px 0 0;padding:0;list-style:none;font-size:14.5px;color:rgba(255,255,255,.72)}
+.gages li{display:flex;align-items:center;gap:8px}.gages li:before{content:"";width:16px;height:16px;border-radius:50%;background:rgba(191,240,214,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.2 2.3 2.3 4.7-5' fill='none' stroke='%23bff0d6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px}
+
+/* démonstration animée */
+.demo{position:relative;perspective:1400px}
+.fenetre{background:#fff;color:var(--encre);border-radius:16px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.1);overflow:hidden;transform:rotateY(-7deg) rotateX(3deg);transform-origin:left center}
+.chrome{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#eef1ee;border-bottom:1px solid var(--trait)}
+.chrome i{width:10px;height:10px;border-radius:50%;background:#d5dad6}.chrome b{flex:1;margin-left:8px;background:#fff;border-radius:7px;height:22px;font:500 11px/22px ui-monospace,Menlo,monospace;color:#8a948f;padding-left:10px;overflow:hidden;white-space:nowrap}
+.chrome em{width:22px;height:22px;border-radius:6px;background:var(--vert);animation:pouls 8s infinite}
+.page{padding:18px 20px 64px}
+.page h4{margin:0 0 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a948f;font-weight:650}
+.ligne{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:11px 0;border-top:1px solid var(--trait);font-size:14px}
+.ligne span:nth-child(2){font-variant-numeric:tabular-nums;font-weight:600}
+.ligne .ok{font-size:11px;font-weight:650;color:#1f7a4d;background:#e3f6ea;padding:3px 8px;border-radius:999px}
+.bulle{position:absolute;right:-22px;top:58px;width:232px;background:#fff;color:var(--encre);border-radius:14px;padding:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.55),0 0 0 1px rgba(15,31,26,.06);animation:bulle 8s infinite}
+.bulle strong{display:block;font-size:13.5px;margin-bottom:9px}
+.bulle label{display:flex;align-items:center;gap:8px;font-size:12px;padding:6px 8px;border:1px solid var(--trait);border-radius:7px;margin-bottom:5px}
+.bulle label:before{content:"";width:13px;height:13px;border-radius:3px;background:var(--vert) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4 8.3 2.6 2.6L12 5.3' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/13px}
+.bulle label span{margin-left:auto;color:#8a948f;font-variant-numeric:tabular-nums}
+.bulle button{width:100%;margin-top:5px;border:0;border-radius:8px;padding:9px;font:650 12.5px/1 inherit;background:var(--vert);color:#fff;animation:appui 8s infinite}
+.fichiers{position:absolute;left:-18px;bottom:-66px;width:min(330px,82%);background:var(--encre);color:#eaf3ee;border-radius:14px;padding:13px 15px;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);font:500 12px/1.9 ui-monospace,Menlo,monospace}
+.fichiers small{display:block;font:650 10.5px/1 -apple-system,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--menthe);margin-bottom:6px}
+.fichiers div{opacity:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:fichier 8s infinite}
+.fichiers div:nth-of-type(2){animation-delay:.35s}.fichiers div:nth-of-type(3){animation-delay:.7s}
+.fichiers div:before{content:"↓ ";color:var(--citron)}
+@keyframes bulle{0%,6%{opacity:0;transform:translateY(-8px) scale(.97)}12%,92%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-8px) scale(.97)}}
+@keyframes appui{0%,38%{transform:none;background:var(--vert)}42%{transform:scale(.96);background:#17463a}46%,100%{transform:none;background:var(--vert)}}
+@keyframes fichier{0%,46%{opacity:0;transform:translateX(-10px)}54%,92%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes pouls{0%,4%{box-shadow:0 0 0 0 rgba(30,81,66,.5)}9%{box-shadow:0 0 0 9px rgba(30,81,66,0)}100%{box-shadow:0 0 0 0 rgba(30,81,66,0)}}
+
+/* sections */
+section{padding-block:96px}
+.entete{max-width:36em;margin-bottom:46px}
+.entete h2{font-size:clamp(30px,3.8vw,46px);font-weight:700}
+.entete p{color:var(--gris);font-size:18.5px;margin:18px 0 0}
+.avantapres{display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}
+.pile{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:22px 24px;font:500 14px/2.1 ui-monospace,Menlo,monospace}
+.pile b{display:block;font:650 12px/1 -apple-system,sans-serif;letter-spacing:.09em;text-transform:uppercase;margin-bottom:12px;color:var(--gris)}
+.pile div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#9aa39e}
+.pile.propre{background:var(--encre);border-color:var(--encre)}.pile.propre b{color:var(--menthe)}.pile.propre div{color:#eaf3ee}
+.fleche{width:46px;height:46px;border-radius:50%;background:var(--citron);display:grid;place-items:center;font-size:22px;font-weight:700}
+.etapes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:e}
+.etape{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:28px 26px 30px;counter-increment:e;transition:transform .25s,box-shadow .25s}
+.etape:hover,.atout:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(15,31,26,.45)}
+.etape:before{content:counter(e);display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--vert);color:#fff;font-weight:700;font-size:18px;margin-bottom:20px}
+.etapes.deux{grid-template-columns:repeat(2,1fr)}.etapes.deux .etape:before{content:none}.etapes.deux .etape:last-child{border-color:var(--vert)}
+@media(max-width:820px){.etapes.deux{grid-template-columns:1fr}}
+.etape h3,.atout h3{font-size:20px;margin-bottom:8px}.etape p,.atout p{margin:0;color:var(--gris);font-size:16px}
+.capture{margin:56px 0 0;border-radius:var(--rayon);overflow:hidden;border:1px solid var(--trait);background:#fff;box-shadow:0 40px 80px -50px rgba(15,31,26,.55)}
+.capture img{width:100%;aspect-ratio:1280/540;object-fit:cover;object-position:top}
+.capture figcaption{font-size:14px;color:var(--gris);padding:12px 18px;border-top:1px solid var(--trait)}
+.atouts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.atout{background:var(--papier);border:1px solid var(--trait);border-radius:var(--rayon);padding:26px;transition:transform .25s,box-shadow .25s}
+.atout svg{width:26px;height:26px;stroke:var(--vert);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;background:#e6f3ec;border-radius:10px;padding:9px;box-sizing:content-box;margin-bottom:18px}
+.sombre-s{background:var(--vert-nuit);color:#fff;border-radius:34px;margin-inline:16px;padding-block:84px}
+.sombre-s .oeil{color:var(--menthe)}.sombre-s .entete p{color:rgba(255,255,255,.74)}
+.prive{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:34px}
+.prive div{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:var(--rayon);padding:24px}
+.prive h3{font-size:19px;margin-bottom:8px}.prive p{margin:0;color:rgba(255,255,255,.72);font-size:16px}
+.sombre-s .lien{color:var(--menthe)}
+.compta{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;background:var(--papier);border:1px solid var(--trait);border-radius:28px;padding:48px}
+.compta h2{font-size:clamp(28px,3.2vw,40px);font-weight:700;margin-bottom:16px}.compta p{color:var(--gris);margin:0 0 26px}
+.carte-lien{background:var(--creme);border-radius:var(--rayon);padding:22px;font:500 13.5px/1.7 ui-monospace,Menlo,monospace;word-break:break-all;border:1px dashed #c9cfc9}
+.carte-lien b{display:block;font:650 12px/1 -apple-system,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--gris);margin-bottom:10px}
+.faq{max-width:780px}
+details{background:var(--papier);border:1px solid var(--trait);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+summary{font-weight:650;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:22px;line-height:1;color:var(--vert);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}details p{margin:12px 0 2px;color:var(--gris)}
+.fin{text-align:center;padding-block:40px 110px}
+.fin h2{font-size:clamp(30px,4.2vw,52px);font-weight:700;max-width:16em;margin:0 auto 14px}.fin p{color:var(--gris);font-size:19px;margin:0 0 30px}
+footer{border-top:1px solid var(--trait);padding-block:34px 44px;font-size:15px;color:var(--gris)}
+footer .w{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center}footer a{text-decoration:none}footer a:hover{color:var(--encre)}
+footer p{margin:0;flex-basis:100%;font-size:14px}
+
+/* apparition au défilement */
+.js .r{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.js .r.vu{opacity:1;transform:none}
+.js .etapes .r:nth-child(2),.js .atouts .r:nth-child(3n+2),.js .prive .r:nth-child(2){transition-delay:.09s}
+.js .etapes .r:nth-child(3),.js .atouts .r:nth-child(3n),.js .prive .r:nth-child(3){transition-delay:.18s}
+
+@media (max-width:920px){
+  .hero .w{grid-template-columns:1fr;padding-block:52px 96px;gap:60px}
+  .fenetre{transform:none}.bulle{right:8px}.fichiers{left:8px}
+  .etapes,.atouts,.prive{grid-template-columns:1fr}
+  .avantapres{grid-template-columns:1fr}.fleche{margin:0 auto;transform:rotate(90deg)}
+  .compta{grid-template-columns:1fr;padding:30px}
+  .barre nav{display:none}.langues{margin-left:auto}
+  section{padding-block:68px}.sombre-s{margin-inline:8px;border-radius:26px}
+}
+@media (max-width:520px){.barre .btn{display:none}.barre .w{gap:12px}.bulle{width:196px;right:4px}.fichiers{left:4px}.hero h1{font-size:31px}.hero p.chapo{font-size:17.5px}.w{padding-inline:20px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.bulle,.fichiers div{opacity:1}.js .r{opacity:1;transform:none}}
+
+.article blockquote{margin:18px 0;padding:6px 22px;border-left:3px solid var(--vert);background:var(--papier);border-radius:0 14px 14px 0}
+.article table{width:100%;border-collapse:collapse;font-size:15px;margin:18px 0;display:block;overflow-x:auto}
+.article th,.article td{border:1px solid var(--trait);padding:9px 11px;text-align:left;vertical-align:top}
+.article thead th{background:var(--papier)}
+.article{padding-block:64px 90px}.etroit{max-width:760px}
+.article h1{font-size:clamp(30px,4.2vw,46px);font-weight:700;margin-bottom:18px}
+.article h2{font-size:25px;margin:46px 0 12px}.article h3{font-size:19px;margin:26px 0 8px}
+.article p{margin:0 0 16px}.article ul,.article ol{padding-left:22px;margin:0 0 18px}.article li{margin-bottom:8px}
+.article a{color:var(--vert);font-weight:550}.article hr{border:0;border-top:1px solid var(--trait);margin:54px 0}
+.article code{background:#e6eae6;padding:2px 7px;border-radius:5px;font:500 14.5px/1.5 ui-monospace,Menlo,monospace;overflow-wrap:anywhere}
+.article .cta{display:inline-block;margin:10px 0;padding:13px 22px;border-radius:999px;background:var(--vert);color:#fff;font-weight:650;text-decoration:none}
+.article form.inscription{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0;padding:18px;border:1px solid #d9dfda;border-radius:14px;background:#fff}
+.article form.inscription label{flex-basis:100%;font-weight:650}
+.article form.inscription input[type=email]{flex:1 1 240px;min-width:0;padding:12px 14px;border:1px solid #b9c4bd;border-radius:10px;font:inherit}
+.article form.inscription button{border:0;cursor:pointer;font:inherit;margin:0}
+.article .petit{font-size:.9em;color:#5b6660}
+.article .contact{background:var(--papier);border:1px solid var(--trait);border-radius:14px;padding:18px 20px;margin:18px 0}
+.article .ancres{font-size:15px}.article .date,.maj{color:var(--gris);font-size:14.5px}
+.article details{margin-bottom:8px}
+.article .encadre{background:var(--papier);border:2px solid var(--vert);border-radius:14px;padding:16px 20px;margin:18px 0}
+.article .bouton{display:inline-block;padding:13px 22px;border-radius:999px;border:0;background:var(--vert);color:#fff;font:650 16px/1.2 inherit;cursor:pointer}
+.article input{width:100%;max-width:460px;padding:10px 12px;border:1px solid var(--trait);border-radius:10px;font:inherit}
+</style>
+</head>
+<body>
+<header class="barre"><div class="w">
+  <a class="marque" href="index.html"><svg width="34" height="34" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Paperkeep</a>
+  <nav><a href="index.html#fonctionnement">Fonctionnement</a><a href="index.html#confidentialite">Confidentialité</a><a href="index.html#comptables">Comptables</a><a href="aide.html">Aide</a></nav>
+  <div class="langues"><a href="index.html" aria-current="true" lang="fr">FR</a><a href="nl.html" lang="nl">NL</a><a href="en.html" lang="en">EN</a></div>
+  <a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign=deployer-paperkeep-cabinet"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Ajouter à Chrome <small>— gratuit</small></a>
+</div></header>
+<main class="article"><div class="w etroit">
+<h1>Déployer Paperkeep sur les ordinateurs d'un cabinet (Chrome et Edge)</h1>
+  <p class="maj">Mis à jour le 2026-10-26 · Paperkeep</p>
+  <p>Dans un cabinet comptable ou une PME dont les postes sont gérés, les utilisateurs ne peuvent pas toujours installer une extension eux-mêmes. L'administrateur peut alors l'installer d'office sur tous les postes avec la règle <code>ExtensionInstallForcelist</code>, qui existe dans Chrome et dans Microsoft Edge. Voici les valeurs à utiliser pour Paperkeep, d'après les documentations officielles de Google et de Microsoft.</p>
+  <p class="ancres">Aller à : <a href="#avant">Avant de commencer</a> · <a href="#ids">Les identifiants</a> · <a href="#chrome">Chrome</a> · <a href="#edge">Edge</a> · <a href="#verifier">Vérifier</a></p>
+
+  <h2 id="avant">1. Avant de commencer : aucune donnée centralisée</h2>
+  <ul>
+    <li><strong>Pas de console, pas de serveur.</strong> Paperkeep n'a pas de serveur. Chaque poste garde ses factures dans son propre dossier <code>Téléchargements › Factures</code>. Rien ne remonte vers le cabinet ni vers nous.</li>
+    <li><strong>Rien à configurer côté Paperkeep.</strong> La règle installe l'extension ; l'utilisateur s'en sert ensuite comme d'habitude : il ouvre une page de facturation et clique sur l'icône.</li>
+    <li><strong>Les permissions restent les mêmes.</strong> Les accès facultatifs (portails Stripe, reçus sans PDF, HBO Max) sont toujours demandés au clic, seulement si la page en a besoin. Le détail : <a href="confiance.html">Vérifiez Paperkeep vous-même</a>.</li>
+    <li><strong>La Pro reste individuelle.</strong> La règle n'active aucune licence : chaque utilisateur qui veut la <a href="pro.html">Pro</a> la démarre depuis l'extension.</li>
+    <li><strong>Testez d'abord sur un poste.</strong> Google le rappelle pour le registre : une modification mal faite peut endommager un ordinateur.</li>
+  </ul>
+
+  <h2 id="ids">2. Les identifiants de Paperkeep</h2>
+  <table>
+    <thead><tr><th>Navigateur</th><th>Identifiant de l'extension</th><th>Valeur pour <code>ExtensionInstallForcelist</code></th></tr></thead>
+    <tbody>
+      <tr><td>Google Chrome (Chrome Web Store)</td><td><code>mmllhnjkdpilogbaokplljippcnmdopi</code></td><td><code>mmllhnjkdpilogbaokplljippcnmdopi;https://clients2.google.com/service/update2/crx</code></td></tr>
+      <tr><td>Microsoft Edge (Edge Add-ons)</td><td><code>ekoobifejmegpmndflgdcepbldfbegki</code></td><td><code>ekoobifejmegpmndflgdcepbldfbegki;https://edge.microsoft.com/extensionwebstorebase/v1/crx</code></td></tr>
+    </tbody>
+  </table>
+  <p>Chaque valeur est l'identifiant de l'extension suivi, après un point-virgule, de l'adresse de mise à jour du store. Si l'adresse est omise, chaque navigateur utilise par défaut celle de son propre store.</p>
+
+  <h2 id="chrome">3. Google Chrome</h2>
+  <h3>Avec une stratégie de groupe (Windows)</h3>
+  <ol>
+    <li>Si les règles de Chrome n'apparaissent pas dans l'éditeur de stratégie de groupe, téléchargez les derniers modèles de règles fournis par Google (fichier <code>policy_templates.zip</code>).</li>
+    <li>Dans l'éditeur, ouvrez <strong>Modèles d'administration</strong> › <strong>Google</strong> › <strong>Google Chrome</strong> › <strong>Extensions</strong>.</li>
+    <li>Ouvrez la règle qui configure la liste des extensions installées d'office (<code>ExtensionInstallForcelist</code>, « Configure the list of force-installed apps and extensions » dans les modèles en anglais), activez-la et ajoutez la valeur Chrome du tableau.</li>
+  </ol>
+  <h3>Autre possibilité : la règle <code>ExtensionSettings</code></h3>
+  <p>Google documente aussi cette règle, au format JSON, à saisir sur une seule ligne dans « paramètres de gestion des extensions » :</p>
+  <p><code>{"mmllhnjkdpilogbaokplljippcnmdopi":{"installation_mode":"force_installed","update_url":"https://clients2.google.com/service/update2/crx"}}</code></p>
+  <p>Avec <code>force_installed</code>, l'utilisateur ne peut pas désactiver l'extension. Avec <code>normal_installed</code>, elle est installée automatiquement mais l'utilisateur peut la désactiver. Si les deux règles sont définies, <code>ExtensionSettings</code> l'emporte sur <code>ExtensionInstallForcelist</code>.</p>
+  <h3>Par le registre</h3>
+  <p>Les règles de Chrome se trouvent sous <code>HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome</code>. Google conseille cette voie pour les ordinateurs qui ne sont pas joints à un domaine Active Directory, et fournit un exemple de fichier <code>chrome.reg</code> dans le paquet Chrome Enterprise, à adapter et à tester avant de le déployer.</p>
+  <h3>À savoir</h3>
+  <ul>
+    <li>Une extension installée par cette règle ne peut être ni désinstallée ni désactivée par l'utilisateur. La retirer de la liste la désinstalle.</li>
+    <li>La règle ne s'applique pas à la navigation privée.</li>
+    <li>La restriction aux postes gérés (domaine, MDM…) vise les extensions <em>hors</em> Chrome Web Store. Paperkeep est publié sur le Chrome Web Store.</li>
+  </ul>
+
+  <h2 id="edge">4. Microsoft Edge</h2>
+  <h3>Avec une stratégie de groupe (Windows)</h3>
+  <ol>
+    <li>Téléchargez les modèles d'administration de Microsoft Edge depuis la page Microsoft Edge Enterprise et copiez <code>msedge.admx</code> (et le fichier <code>.adml</code> de votre langue) dans le dossier des définitions de stratégie.</li>
+    <li>Dans l'éditeur, ouvrez <strong>Computer Configuration</strong> (ou <strong>User Configuration</strong>) › <strong>Policies</strong> › <strong>Administrative Templates</strong> › <strong>Microsoft Edge</strong> › <strong>Extensions</strong>. Ce sont les libellés anglais de la documentation de Microsoft ; un Windows en français les traduit.</li>
+    <li>Ouvrez « Control which extensions are installed silently » (nom de la règle dans les modèles en anglais), activez-la et ajoutez la valeur Edge du tableau.</li>
+  </ol>
+  <h3>Par le registre</h3>
+  <p>Clé : <code>HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist</code>. Chaque extension est une valeur de type <code>REG_SZ</code> nommée <code>1</code>, <code>2</code>, <code>3</code>… Exemple :</p>
+  <p><code>SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\1 = ekoobifejmegpmndflgdcepbldfbegki;https://edge.microsoft.com/extensionwebstorebase/v1/crx</code></p>
+  <h3>Sur Mac</h3>
+  <p>Clé de préférence <code>ExtensionInstallForcelist</code>, sous forme de tableau (<code>&lt;array&gt;</code>) contenant la valeur Edge du tableau.</p>
+  <h3>À savoir</h3>
+  <ul>
+    <li>Sur un Windows qui n'est pas joint à un domaine Active Directory, l'installation forcée est limitée aux extensions publiées sur Edge Add-ons. C'est le cas de Paperkeep.</li>
+    <li>L'utilisateur ne peut ni désinstaller ni désactiver l'extension. La retirer de la liste la désinstalle.</li>
+    <li>La règle ne s'applique pas au mode InPrivate.</li>
+    <li>Au 26/10/2026, la version publiée sur Edge Add-ons est la 1.4.2 (mise à jour du 17/10/2026). Les postes reçoivent les versions suivantes automatiquement, par le store.</li>
+  </ul>
+  <p>Firefox a ses propres règles d'entreprise, que cette page ne couvre pas.</p>
+
+  <h2 id="verifier">5. Vérifier que la règle est appliquée</h2>
+  <ul>
+    <li><strong>Chrome :</strong> ouvrez <code>chrome://policy</code>, cliquez sur <strong>Actualiser les règles</strong> et vérifiez que l'état de la règle est « OK ». Les utilisateurs doivent redémarrer Chrome pour que la modification prenne effet.</li>
+    <li><strong>Edge :</strong> ouvrez <code>edge://policy</code> pour voir les règles appliquées. Pour forcer la mise à jour des stratégies de groupe sur un poste : <code>gpupdate /force</code>, puis fermez et rouvrez Edge.</li>
+  </ul>
+  <p>Une question avant de déployer : <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>. Pour présenter Paperkeep à vos clients : <a href="kit-comptables.html">le kit pour comptables</a>.</p>
+
+  <p class="maj">Sources, consultées le 26/10/2026 :</p>
+  <ul class="petit">
+    <li>Google, définition de la règle <a href="https://chromium.googlesource.com/chromium/src/+/main/components/policy/resources/templates/policy_definitions/Extensions/ExtensionInstallForcelist.yaml">ExtensionInstallForcelist</a> (modèles de règles de Chromium) ;</li>
+    <li>Aide Chrome Enterprise : <a href="https://support.google.com/chrome/a/answer/7532015?hl=fr">définir des règles d'applications et d'extensions (Windows)</a>, <a href="https://support.google.com/chrome/a/answer/187202?hl=fr">règles pour les ordinateurs gérés</a>, <a href="https://support.google.com/chrome/a/answer/9131254?hl=fr">règles et registre Windows</a>, <a href="https://support.google.com/chrome/a/answer/13130396?hl=fr">vérification avec chrome://policy</a> ;</li>
+    <li>Microsoft Learn : <a href="https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/extensioninstallforcelist">ExtensionInstallForcelist pour Microsoft Edge</a> (mise à jour du 09/07/2026) et <a href="https://learn.microsoft.com/en-us/deployedge/configure-microsoft-edge">configurer Microsoft Edge avec des stratégies</a> ;</li>
+    <li>Version publiée sur Edge Add-ons : fiche officielle de <a href="https://microsoftedge.microsoft.com/addons/detail/ekoobifejmegpmndflgdcepbldfbegki">Paperkeep sur Edge Add-ons</a>.</li>
+  </ul>
+  <p><em>Les noms des règles et des menus peuvent changer avec les versions de Chrome, d'Edge et de Windows. Testez sur un poste avant de déployer.</em></p>
+
+</div></main>
+<footer><div class="w">
+  <a class="marque" href="index.html" style="color:var(--encre);font-size:17px"><svg width="26" height="26" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Paperkeep</a>
+  <a href="aide.html">Aide et contact</a><a href="mode-emploi.html">Mode d’emploi</a><a href="guides.html">Guides</a><a href="pro.html">Paperkeep Pro</a><a href="a-propos.html">À propos</a><a href="privacy.html">Confidentialité</a><a href="conditions.html">Conditions de vente</a><a href="retractation.html">Renoncer au contrat</a>
+  <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>
+  <p>Paperkeep · BE 1042.078.027 · <a href="mentions-legales.html">Mentions légales</a></p>
+</div></footer>
+</body>
+</html>

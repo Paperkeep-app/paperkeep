@@ -1,0 +1,79 @@
+<h1>Déployer Paperkeep sur les ordinateurs d'un cabinet (Chrome et Edge)</h1>
+  <p>Dans un cabinet comptable ou une PME dont les postes sont gérés, les utilisateurs ne peuvent pas toujours installer une extension eux-mêmes. L'administrateur peut alors l'installer d'office sur tous les postes avec la règle <code>ExtensionInstallForcelist</code>, qui existe dans Chrome et dans Microsoft Edge. Voici les valeurs à utiliser pour Paperkeep, d'après les documentations officielles de Google et de Microsoft.</p>
+  <p class="ancres">Aller à : <a href="#avant">Avant de commencer</a> · <a href="#ids">Les identifiants</a> · <a href="#chrome">Chrome</a> · <a href="#edge">Edge</a> · <a href="#verifier">Vérifier</a></p>
+
+  <h2 id="avant">1. Avant de commencer : aucune donnée centralisée</h2>
+  <ul>
+    <li><strong>Pas de console, pas de serveur.</strong> Paperkeep n'a pas de serveur. Chaque poste garde ses factures dans son propre dossier <code>Téléchargements › Factures</code>. Rien ne remonte vers le cabinet ni vers nous.</li>
+    <li><strong>Rien à configurer côté Paperkeep.</strong> La règle installe l'extension ; l'utilisateur s'en sert ensuite comme d'habitude : il ouvre une page de facturation et clique sur l'icône.</li>
+    <li><strong>Les permissions restent les mêmes.</strong> Les accès facultatifs (portails Stripe, reçus sans PDF, HBO Max) sont toujours demandés au clic, seulement si la page en a besoin. Le détail : <a href="confiance.html">Vérifiez Paperkeep vous-même</a>.</li>
+    <li><strong>La Pro reste individuelle.</strong> La règle n'active aucune licence : chaque utilisateur qui veut la <a href="pro.html">Pro</a> la démarre depuis l'extension.</li>
+    <li><strong>Testez d'abord sur un poste.</strong> Google le rappelle pour le registre : une modification mal faite peut endommager un ordinateur.</li>
+  </ul>
+
+  <h2 id="ids">2. Les identifiants de Paperkeep</h2>
+  <table>
+    <thead><tr><th>Navigateur</th><th>Identifiant de l'extension</th><th>Valeur pour <code>ExtensionInstallForcelist</code></th></tr></thead>
+    <tbody>
+      <tr><td>Google Chrome (Chrome Web Store)</td><td><code>mmllhnjkdpilogbaokplljippcnmdopi</code></td><td><code>mmllhnjkdpilogbaokplljippcnmdopi;https://clients2.google.com/service/update2/crx</code></td></tr>
+      <tr><td>Microsoft Edge (Edge Add-ons)</td><td><code>ekoobifejmegpmndflgdcepbldfbegki</code></td><td><code>ekoobifejmegpmndflgdcepbldfbegki;https://edge.microsoft.com/extensionwebstorebase/v1/crx</code></td></tr>
+    </tbody>
+  </table>
+  <p>Chaque valeur est l'identifiant de l'extension suivi, après un point-virgule, de l'adresse de mise à jour du store. Si l'adresse est omise, chaque navigateur utilise par défaut celle de son propre store.</p>
+
+  <h2 id="chrome">3. Google Chrome</h2>
+  <h3>Avec une stratégie de groupe (Windows)</h3>
+  <ol>
+    <li>Si les règles de Chrome n'apparaissent pas dans l'éditeur de stratégie de groupe, téléchargez les derniers modèles de règles fournis par Google (fichier <code>policy_templates.zip</code>).</li>
+    <li>Dans l'éditeur, ouvrez <strong>Modèles d'administration</strong> › <strong>Google</strong> › <strong>Google Chrome</strong> › <strong>Extensions</strong>.</li>
+    <li>Ouvrez la règle qui configure la liste des extensions installées d'office (<code>ExtensionInstallForcelist</code>, « Configure the list of force-installed apps and extensions » dans les modèles en anglais), activez-la et ajoutez la valeur Chrome du tableau.</li>
+  </ol>
+  <h3>Autre possibilité : la règle <code>ExtensionSettings</code></h3>
+  <p>Google documente aussi cette règle, au format JSON, à saisir sur une seule ligne dans « paramètres de gestion des extensions » :</p>
+  <p><code>{"mmllhnjkdpilogbaokplljippcnmdopi":{"installation_mode":"force_installed","update_url":"https://clients2.google.com/service/update2/crx"}}</code></p>
+  <p>Avec <code>force_installed</code>, l'utilisateur ne peut pas désactiver l'extension. Avec <code>normal_installed</code>, elle est installée automatiquement mais l'utilisateur peut la désactiver. Si les deux règles sont définies, <code>ExtensionSettings</code> l'emporte sur <code>ExtensionInstallForcelist</code>.</p>
+  <h3>Par le registre</h3>
+  <p>Les règles de Chrome se trouvent sous <code>HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome</code>. Google conseille cette voie pour les ordinateurs qui ne sont pas joints à un domaine Active Directory, et fournit un exemple de fichier <code>chrome.reg</code> dans le paquet Chrome Enterprise, à adapter et à tester avant de le déployer.</p>
+  <h3>À savoir</h3>
+  <ul>
+    <li>Une extension installée par cette règle ne peut être ni désinstallée ni désactivée par l'utilisateur. La retirer de la liste la désinstalle.</li>
+    <li>La règle ne s'applique pas à la navigation privée.</li>
+    <li>La restriction aux postes gérés (domaine, MDM…) vise les extensions <em>hors</em> Chrome Web Store. Paperkeep est publié sur le Chrome Web Store.</li>
+  </ul>
+
+  <h2 id="edge">4. Microsoft Edge</h2>
+  <h3>Avec une stratégie de groupe (Windows)</h3>
+  <ol>
+    <li>Téléchargez les modèles d'administration de Microsoft Edge depuis la page Microsoft Edge Enterprise et copiez <code>msedge.admx</code> (et le fichier <code>.adml</code> de votre langue) dans le dossier des définitions de stratégie.</li>
+    <li>Dans l'éditeur, ouvrez <strong>Computer Configuration</strong> (ou <strong>User Configuration</strong>) › <strong>Policies</strong> › <strong>Administrative Templates</strong> › <strong>Microsoft Edge</strong> › <strong>Extensions</strong>. Ce sont les libellés anglais de la documentation de Microsoft ; un Windows en français les traduit.</li>
+    <li>Ouvrez « Control which extensions are installed silently » (nom de la règle dans les modèles en anglais), activez-la et ajoutez la valeur Edge du tableau.</li>
+  </ol>
+  <h3>Par le registre</h3>
+  <p>Clé : <code>HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist</code>. Chaque extension est une valeur de type <code>REG_SZ</code> nommée <code>1</code>, <code>2</code>, <code>3</code>… Exemple :</p>
+  <p><code>SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\1 = ekoobifejmegpmndflgdcepbldfbegki;https://edge.microsoft.com/extensionwebstorebase/v1/crx</code></p>
+  <h3>Sur Mac</h3>
+  <p>Clé de préférence <code>ExtensionInstallForcelist</code>, sous forme de tableau (<code>&lt;array&gt;</code>) contenant la valeur Edge du tableau.</p>
+  <h3>À savoir</h3>
+  <ul>
+    <li>Sur un Windows qui n'est pas joint à un domaine Active Directory, l'installation forcée est limitée aux extensions publiées sur Edge Add-ons. C'est le cas de Paperkeep.</li>
+    <li>L'utilisateur ne peut ni désinstaller ni désactiver l'extension. La retirer de la liste la désinstalle.</li>
+    <li>La règle ne s'applique pas au mode InPrivate.</li>
+    <li>Au 26/10/2026, la version publiée sur Edge Add-ons est la 1.4.2 (mise à jour du 17/10/2026). Les postes reçoivent les versions suivantes automatiquement, par le store.</li>
+  </ul>
+  <p>Firefox a ses propres règles d'entreprise, que cette page ne couvre pas.</p>
+
+  <h2 id="verifier">5. Vérifier que la règle est appliquée</h2>
+  <ul>
+    <li><strong>Chrome :</strong> ouvrez <code>chrome://policy</code>, cliquez sur <strong>Actualiser les règles</strong> et vérifiez que l'état de la règle est « OK ». Les utilisateurs doivent redémarrer Chrome pour que la modification prenne effet.</li>
+    <li><strong>Edge :</strong> ouvrez <code>edge://policy</code> pour voir les règles appliquées. Pour forcer la mise à jour des stratégies de groupe sur un poste : <code>gpupdate /force</code>, puis fermez et rouvrez Edge.</li>
+  </ul>
+  <p>Une question avant de déployer : <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>. Pour présenter Paperkeep à vos clients : <a href="kit-comptables.html">le kit pour comptables</a>.</p>
+
+  <p class="maj">Sources, consultées le 26/10/2026 :</p>
+  <ul class="petit">
+    <li>Google, définition de la règle <a href="https://chromium.googlesource.com/chromium/src/+/main/components/policy/resources/templates/policy_definitions/Extensions/ExtensionInstallForcelist.yaml">ExtensionInstallForcelist</a> (modèles de règles de Chromium) ;</li>
+    <li>Aide Chrome Enterprise : <a href="https://support.google.com/chrome/a/answer/7532015?hl=fr">définir des règles d'applications et d'extensions (Windows)</a>, <a href="https://support.google.com/chrome/a/answer/187202?hl=fr">règles pour les ordinateurs gérés</a>, <a href="https://support.google.com/chrome/a/answer/9131254?hl=fr">règles et registre Windows</a>, <a href="https://support.google.com/chrome/a/answer/13130396?hl=fr">vérification avec chrome://policy</a> ;</li>
+    <li>Microsoft Learn : <a href="https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/extensioninstallforcelist">ExtensionInstallForcelist pour Microsoft Edge</a> (mise à jour du 09/07/2026) et <a href="https://learn.microsoft.com/en-us/deployedge/configure-microsoft-edge">configurer Microsoft Edge avec des stratégies</a> ;</li>
+    <li>Version publiée sur Edge Add-ons : fiche officielle de <a href="{{EDGE}}">Paperkeep sur Edge Add-ons</a>.</li>
+  </ul>
+  <p><em>Les noms des règles et des menus peuvent changer avec les versions de Chrome, d'Edge et de Windows. Testez sur un poste avant de déployer.</em></p>

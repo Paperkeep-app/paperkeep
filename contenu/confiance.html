@@ -1,0 +1,84 @@
+<h1>Vérifiez Paperkeep vous-même</h1>
+  <p>Une extension qui lit vos pages de facturation doit pouvoir être contrôlée sans qu'on la croie sur parole. Voici ce que Paperkeep lit, ce qu'il ne lit pas, chaque permission qu'il demande et pourquoi, et comment le vérifier vous-même dans votre navigateur.</p>
+  <p class="maj">Cette page décrit la version 1.5.3 de l'extension, d'après son code relu le 26/10/2026. Le numéro de la version installée chez vous s'affiche dans la page des extensions de votre navigateur.</p>
+  <p class="ancres">Aller à : <a href="#lit">Ce qu'il lit</a> · <a href="#lit-pas">Ce qu'il ne lit pas</a> · <a href="#local">Ce qui reste chez vous</a> · <a href="#permissions">Les permissions</a> · <a href="#pro">La Pro et ExtensionPay</a> · <a href="#code">Le code source</a> · <a href="#verifier">Vérifier dans le navigateur</a></p>
+
+  <h2 id="lit">1. Ce que Paperkeep lit</h2>
+  <ul>
+    <li><strong>Rien, tant que vous ne cliquez pas sur son icône.</strong> L'extension ne déclare aucun script qui tourne en permanence sur les sites et ne demande l'accès à aucun site à l'installation.</li>
+    <li><strong>Au clic, la page ouverte, et elle seule.</strong> Paperkeep y repère les liens de facture, les dates, les montants et le nom du fournisseur, pour proposer la liste des factures à télécharger.</li>
+    <li><strong>Avec la Pro, dans Gmail :</strong> le message ouvert au moment du clic (expéditeur, objet, date, pièces jointes PDF). Pas les autres messages de votre boîte.</li>
+    <li><strong>Les fichiers de facture eux-mêmes :</strong> ils sont téléchargés depuis le site du fournisseur directement vers votre dossier <code>Téléchargements › Factures</code>. Paperkeep vérifie ensuite la taille et le type de chaque fichier, pour signaler un téléchargement vide ou erroné.</li>
+  </ul>
+
+  <h2 id="lit-pas">2. Ce que Paperkeep ne lit pas et ne fait pas</h2>
+  <ul>
+    <li>Il ne lit ni vos autres onglets, ni votre historique, ni vos mots de passe. Il ne se connecte à aucun compte à votre place.</li>
+    <li>La version gratuite ne lit pas vos e-mails.</li>
+    <li>Il n'envoie ni facture, ni contenu de page, ni liste de fournisseurs, ni à nous ni à un tiers. Paperkeep n'a pas de serveur et l'extension ne contient aucun outil de statistiques.</li>
+    <li>Il n'envoie rien à un logiciel comptable : c'est vous qui transmettez les fichiers.</li>
+  </ul>
+  <p>Deux pages de ce site s'ouvrent d'elles-mêmes : <a href="bienvenue.html">une page de premiers pas</a> à l'installation, et <a href="au-revoir.html">une page d'au revoir</a> à la désinstallation. Ce sont des pages statiques, sans formulaire caché ni paramètre ajouté à l'adresse.</p>
+
+  <h2 id="local">3. Ce qui reste sur votre ordinateur</h2>
+  <p>Paperkeep garde quelques données dans le stockage local de l'extension, sur votre ordinateur :</p>
+  <ul>
+    <li>le journal de vos 500 derniers téléchargements (fournisseur, nom du fichier, résultat de la vérification) ;</li>
+    <li>la liste de vos fournisseurs, avec l'adresse de leur page de facturation <strong>sans ses paramètres</strong> (ils portent souvent un jeton), pour la tournée du mois ;</li>
+    <li>vos réglages et un compteur de téléchargements par mois ;</li>
+    <li>avec la Pro, le dernier état connu de votre abonnement.</li>
+  </ul>
+  <p>La bibliothèque de paiement ExtensionPay range en plus, dans le stockage synchronisé du navigateur, la date d'installation et, dès que vous avez cliqué sur une offre Pro, votre identifiant de licence. Si la synchronisation de votre navigateur est activée, ces deux valeurs suivent votre compte de navigateur.</p>
+
+  <h2 id="permissions">4. Les permissions, une par une</h2>
+  <p>À l'installation, Paperkeep demande quatre permissions. Les autres sont <strong>facultatives</strong> : elles ne sont demandées qu'au moment où vous cliquez sur « Télécharger », et seulement si la page en a besoin. Si vous refusez, rien n'est téléchargé et rien d'autre ne change.</p>
+  <table>
+    <thead><tr><th>Permission</th><th>Pourquoi Paperkeep en a besoin</th><th>Avertissement affiché par Chrome</th></tr></thead>
+    <tbody>
+      <tr><td><code>downloads</code></td><td>Enregistrer les factures dans <code>Téléchargements › Factures</code>, les renommer par date, fournisseur et montant, et vérifier chaque fichier.</td><td>« Manage your downloads » (gérer vos téléchargements)</td></tr>
+      <tr><td><code>storage</code></td><td>Garder sur votre ordinateur le journal, les réglages et la liste des fournisseurs.</td><td>Aucun</td></tr>
+      <tr><td><code>activeTab</code></td><td>Lire la page ouverte, uniquement quand vous cliquez sur l'icône. L'accès cesse quand vous quittez la page ou fermez l'onglet.</td><td>Aucun</td></tr>
+      <tr><td><code>scripting</code></td><td>Lancer, au clic, le petit programme qui repère les factures sur cette page.</td><td>Aucun</td></tr>
+      <tr><td><code>pageCapture</code> (facultative, Chrome et Edge)</td><td>Enregistrer en un seul fichier <code>.mhtml</code> un reçu qui n'existe pas en PDF. Demandée seulement face à un tel reçu. La version Firefox ne la déclare pas.</td><td>« Read and change all your data on all websites ». C'est l'avertissement le plus large du catalogue de Chrome : c'est pour cela qu'elle n'est jamais demandée à l'installation.</td></tr>
+      <tr><td><code>invoice.stripe.com</code> et <code>pay.stripe.com</code> (facultatives)</td><td>Certains portails Stripe ne publient que la page de la facture. Pour en extraire le PDF, Paperkeep doit ouvrir cette page, donc accéder à son domaine. Demandées seulement si vous téléchargez une telle facture.</td><td>Affiché au moment de la demande</td></tr>
+      <tr><td><code>*.hbomax.com</code> (facultative)</td><td>HBO Max n'émet pas de facture PDF. Son historique de paiement renvoie vers des pages de reçu, chacune à une autre adresse. Pour enregistrer ces reçus depuis l'historique, Paperkeep doit ouvrir chaque page de reçu, donc accéder au domaine hbomax.com. Cet accès n'est demandé que si vous cliquez sur « Télécharger » depuis votre historique HBO Max. Si vous ouvrez vous-même un reçu, l'accès au clic suffit et rien n'est demandé. Vous n'utilisez pas HBO Max ? Cette demande n'apparaîtra jamais.</td><td>Affiché au moment de la demande</td></tr>
+    </tbody>
+  </table>
+  <p>Une précision technique, pour être complet : les fichiers qui repèrent les factures sont déclarés « accessibles aux pages web », parce que le programme lancé dans la page doit pouvoir les charger. Un site pourrait donc détecter que Paperkeep est installé. Cela ne lui donne accès à aucune de vos données.</p>
+  <p class="maj">Sources : <a href="https://developer.chrome.com/docs/extensions/reference/permissions-list">liste des permissions et de leurs avertissements</a> (mise à jour du 09/09/2026) et <a href="https://developer.chrome.com/docs/extensions/develop/concepts/activeTab">fonctionnement d'activeTab</a>, documentation officielle de Chrome, consultées le 26/10/2026.</p>
+
+  <h2 id="pro">5. Paperkeep Pro : seul l'état de l'abonnement est vérifié</h2>
+  <ul>
+    <li>L'abonnement <a href="pro.html">Pro</a> passe par <strong>ExtensionPay</strong>, avec un paiement chez Stripe. L'extension interroge extensionpay.com pour une seule chose : l'état de votre abonnement (payé, essai en cours). Aucune facture et aucun contenu de page n'y sont envoyés.</li>
+    <li>Tant que vous n'avez cliqué sur aucune offre Pro (essai, paiement ou connexion), aucun identifiant n'existe chez ExtensionPay et l'extension ne lui envoie aucune requête.</li>
+    <li>Sans connexion internet, le dernier état connu reste valable 7 jours.</li>
+    <li><strong>Sur Firefox, uniquement après votre accord.</strong> La version Firefox déclare deux types de données facultatifs, l'identité (e-mail et identifiant chez ExtensionPay) et le paiement (chez Stripe). Firefox ne les affiche pas à l'installation : ils vous sont demandés au premier clic sur la Pro. Sans cet accord, rien n'est envoyé à ExtensionPay. Vous pouvez le retirer à tout moment dans <code>about:addons</code>, dans la section des permissions et des données des réglages de l'extension (« Permissions and data » dans la documentation de Mozilla).</li>
+  </ul>
+  <p class="maj">Source : <a href="https://extensionworkshop.com/documentation/develop/firefox-builtin-data-consent/">Extension Workshop, consentement à la collecte de données dans Firefox</a> (mise à jour du 18/10/2026), consultée le 26/10/2026.</p>
+
+  <h2 id="code">6. Le code source est public</h2>
+  <p>Le code de l'extension est publié sur GitHub : <a href="https://github.com/Paperkeep-app/paperkeep-extension">github.com/Paperkeep-app/paperkeep-extension</a>. Chacun peut lire comment les factures sont repérées, nommées et vérifiées.</p>
+  <p><strong>Ce qu'il faut savoir au 26/10/2026 :</strong> le dépôt contient la version 1.2.1, publiée le 10/10/2026, sans les fonctions Pro. Les versions suivantes n'y sont pas encore. Nous l'écrivons ici plutôt que de vous laisser le découvrir.</p>
+
+  <h2 id="verifier">7. Vérifier vous-même dans le navigateur</h2>
+  <h3>Les permissions accordées (Chrome)</h3>
+  <ol>
+    <li>Ouvrez le menu <strong>Plus</strong> de Chrome, puis <strong>Extensions</strong>, puis <strong>Gérer les extensions</strong>.</li>
+    <li>Sur Paperkeep, cliquez sur <strong>Détails</strong>.</li>
+    <li>La section des autorisations montre ce qui a été accordé. Pour l'accès aux sites, Chrome propose « En cas de sélection », « Sur des sites spécifiques » et « Sur tous les sites ».</li>
+  </ol>
+  <p>Sur Firefox, les permissions et l'accord pour les données de la Pro se trouvent dans <code>about:addons</code>, dans les réglages de l'extension.</p>
+  <h3>Les requêtes envoyées (Chrome)</h3>
+  <ol>
+    <li>Tapez <code>chrome://extensions</code> dans un nouvel onglet.</li>
+    <li>Activez l'interrupteur <strong>Mode développeur</strong> (« Developer mode »).</li>
+    <li>Sur la carte de Paperkeep, cliquez sur le lien bleu à côté de <strong>Inspecter les vues</strong> (« Inspect views »). Les outils de développement s'ouvrent : choisissez l'onglet <strong>Network</strong> (Réseau).</li>
+    <li>Pour la fenêtre de Paperkeep elle-même, inspectez-la (clic droit dans la fenêtre, puis <strong>Inspecter</strong>) et rechargez depuis l'onglet <strong>Network</strong>.</li>
+    <li>Utilisez Paperkeep normalement. Vous ne verrez que des requêtes vers le site du fournisseur dont vous téléchargez les factures et, si vous utilisez la Pro, vers extensionpay.com.</li>
+  </ol>
+  <p class="maj">Sources : documentation officielle de Chrome, <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world">page des extensions et mode développeur</a> et <a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/debug">inspecter le service worker, la fenêtre et le réseau</a> ; <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=fr">aide du Chrome Web Store, gérer ses extensions</a>. Consultées le 26/10/2026. Les libellés français des outils de développement peuvent varier selon la langue de votre navigateur.</p>
+
+  <h2>Qui édite Paperkeep</h2>
+  <p>Paperkeep est une entreprise belge, numéro BE 1042.078.027, active à la Banque-Carrefour des Entreprises depuis le 1<sup>er</sup> octobre 2026. Une question ou un doute sur la sécurité : <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>. Voir aussi la <a href="privacy.html">politique de confidentialité</a> et la page <a href="a-propos.html">À propos</a>.</p>
+  <p><a class="cta" href="{{STORE}}">Ajouter Paperkeep à Chrome</a></p>
+  <p class="petit">Aussi pour <a href="{{EDGE}}">Microsoft Edge</a> et <a href="{{FIREFOX}}">Firefox</a>.</p>

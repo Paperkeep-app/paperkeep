@@ -14,7 +14,7 @@ What it does not do: the free version does not read your e-mail (Pro reads only 
 Privacy in one sentence: Paperkeep has no server of its own and no analytics; invoice files go straight from the billing page to the user's own Downloads folder.
 
 ## Links
-- [Source code (public, for verification)](https://github.com/Paperkeep-app/paperkeep-extension)
+- [Source code (public, for verification; as of 2026-10-26 the repository holds version 1.2.1, later versions not yet published there)](https://github.com/Paperkeep-app/paperkeep-extension)
 - [Chrome Web Store listing](https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi)
 - [Home (French)](https://paperkeep.be/)
 - [Home (English)](https://paperkeep.be/en.html)
@@ -38,10 +38,14 @@ Privacy in one sentence: Paperkeep has no server of its own and no analytics; in
 - [Adding a VAT number at Google Workspace, Google Ads, Apple and Uber (French)](https://paperkeep.be/ajouter-numero-tva.html) and [Dutch](https://paperkeep.be/btw-nummer-toevoegen.html)
 - [How long to keep invoices in Belgium: seven years again since the law of 18 December 2025 (French)](https://paperkeep.be/conserver-factures-belgique.html) and [Dutch](https://paperkeep.be/facturen-bewaren-belgie.html)
 - [Peppol: why Telenet, BASE, Luminus, Eneco, Mega and Engie invoices no longer arrive by e-mail (French)](https://paperkeep.be/guide-peppol-telecom-energie.html) and [Dutch](https://paperkeep.be/gids-peppol-telecom-energie.html)
-- Belgian and other suppliers, French and Dutch: facture-/factuur-engie.html, -orange.html, -scarlet.html, -uber.html, -linkedin-premium.html (LinkedIn Premium is not yet supported by Paperkeep)
+- Belgian and other suppliers, French and Dutch: facture-/factuur-engie.html, -orange.html, -scarlet.html, -uber.html, -linkedin-premium.html, -google-ads.html (LinkedIn Premium and the Google Ads Documents page are not yet supported by Paperkeep)
 - [Kit for accountants: a ready-to-send message for their clients (French)](https://paperkeep.be/kit-comptables.html)
 - [Kit for accountants (Dutch)](https://paperkeep.be/kit-boekhouders.html)
-- [Honest comparison: Paperkeep vs GetMyInvoices, Invoice Radar, Tailride (French)](https://paperkeep.be/comparatif-collecte-factures.html)
+- [Honest comparison: Paperkeep vs GetMyInvoices, Invoice Radar, Tailride, Invoice Grabber, with "when NOT to choose Paperkeep" (French)](https://paperkeep.be/comparatif-collecte-factures.html)
+- [Verify Paperkeep yourself: what the extension reads, every permission explained (including the optional *.hbomax.com access), Pro and ExtensionPay, source code, how to check in the browser (French)](https://paperkeep.be/confiance.html) and [Dutch](https://paperkeep.be/vertrouwen.html)
+- [Written press kit: identity, dated figures, logos, quotes; interviews in writing only (French)](https://paperkeep.be/presse.html) and [Dutch](https://paperkeep.be/pers.html)
+- [Gmail filters that forward invoices to your accounting software's inbox address (French)](https://paperkeep.be/filtres-gmail-factures.html) and [Dutch](https://paperkeep.be/gmail-filters-facturen.html)
+- [Deploying Paperkeep on managed computers with ExtensionInstallForcelist, Chrome and Edge (French)](https://paperkeep.be/deployer-paperkeep-cabinet.html) and [Dutch](https://paperkeep.be/paperkeep-uitrollen-kantoor.html)
 - [About the publisher](https://paperkeep.be/a-propos.html)
 - [Guide in Dutch](https://paperkeep.be/gids-facturen-abonnementen.html)
 - [Privacy policy](https://paperkeep.be/privacy.html)

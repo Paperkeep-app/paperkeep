@@ -1,0 +1,67 @@
+<h1>Filtres Gmail : envoyer automatiquement vos factures à votre logiciel comptable</h1>
+  <p>Quand une facture arrive en pièce jointe dans Gmail, un filtre peut la transférer toute seule à l'adresse de dépôt de votre logiciel comptable. Voici la procédure d'après l'aide officielle de Gmail, les mots-clés utiles en français et en néerlandais, et ce qu'un filtre ne fera jamais : aller chercher les factures qui n'arrivent pas par e-mail.</p>
+  <p class="ancres">Aller à : <a href="#adresse">L'adresse de dépôt</a> · <a href="#valider">Ajouter et valider l'adresse</a> · <a href="#filtre">Créer le filtre</a> · <a href="#mots">Les mots-clés</a> · <a href="#limites">Les limites</a> · <a href="#paperkeep">Les factures sans e-mail</a></p>
+
+  <h2 id="adresse">1. Trouver l'adresse de dépôt de votre logiciel</h2>
+  <p>La plupart des logiciels comptables donnent une adresse e-mail qui reçoit les factures d'achat. Où la trouver, d'après l'aide de chaque éditeur : <a href="factures-achat-accountable.html">Accountable</a> · <a href="factures-achat-billit.html">Billit</a> · <a href="factures-achat-yuki.html">Yuki</a> · <a href="factures-achat-odoo.html">Odoo</a>. Pour un autre logiciel, cherchez « adresse e-mail » ou « boîte de réception » dans son aide.</p>
+
+  <h2 id="valider">2. Ajouter et valider l'adresse de transfert dans Gmail</h2>
+  <p>Gmail ne transfère vers une adresse qu'après sa validation.</p>
+  <ol>
+    <li>Sur ordinateur, ouvrez Gmail. En haut à droite, cliquez sur l'icône <strong>Paramètres</strong>, puis sur <strong>Voir tous les paramètres</strong>.</li>
+    <li>Ouvrez l'onglet <strong>Transfert et POP/IMAP</strong> (ou <strong>Transfert</strong>).</li>
+    <li>Dans la section « Transfert », cliquez sur <strong>Ajouter une adresse de transfert</strong> et saisissez l'adresse de dépôt de votre logiciel.</li>
+    <li>Cliquez sur <strong>Suivant</strong>, puis <strong>Continuer</strong>, puis <strong>OK</strong>.</li>
+    <li>Gmail envoie un message de validation à cette adresse. Il faut cliquer sur le lien de validation qu'il contient.</li>
+  </ol>
+  <p><strong>Attention, l'adresse est celle d'un logiciel.</strong> Le message de validation arrive donc dans votre logiciel comptable, pas dans votre boîte. Où le retrouver dépend du logiciel : son aide ou son support vous le dira. Nous ne pouvons pas le vérifier pour chaque logiciel.</p>
+  <p><strong>N'activez pas</strong> « Transférer une copie des messages reçus à » : cette option transfère <em>tous</em> vos nouveaux messages. Pour ne transférer que les factures, l'aide de Gmail demande de laisser le transfert automatique désactivé et de passer par un filtre.</p>
+
+  <h2 id="filtre">3. Créer le filtre qui transfère les factures</h2>
+  <ol>
+    <li>Dans le champ de recherche en haut de Gmail, cliquez sur l'icône <strong>Afficher les options de recherche</strong>.</li>
+    <li>Saisissez vos critères (voir les mots-clés plus bas).</li>
+    <li>Cliquez sur <strong>Rechercher</strong> pour vérifier les messages trouvés. C'est l'étape qui évite de transférer une publicité à votre comptabilité.</li>
+    <li>Au bas de la fenêtre de recherche, cliquez sur <strong>Créer un filtre</strong>.</li>
+    <li>Cochez <strong>Transférer</strong> et choisissez l'adresse de dépôt validée.</li>
+    <li>Cliquez de nouveau sur <strong>Créer un filtre</strong>.</li>
+  </ol>
+  <p>Autre point de départ : cochez une facture déjà reçue, cliquez sur <strong>Plus</strong>, puis sur <strong>Filtrer les messages similaires</strong>. Pour modifier un filtre plus tard : <strong>Paramètres</strong> › <strong>Filtres et adresses bloquées</strong>.</p>
+
+  <h2 id="mots">4. Les mots-clés utiles</h2>
+  <p>Le plus fiable est de filtrer par expéditeur : ouvrez une vraie facture reçue et reprenez son adresse exacte avec <code>from:</code>. Pour attraper plusieurs fournisseurs d'un coup, combinez des mots de l'objet. Exemple à coller dans le champ de recherche :</p>
+  <p><code>has:attachment filename:pdf subject:(facture OR factuur OR invoice OR reçu OR receipt OR décompte OR aanrekening OR afrekening)</code></p>
+  <table>
+    <thead><tr><th>Langue</th><th>Mots à essayer dans l'objet</th></tr></thead>
+    <tbody>
+      <tr><td>Français</td><td>facture, reçu, décompte (Proximus, Scarlet), « note de crédit », « preuve d'achat » (STIB)</td></tr>
+      <tr><td>Néerlandais</td><td>factuur, aanrekening, afrekening (Scarlet, Eneco), creditnota, aankoopbewijs, betalingsbewijs</td></tr>
+      <tr><td>Anglais</td><td>invoice, receipt, « credit note »</td></tr>
+    </tbody>
+  </table>
+  <p>Ce que veut dire chaque opérateur, d'après l'aide de Gmail :</p>
+  <ul>
+    <li><code>from:</code> : les e-mails d'un expéditeur, par exemple <code>from:factures@exemple.be</code> ;</li>
+    <li><code>subject:</code> : un mot dans l'objet ; les parenthèses regroupent plusieurs termes ;</li>
+    <li><code>OR</code> : l'un ou l'autre des critères ;</li>
+    <li><code>has:attachment</code> : seulement les e-mails avec pièce jointe ;</li>
+    <li><code>filename:pdf</code> : seulement les pièces jointes de ce type ;</li>
+    <li><code>-</code> : exclure un mot, par exemple <code>-newsletter</code> ; les guillemets cherchent une expression exacte.</li>
+  </ul>
+  <p>Le vocabulaire des fournisseurs belges vient de leurs aides officielles, relues pour nos <a href="guides.html">guides par fournisseur</a>. Testez toujours avec <strong>Rechercher</strong> avant de créer le filtre : chaque boîte est différente.</p>
+
+  <h2 id="limites">5. Ce que le filtre ne fera pas</h2>
+  <ul>
+    <li><strong>Il ne traite que les nouveaux messages.</strong> Les factures déjà dans votre boîte ne sont pas transférées.</li>
+    <li><strong>Un filtre par adresse.</strong> Pour transférer vers deux logiciels, il faut deux filtres.</li>
+    <li><strong>Pas de pièce jointe, pas de facture.</strong> Beaucoup de fournisseurs envoient un e-mail avec un simple lien vers l'espace client. Le filtre transfère ce message, mais la facture reste dans l'espace client.</li>
+    <li><strong>Pas d'e-mail du tout.</strong> Certains services n'envoient rien : Google Ads, pour les comptes en post-paiement ou en prépaiement (<a href="facture-google-ads.html">où trouver la facture Google Ads</a>), ou LinkedIn Premium (<a href="facture-linkedin-premium.html">où trouver le reçu</a>).</li>
+  </ul>
+
+  <h2 id="paperkeep">6. Pour les factures qui n'arrivent pas par e-mail : Paperkeep</h2>
+  <p>Le filtre et Paperkeep se complètent. Le filtre s'occupe de ce qui arrive en pièce jointe. Paperkeep s'occupe du reste : vous ouvrez la page de facturation du service, vous cliquez sur l'icône, et les factures arrivent dans <code>Téléchargements › Factures</code>, nommées par date, fournisseur et montant. Vous les glissez ensuite dans votre logiciel ou les envoyez à son adresse de dépôt.</p>
+  <p>Paperkeep ne se connecte pas à votre logiciel et n'envoie rien tout seul. La version gratuite ne lit pas vos e-mails ; <a href="pro.html">Paperkeep Pro</a> peut télécharger les factures PDF du message Gmail que vous avez ouvert, au clic. Exemples de services dont la facture attend dans l'espace client : <a href="facture-chatgpt.html">ChatGPT</a>, <a href="facture-canva.html">Canva</a>, <a href="facture-meta-ads.html">Meta Ads</a>, <a href="facture-adobe.html">Adobe</a>.</p>
+  <p><a class="cta" href="{{STORE}}">Ajouter Paperkeep à Chrome</a></p>
+
+  <p class="maj">Sources : aide officielle de Gmail, <a href="https://support.google.com/mail/answer/6579?hl=fr">les filtres</a>, <a href="https://support.google.com/mail/answer/10957?hl=fr">le transfert automatique</a> et <a href="https://support.google.com/mail/answer/7190?hl=fr">opérateurs de recherche</a>, consultées le 26/10/2026 ; <a href="https://support.google.com/google-ads/answer/1723045?hl=fr">aide de Google Ads sur les factures</a>, consultée le 26/10/2026. Les libellés peuvent changer avec Gmail.</p>
+  <p><em>Cette page donne une information générale et ne remplace pas l'avis de votre comptable.</em></p>

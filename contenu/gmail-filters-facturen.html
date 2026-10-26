@@ -1,0 +1,67 @@
+<h1>Gmail-filters: je facturen automatisch naar je boekhoudpakket sturen</h1>
+  <p>Komt een factuur als bijlage in Gmail binnen, dan kan een filter ze vanzelf doorsturen naar het aanleveradres van je boekhoudpakket. Hier vind je de werkwijze volgens de officiële hulp van Gmail, de nuttige trefwoorden in het Nederlands en het Frans, en wat een filter nooit zal doen: de facturen ophalen die niet per e-mail komen.</p>
+  <p class="ancres">Ga naar: <a href="#adres">Het aanleveradres</a> · <a href="#verifieren">Adres toevoegen en verifiëren</a> · <a href="#filter">Het filter maken</a> · <a href="#woorden">De trefwoorden</a> · <a href="#grenzen">De grenzen</a> · <a href="#paperkeep">Facturen zonder e-mail</a></p>
+
+  <h2 id="adres">1. Het aanleveradres van je pakket vinden</h2>
+  <p>De meeste boekhoudpakketten geven je een e-mailadres dat aankoopfacturen ontvangt. Waar je het vindt, volgens de hulp van elke uitgever: <a href="aankoopfacturen-accountable.html">Accountable</a> · <a href="aankoopfacturen-billit.html">Billit</a> · <a href="aankoopfacturen-yuki.html">Yuki</a> · <a href="aankoopfacturen-odoo.html">Odoo</a>. Voor een ander pakket zoek je « e-mailadres » of « inbox » in de hulp ervan.</p>
+
+  <h2 id="verifieren">2. Het doorstuuradres toevoegen en verifiëren in Gmail</h2>
+  <p>Gmail stuurt pas door naar een adres nadat het geverifieerd is.</p>
+  <ol>
+    <li>Open Gmail op je computer. Klik rechtsboven op <strong>Instellingen</strong> en kies <strong>Alle instellingen weergeven</strong>.</li>
+    <li>Open het tabblad <strong>Doorsturen en POP/IMAP</strong> (of <strong>Doorsturen</strong>).</li>
+    <li>Klik in het gedeelte Doorsturen op <strong>Een doorstuuradres toevoegen</strong> en vul het aanleveradres van je pakket in.</li>
+    <li>Klik op <strong>Volgende</strong>, dan <strong>Doorgaan</strong> en tot slot <strong>OK</strong>.</li>
+    <li>Gmail stuurt een verificatiebericht naar dat adres. Daarin moet op de verificatielink geklikt worden.</li>
+  </ol>
+  <p><strong>Let op: het adres is dat van een softwarepakket.</strong> Het verificatiebericht komt dus in je boekhoudpakket terecht, niet in je mailbox. Waar je het terugvindt, hangt af van het pakket: de hulp of de support ervan helpt je verder. We kunnen dat niet voor elk pakket nagaan.</p>
+  <p><strong>Zet</strong> « Een kopie van binnenkomende berichten doorsturen naar » <strong>niet aan</strong>: die optie stuurt <em>al</em> je nieuwe berichten door. Om alleen facturen door te sturen, vraagt de hulp van Gmail om automatisch doorsturen uit te laten en met een filter te werken.</p>
+
+  <h2 id="filter">3. Het filter maken dat facturen doorstuurt</h2>
+  <ol>
+    <li>Klik bovenaan in het zoekvak van Gmail op het pictogram <strong>Zoekopties tonen</strong>.</li>
+    <li>Vul je criteria in (zie de trefwoorden hieronder).</li>
+    <li>Klik op <strong>Zoeken</strong> om de gevonden berichten na te kijken. Zo stuur je geen reclame naar je boekhouding.</li>
+    <li>Klik onderaan het zoekvenster op <strong>Filter maken</strong>.</li>
+    <li>Kies de actie <strong>Doorsturen</strong> en selecteer het geverifieerde aanleveradres.</li>
+    <li>Klik opnieuw op <strong>Filter maken</strong>.</li>
+  </ol>
+  <p>Een filter later aanpassen: <strong>Instellingen</strong> › <strong>Filters en geblokkeerde adressen</strong>.</p>
+
+  <h2 id="woorden">4. De nuttige trefwoorden</h2>
+  <p>Het betrouwbaarst is filteren op afzender: open een echte factuur die je ontvangen hebt en neem het exacte adres over met <code>from:</code>. Wil je meerdere leveranciers tegelijk vangen, combineer dan woorden uit het onderwerp. Voorbeeld om in het zoekvak te plakken:</p>
+  <p><code>has:attachment filename:pdf subject:(factuur OR facture OR invoice OR aanrekening OR afrekening OR reçu OR receipt OR décompte)</code></p>
+  <table>
+    <thead><tr><th>Taal</th><th>Woorden om in het onderwerp te proberen</th></tr></thead>
+    <tbody>
+      <tr><td>Nederlands</td><td>factuur, aanrekening, afrekening (Scarlet, Eneco), creditnota, aankoopbewijs (MIVB), betalingsbewijs</td></tr>
+      <tr><td>Frans</td><td>facture, reçu, décompte (Proximus, Scarlet), « note de crédit », « preuve d'achat »</td></tr>
+      <tr><td>Engels</td><td>invoice, receipt, « credit note »</td></tr>
+    </tbody>
+  </table>
+  <p>Wat elke operator betekent, volgens de hulp van Gmail:</p>
+  <ul>
+    <li><code>from:</code>: e-mails van één afzender, bijvoorbeeld <code>from:facturen@voorbeeld.be</code>;</li>
+    <li><code>subject:</code>: een woord in het onderwerp; haakjes groeperen meerdere termen;</li>
+    <li><code>OR</code>: het ene of het andere criterium;</li>
+    <li><code>has:attachment</code>: alleen e-mails met een bijlage;</li>
+    <li><code>filename:pdf</code>: alleen bijlagen van dat type;</li>
+    <li><code>-</code>: een woord uitsluiten, bijvoorbeeld <code>-nieuwsbrief</code>; aanhalingstekens zoeken een exacte uitdrukking.</li>
+  </ul>
+  <p>De woordenschat van de Belgische leveranciers komt uit hun officiële hulppagina's, nagelezen voor onze <a href="guides.html">gidsen per leverancier</a>. Test altijd eerst met <strong>Zoeken</strong>: elke mailbox is anders.</p>
+
+  <h2 id="grenzen">5. Wat het filter niet doet</h2>
+  <ul>
+    <li><strong>Alleen nieuwe berichten.</strong> Facturen die al in je mailbox zitten, worden niet doorgestuurd.</li>
+    <li><strong>Eén filter per adres.</strong> Wil je naar twee pakketten doorsturen, dan heb je twee filters nodig.</li>
+    <li><strong>Geen bijlage, geen factuur.</strong> Veel leveranciers sturen een e-mail met alleen een link naar de klantenzone. Het filter stuurt dat bericht door, maar de factuur blijft in de klantenzone.</li>
+    <li><strong>Helemaal geen e-mail.</strong> Sommige diensten sturen niets: Google Ads bij achteraf of vooraf betalen (<a href="factuur-google-ads.html">waar je de Google Ads-factuur vindt</a>), of LinkedIn Premium (<a href="factuur-linkedin-premium.html">waar je het betalingsbewijs vindt</a>).</li>
+  </ul>
+
+  <h2 id="paperkeep">6. Voor facturen die niet per e-mail komen: Paperkeep</h2>
+  <p>Het filter en Paperkeep vullen elkaar aan. Het filter regelt wat als bijlage binnenkomt. Paperkeep regelt de rest: je opent de facturatiepagina van de dienst, klikt op het icoon, en de facturen komen in <code>Downloads › Factures</code>, met datum, leverancier en bedrag in de naam. Daarna sleep je ze in je pakket of stuur je ze naar het aanleveradres.</p>
+  <p>Paperkeep maakt geen verbinding met je pakket en stuurt niets vanzelf door. De gratis versie leest je e-mails niet; <a href="pro.html">Paperkeep Pro</a> kan bij een klik de pdf-facturen downloaden uit het Gmail-bericht dat je geopend hebt. Voorbeelden van diensten waar de factuur in de klantenzone wacht: <a href="factuur-chatgpt.html">ChatGPT</a>, <a href="factuur-canva.html">Canva</a>, <a href="factuur-meta-ads.html">Meta Ads</a>, <a href="factuur-adobe.html">Adobe</a>.</p>
+  <p><a class="cta" href="{{STORE}}">Paperkeep toevoegen aan Chrome</a></p>
+
+  <p class="maj">Bronnen: officiële hulp van Gmail, <a href="https://support.google.com/mail/answer/6579?hl=nl">filters</a>, <a href="https://support.google.com/mail/answer/10957?hl=nl">automatisch doorsturen</a> en <a href="https://support.google.com/mail/answer/7190?hl=fr">zoekoperatoren</a>, geraadpleegd op 26/10/2026; <a href="https://support.google.com/google-ads/answer/1723045?hl=nl">hulp van Google Ads over facturen</a>, geraadpleegd op 26/10/2026. De labels kunnen veranderen met Gmail.</p>
+  <p><em>Deze pagina geeft algemene informatie en vervangt het advies van je boekhouder niet.</em></p>
