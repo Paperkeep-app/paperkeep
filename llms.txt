@@ -28,9 +28,9 @@ Privacy in one sentence: Paperkeep has no server of its own and no analytics; in
 - [Guide: Peppol and invoices from foreign suppliers, which still have to be downloaded (French)](https://paperkeep.be/guide-peppol-factures-etrangeres.html)
 - [Guide: Peppol and invoices from foreign suppliers (Dutch)](https://paperkeep.be/gids-peppol-buitenlandse-facturen.html)
 - [Guide: Peppol in Belgium and invoices from foreign suppliers (English)](https://paperkeep.be/guide-peppol-foreign-invoices.html)
-- [Where to find the invoices of ChatGPT, Canva, Google Workspace, Microsoft 365, Adobe, Notion, Meta Ads, OVHcloud, Zoom and Dropbox (French)](https://paperkeep.be/ou-trouver-factures-abonnements.html)
-- [Where to find the invoices of ten common services (Dutch)](https://paperkeep.be/waar-vind-ik-facturen-abonnementen.html)
-- [Where is my invoice? One page per service in English (ChatGPT, Canva, Meta Ads, Google Workspace, Microsoft 365, Adobe, Notion, Zoom, Dropbox, OVHcloud)](https://paperkeep.be/en.html#invoices)
+- [Where to find the invoices of ChatGPT, Canva, Google Workspace, Microsoft 365, Adobe, Notion, Meta Ads, OVHcloud, Zoom, Dropbox and twenty more services (French)](https://paperkeep.be/ou-trouver-factures-abonnements.html)
+- [Where to find the invoices of thirty common services (Dutch)](https://paperkeep.be/waar-vind-ik-facturen-abonnementen.html)
+- [Where is my invoice? One page per service in English (ChatGPT, Canva, Meta Ads, Google Workspace, Microsoft 365, Adobe, Notion, Zoom, Dropbox, OVHcloud and 14 more)](https://paperkeep.be/en.html#invoices)
 - Pages per service: French facture-<service>.html, Dutch factuur-<service>.html, English invoice-<service>.html (for example https://paperkeep.be/invoice-chatgpt.html)
 - [Sending purchase invoices to Belgian accounting software: Accountable, Billit, Yuki, Odoo (French)](https://paperkeep.be/factures-achat-accountable.html) — also factures-achat-billit.html, factures-achat-yuki.html, factures-achat-odoo.html
 - [Same guides in Dutch](https://paperkeep.be/aankoopfacturen-accountable.html) — also aankoopfacturen-billit.html, aankoopfacturen-yuki.html, aankoopfacturen-odoo.html
@@ -38,6 +38,7 @@ Privacy in one sentence: Paperkeep has no server of its own and no analytics; in
 - [How long to keep invoices in Belgium: seven years again since the law of 18 December 2025 (French)](https://paperkeep.be/conserver-factures-belgique.html) and [Dutch](https://paperkeep.be/facturen-bewaren-belgie.html)
 - [Peppol: why Telenet, BASE, Luminus, Eneco, Mega and Engie invoices no longer arrive by e-mail (French)](https://paperkeep.be/guide-peppol-telecom-energie.html) and [Dutch](https://paperkeep.be/gids-peppol-telecom-energie.html)
 - Belgian and other suppliers, French and Dutch: facture-/factuur-engie.html, -orange.html, -scarlet.html, -uber.html, -linkedin-premium.html, -google-ads.html (LinkedIn Premium and the Google Ads Documents page are not yet supported by Paperkeep)
+- Twenty more per-service invoice guides (paths from each provider's official help, read on 27 October 2026), in French, Dutch and English: claude, figma, slack, zapier, calendly, hubspot, mailchimp, shopify, wix, squarespace, hostinger, infomaniak, apple, spotify (for example https://paperkeep.be/facture-claude.html, https://paperkeep.be/factuur-shopify.html, https://paperkeep.be/invoice-slack.html); Belgian suppliers in French and Dutch only: telenet, base, luminus, totalenergies, mega, bol (for example https://paperkeep.be/facture-telenet.html, https://paperkeep.be/factuur-bol.html). Paperkeep does not yet support Shopify (Export bill dialog), Spotify and TotalEnergies (closed menus) or Apple (no PDF receipt); Squarespace and Zapier offer no PDF, only printing.
 - [Kit for accountants: a ready-to-send message for their clients (French)](https://paperkeep.be/kit-comptables.html)
 - [Kit for accountants (Dutch)](https://paperkeep.be/kit-boekhouders.html)
 - [Honest comparison: Paperkeep vs GetMyInvoices, Invoice Radar, Tailride, Invoice Grabber, with "when NOT to choose Paperkeep" (French)](https://paperkeep.be/comparatif-collecte-factures.html)
