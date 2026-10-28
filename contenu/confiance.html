@@ -48,6 +48,7 @@
   <p class="maj">Sources : <a href="https://developer.chrome.com/docs/extensions/reference/permissions-list">liste des permissions et de leurs avertissements</a> (mise à jour du 09/09/2026) et <a href="https://developer.chrome.com/docs/extensions/develop/concepts/activeTab">fonctionnement d'activeTab</a>, documentation officielle de Chrome, consultées le 26/10/2026.</p>
 
   <h2 id="pro">5. Paperkeep Pro : seul l'état de l'abonnement est vérifié</h2>
+  <p><strong>Pourquoi la fiche du Chrome Web Store cite des données personnelles, de paiement et le « contenu de site web » ?</strong> Google demande de déclarer tout ce que l'extension manipule, même sur votre ordinateur. Le contenu de la page de facturation est lu sur votre ordinateur, au clic, et n'est envoyé nulle part. L'adresse e-mail et le paiement ne concernent que la Pro, chez ExtensionPay et Stripe.</p>
   <ul>
     <li>L'abonnement <a href="pro.html">Pro</a> passe par <strong>ExtensionPay</strong>, avec un paiement chez Stripe. L'extension interroge extensionpay.com pour une seule chose : l'état de votre abonnement (payé, essai en cours). Aucune facture et aucun contenu de page n'y sont envoyés.</li>
     <li>Tant que vous n'avez cliqué sur aucune offre Pro (essai, paiement ou connexion), aucun identifiant n'existe chez ExtensionPay et l'extension ne lui envoie aucune requête.</li>
@@ -56,7 +57,7 @@
   </ul>
   <p class="maj">Source : <a href="https://extensionworkshop.com/documentation/develop/firefox-builtin-data-consent/">Extension Workshop, consentement à la collecte de données dans Firefox</a> (mise à jour du 18/10/2026), consultée le 26/10/2026.</p>
 
-  <h2 id="code">6. Le code source est public</h2>
+  <h2 id="code">6. Le code est lisible dans votre navigateur</h2>
   <p>Le code de l'extension que vous installez est lisible dans votre propre navigateur : dans <code>chrome://extensions</code>, activez le « Mode développeur », puis ouvrez le service worker de Paperkeep avec « Inspecter les vues » : vous voyez exactement ce qui s'exécute, et l'onglet Réseau montre chaque requête.</p>
 
   <h2 id="verifier">7. Vérifier vous-même dans le navigateur</h2>

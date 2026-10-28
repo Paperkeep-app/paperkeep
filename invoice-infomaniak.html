@@ -49,7 +49,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.08;margin:0}
 .hero .w{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center;padding-block:78px 120px}
 .hero .oeil{color:var(--menthe);display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 13px;border-radius:999px;letter-spacing:.06em}
 .hero .oeil i{width:7px;height:7px;border-radius:50%;background:var(--citron);box-shadow:0 0 0 4px rgba(217,243,106,.2)}
-.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:auto}
+.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:manual}
 .hero h1 span{display:block}.hero h1 .b{color:var(--menthe)}
 .hero p.chapo{font-size:19px;line-height:1.55;color:rgba(255,255,255,.8);max-width:33em;margin:22px 0 30px}
 .actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
@@ -177,7 +177,7 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
   <a class="marque" href="en.html"><svg width="34" height="34" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Paperkeep</a>
   <nav><a href="en.html#fonctionnement">How it works</a><a href="en.html#confidentialite">Privacy</a><a href="en.html#comptables">Accountants</a><a href="aide.html#en">Help</a></nav>
   <div class="langues"><a href="index.html" lang="fr">FR</a><a href="nl.html" lang="nl">NL</a><a href="en.html" aria-current="true" lang="en">EN</a></div>
-  <a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign=invoice-infomaniak"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Add to Chrome <small>— free</small></a>
+  <a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign=invoice-infomaniak"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Add to Chrome <small>· free</small></a>
 </div></header>
 <main class="article"><div class="w etroit">
 <h1>Download your Infomaniak invoice as a PDF: the exact path</h1>
@@ -207,9 +207,10 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
 </div></main>
 <footer><div class="w">
   <a class="marque" href="en.html" style="color:var(--encre);font-size:17px"><svg width="26" height="26" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Paperkeep</a>
-  <a href="aide.html#en">Help and contact</a><a href="privacy.html">Privacy</a><a href="retractation.html">Withdraw from a contract</a>
+  <a href="aide.html#en">Help and contact</a><a href="pro.html">Paperkeep Pro</a><a href="privacy.html">Privacy</a><a href="retractation.html">Withdraw from a contract</a>
   <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>
   <p>Paperkeep · BE 1042.078.027 · <a href="mentions-legales.html">Legal notice</a></p>
 </div></footer>
+<script>(function(){var ua=navigator.userAgent,c=/Edg\//.test(ua)?["https://microsoftedge.microsoft.com/addons/detail/ekoobifejmegpmndflgdcepbldfbegki","Edge"]:/Firefox\//.test(ua)?["https://addons.mozilla.org/firefox/addon/paperkeep/","Firefox"]:null,m=/Android|iPhone|iPad/.test(ua),l=document.documentElement.lang;document.querySelectorAll('a[href*="chromewebstore.google.com"]').forEach(function(a){if(m){a.href='mailto:?subject=Paperkeep&body=https://paperkeep.be';a.textContent=({fr:"M'envoyer le lien pour mon ordinateur",nl:"Stuur me de link voor mijn computer",en:"Email me the link for my computer"})[l]||"Email me the link";}else if(c){a.href=c[0];a.innerHTML=a.innerHTML.replace('Chrome',c[1]);}});})();</script>
 </body>
 </html>

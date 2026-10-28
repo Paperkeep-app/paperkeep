@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Odoo : envoyer ses factures fournisseurs (alias e-mail, Peppol)</title>
+<title>Odoo : envoyer ses factures fournisseurs (alias e-mail, Peppol)</title>
 <meta name="description" content="Comment envoyer vos factures fournisseurs à Odoo Comptabilité (Peppol, alias e-mail du journal, glisser-déposer), d'après la documentation officielle.">
 <link rel="canonical" href="https://paperkeep.be/factures-achat-odoo.html">
 <link rel="alternate" hreflang="fr" href="https://paperkeep.be/factures-achat-odoo.html">
@@ -48,7 +48,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.08;margin:0}
 .hero .w{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center;padding-block:78px 120px}
 .hero .oeil{color:var(--menthe);display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 13px;border-radius:999px;letter-spacing:.06em}
 .hero .oeil i{width:7px;height:7px;border-radius:50%;background:var(--citron);box-shadow:0 0 0 4px rgba(217,243,106,.2)}
-.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:auto}
+.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:manual}
 .hero h1 span{display:block}.hero h1 .b{color:var(--menthe)}
 .hero p.chapo{font-size:19px;line-height:1.55;color:rgba(255,255,255,.8);max-width:33em;margin:22px 0 30px}
 .actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
@@ -176,45 +176,45 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
   <a class="marque" href="index.html"><svg width="34" height="34" viewBox="0 0 128 128" aria-hidden="true"><rect x="4" y="4" width="120" height="120" rx="28" fill="#1E5142"/><path d="M36 30a6 6 0 0 1 6-6h44a6 6 0 0 1 6 6v70l-7-5-7 5-7-5-7 5-7-5-7 5-7-5-7 5V30z" fill="#fff"/><path d="M47 42h34M47 53h22" stroke="#1E5142" stroke-width="6" stroke-linecap="round"/><path d="M64 62v20m-9-9l9 9 9-9" stroke="#1E5142" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Paperkeep</a>
   <nav><a href="index.html#fonctionnement">Fonctionnement</a><a href="index.html#confidentialite">Confidentialité</a><a href="index.html#comptables">Comptables</a><a href="aide.html">Aide</a></nav>
   <div class="langues"><a href="index.html" aria-current="true" lang="fr">FR</a><a href="nl.html" lang="nl">NL</a><a href="en.html" lang="en">EN</a></div>
-  <a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign=factures-achat-odoo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Ajouter à Chrome <small>— gratuit</small></a>
+  <a class="btn" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign=factures-achat-odoo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>Ajouter à Chrome <small>· gratuit</small></a>
 </div></header>
 <main class="article"><div class="w etroit">
-<h1>Odoo : comment y envoyer vos factures fournisseurs (et celles qui n'arrivent pas toutes seules)</h1>
+<h1>Odoo : comment y envoyer vos factures fournisseurs (et celles qui n'arrivent pas toutes seules)</h1>
   <p class="maj">Mis à jour le 2026-10-28 · Paperkeep</p>
   <p>Odoo Comptabilité reçoit vos factures fournisseurs par Peppol, par l'alias e-mail d'un journal d'achats ou par simple glisser-déposer. Les factures de vos abonnements en ligne facturés depuis l'étranger, elles, ne viennent que si quelqu'un va les chercher. Voici les étapes d'après la documentation officielle d'Odoo (version 20.0), puis la façon de combler ce manque.</p>
-  <p class="ancres">Aller à : <a href="#peppol">Peppol</a> · <a href="#email">Par e-mail</a> · <a href="#import">Import manuel</a> · <a href="#manque">Ce qui n'arrive pas tout seul</a> · <a href="#paperkeep">Avec Paperkeep</a></p>
+  <p class="ancres">Aller à : <a href="#peppol">Peppol</a> · <a href="#email">Par e-mail</a> · <a href="#import">Import manuel</a> · <a href="#manque">Ce qui n'arrive pas tout seul</a> · <a href="#paperkeep">Avec Paperkeep</a></p>
 
-  <h2 id="peppol">1. Par Peppol : les factures de vos fournisseurs belges</h2>
-  <p>La documentation indique qu'Odoo « agit à la fois comme point d'accès et comme SMP », et que l'enregistrement Peppol est gratuit, y compris dans Odoo Community. On s'inscrit avec le bouton <strong>Activer Peppol</strong> ; l'inscription est en principe activée dans la journée. Une partie des écrans de configuration Peppol reste en anglais dans la documentation française : nous ne les reprenons pas ici.</p>
-  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/customer_invoices/electronic_invoicing.html">documentation officielle d'Odoo, facturation électronique</a>, consultée le 25/10/2026.</p>
+  <h2 id="peppol">1. Par Peppol : les factures de vos fournisseurs belges</h2>
+  <p>La documentation indique qu'Odoo « agit à la fois comme point d'accès et comme SMP », et que l'enregistrement Peppol est gratuit, y compris dans Odoo Community. On s'inscrit avec le bouton <strong>Activer Peppol</strong> ; l'inscription est en principe activée dans la journée. Une partie des écrans de configuration Peppol reste en anglais dans la documentation française : nous ne les reprenons pas ici.</p>
+  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/customer_invoices/electronic_invoicing.html">documentation officielle d'Odoo, facturation électronique</a>, consultée le 25/10/2026.</p>
 
-  <h2 id="email">2. Par e-mail : l'alias du journal Factures fournisseurs</h2>
+  <h2 id="email">2. Par e-mail : l'alias du journal Factures fournisseurs</h2>
   <ol>
     <li>Un domaine d'alias doit être configuré dans votre base.</li>
     <li>L'adresse par défaut <code>vendor-bills@</code> suivie de votre domaine d'alias est créée automatiquement, dans l'onglet <strong>Paramètres avancés</strong> du journal <strong>Factures fournisseurs</strong>.</li>
-    <li>Pour la modifier : <strong>Comptabilité ‣ Configuration ‣ Journaux</strong>, choisissez le journal, puis changez l'<strong>Alias d'e-mail</strong> dans l'onglet <strong>Paramètres avancés</strong>.</li>
+    <li>Pour la modifier : <strong>Comptabilité ‣ Configuration ‣ Journaux</strong>, choisissez le journal, puis changez l'<strong>Alias d'e-mail</strong> dans l'onglet <strong>Paramètres avancés</strong>.</li>
   </ol>
-  <p>Chaque PDF joint à l'e-mail devient un brouillon de facture fournisseur. Seuls les PDF et les XML sont traités par l'alias d'un journal ; les JPEG passent par l'application Documents. La reconnaissance automatique du contenu (numérisation) consomme des crédits payants, sauf pour les fichiers XML.</p>
-  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/vendor_bills/invoice_digitization.html">documentation officielle d'Odoo, numérisation des factures</a>, consultée le 25/10/2026.</p>
+  <p>Chaque PDF joint à l'e-mail devient un brouillon de facture fournisseur. Seuls les PDF et les XML sont traités par l'alias d'un journal ; les JPEG passent par l'application Documents. La reconnaissance automatique du contenu (numérisation) consomme des crédits payants, sauf pour les fichiers XML.</p>
+  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/vendor_bills/invoice_digitization.html">documentation officielle d'Odoo, numérisation des factures</a>, consultée le 25/10/2026.</p>
 
-  <h2 id="import">3. Import manuel : un PDF déjà sur votre ordinateur</h2>
-  <p>Dans le tableau de bord de Comptabilité, glissez-déposez les factures dans le journal d'achats voulu, ou cliquez sur le bouton de téléchargement de ce journal (« Télécharger » dans la documentation française).</p>
-  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/vendor_bills/invoice_digitization.html">documentation officielle d'Odoo</a>, consultée le 25/10/2026.</p>
+  <h2 id="import">3. Import manuel : un PDF déjà sur votre ordinateur</h2>
+  <p>Dans le tableau de bord de Comptabilité, glissez-déposez les factures dans le journal d'achats voulu, ou cliquez sur le bouton de téléchargement de ce journal (« Télécharger » dans la documentation française).</p>
+  <p class="maj">Source : <a href="https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/vendor_bills/invoice_digitization.html">documentation officielle d'Odoo</a>, consultée le 25/10/2026.</p>
 
   <h2 id="manque">4. Ce qui n'arrive pas tout seul</h2>
-  <p>Peppol n'apporte que les factures de fournisseurs qui y sont soumis. Les fournisseurs établis à l'étranger sans établissement stable en Belgique ne le sont pas (voir <a href="guide-peppol-factures-etrangeres.html">ce que dit la règle</a>). Et beaucoup d'abonnements en ligne n'envoient pas leur facture en pièce jointe : elle attend dans l'espace « Facturation » du compte. L'alias <code>vendor-bills@</code> ne reçoit donc rien de leur part.</p>
-  <p>Exemples : <a href="facture-chatgpt.html">ChatGPT</a>, <a href="facture-canva.html">Canva</a>, <a href="facture-meta-ads.html">Meta Ads</a>, <a href="facture-google-workspace.html">Google Workspace</a>, <a href="facture-adobe.html">Adobe</a>, <a href="facture-linkedin-premium.html">LinkedIn Premium</a>. Le chemin exact pour chacun est dans <a href="ou-trouver-factures-abonnements.html">Où trouver la facture de ChatGPT, Canva, Google Workspace…</a></p>
+  <p>Peppol n'apporte que les factures de fournisseurs qui y sont soumis. Les fournisseurs établis à l'étranger sans établissement stable en Belgique ne le sont pas (voir <a href="guide-peppol-factures-etrangeres.html">ce que dit la règle</a>). Et beaucoup d'abonnements en ligne n'envoient pas leur facture en pièce jointe : elle attend dans l'espace « Facturation » du compte. L'alias <code>vendor-bills@</code> ne reçoit donc rien de leur part.</p>
+  <p>Exemples : <a href="facture-chatgpt.html">ChatGPT</a>, <a href="facture-canva.html">Canva</a>, <a href="facture-meta-ads.html">Meta Ads</a>, <a href="facture-google-workspace.html">Google Workspace</a>, <a href="facture-adobe.html">Adobe</a>, <a href="facture-linkedin-premium.html">LinkedIn Premium</a>. Le chemin exact pour chacun est dans <a href="ou-trouver-factures-abonnements.html">Où trouver la facture de ChatGPT, Canva, Google Workspace…</a></p>
 
   <h2 id="paperkeep">5. Avec Paperkeep</h2>
   <ol>
     <li>Ouvrez la page de facturation du service.</li>
-    <li>Cliquez sur l'icône Paperkeep, puis sur « Télécharger » : les factures arrivent en PDF dans <code>Téléchargements › Factures</code>, nommées par date, fournisseur et montant.</li>
-    <li>Glissez-les dans le journal d'achats d'Odoo, ou envoyez-les en pièces jointes à l'alias <code>vendor-bills@</code> : un PDF, un brouillon de facture.</li>
+    <li>Cliquez sur l'icône Paperkeep, puis sur « Télécharger » : les factures arrivent en PDF dans <code>Téléchargements › Factures</code>, nommées par date, fournisseur et montant.</li>
+    <li>Glissez-les dans le journal d'achats d'Odoo, ou envoyez-les en pièces jointes à l'alias <code>vendor-bills@</code> : un PDF, un brouillon de facture.</li>
   </ol>
-  <p>Ce que Paperkeep ne fait pas : il ne se connecte pas à Odoo, n'envoie rien tout seul et ne demande aucun mot de passe. Il n'a aucun partenariat avec Odoo. Rien ne quitte votre ordinateur.</p>
-  <p>Paperkeep est gratuit, sans limite de téléchargement. <a href="pro.html">Paperkeep Pro</a> (39 € par an TVA comprise, essai gratuit de 14 jours, satisfait ou remboursé 30 jours) ajoute la tournée du mois, les factures manquantes et le récapitulatif pour le comptable.</p>
+  <p>Ce que Paperkeep ne fait pas : il ne se connecte pas à Odoo, n'envoie rien tout seul et ne demande aucun mot de passe. Il n'a aucun partenariat avec Odoo. Rien ne quitte votre ordinateur.</p>
+  <p>Paperkeep est gratuit, sans limite de téléchargement. <a href="pro.html">Paperkeep Pro</a> (39 € par an TVA comprise, essai gratuit de 14 jours, satisfait ou remboursé 30 jours) ajoute la tournée du mois, les factures manquantes et le récapitulatif pour le comptable.</p>
   <p><a class="cta" href="https://chromewebstore.google.com/detail/mmllhnjkdpilogbaokplljippcnmdopi?utm_source=paperkeep.be&amp;utm_medium=site&amp;utm_campaign=factures-achat-odoo">Ajouter Paperkeep à Chrome</a></p>
-  <p>Les autres logiciels : <a href="factures-achat-accountable.html">Accountable</a> · <a href="factures-achat-billit.html">Billit</a> · <a href="factures-achat-yuki.html">Yuki</a>.</p>
+  <p>Les autres logiciels : <a href="factures-achat-accountable.html">Accountable</a> · <a href="factures-achat-billit.html">Billit</a> · <a href="factures-achat-yuki.html">Yuki</a>.</p>
   <p><em>Cette page donne une information générale et ne remplace pas l'avis de votre comptable. Les menus viennent de la documentation d'Odoo 20.0 et peuvent différer dans votre version.</em></p>
 
 </div></main>
@@ -224,5 +224,6 @@ footer p{margin:0;flex-basis:100%;font-size:14px}
   <a href="mailto:contact@paperkeep.be">contact@paperkeep.be</a>
   <p>Paperkeep · BE 1042.078.027 · <a href="mentions-legales.html">Mentions légales</a></p>
 </div></footer>
+<script>(function(){var ua=navigator.userAgent,c=/Edg\//.test(ua)?["https://microsoftedge.microsoft.com/addons/detail/ekoobifejmegpmndflgdcepbldfbegki","Edge"]:/Firefox\//.test(ua)?["https://addons.mozilla.org/firefox/addon/paperkeep/","Firefox"]:null,m=/Android|iPhone|iPad/.test(ua),l=document.documentElement.lang;document.querySelectorAll('a[href*="chromewebstore.google.com"]').forEach(function(a){if(m){a.href='mailto:?subject=Paperkeep&body=https://paperkeep.be';a.textContent=({fr:"M'envoyer le lien pour mon ordinateur",nl:"Stuur me de link voor mijn computer",en:"Email me the link for my computer"})[l]||"Email me the link";}else if(c){a.href=c[0];a.innerHTML=a.innerHTML.replace('Chrome',c[1]);}});})();</script>
 </body>
 </html>

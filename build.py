@@ -36,14 +36,14 @@ FICHIER = {"fr": "index.html", "en": "en.html", "nl": "nl.html"}
 
 T = {
     "fr": dict(
-        titre="Paperkeep — vos factures fournisseurs récupérées et renommées en un clic",
-        desc="Extension Chrome gratuite : sur la page de facturation de vos abonnements, un clic télécharge vos factures et les renomme par date, fournisseur et montant. Rien ne quitte votre ordinateur.",
+        titre="Paperkeep : téléchargez et renommez vos factures d'abonnements en un clic",
+        desc="Extension gratuite pour Chrome, Edge et Firefox : sur la page de facturation de vos abonnements, un clic télécharge vos factures et les renomme par date, fournisseur et montant. Rien ne quitte votre ordinateur.",
         nav=["Fonctionnement", "Confidentialité", "Comptables", "Aide"],
         cta="Ajouter à Chrome", cta_sub="gratuit",
-        oeil="Extension Chrome gratuite",
-        h1a="Les factures oubliées,", h1b="récupérées en un clic.",
-        chapo="Canva, ChatGPT, Google, Meta Ads, votre hébergeur… Ces abonnements ne vous envoient pas leur facture : elle reste dans votre compte en ligne, et Peppol ne l'apporte pas non plus. Ouvrez la page de facturation, cliquez sur Paperkeep : les factures sont téléchargées et nommées pour votre comptable.",
-        voir="Essayer en 10 secondes",
+        oeil="Gratuit · Pour indépendants et petites sociétés",
+        h1a="Vos factures d'abonnements,", h1b="récupérées en un clic.",
+        chapo="Canva, ChatGPT, Google, votre hébergeur… laissent leur facture dans votre compte en ligne, et Peppol ne l'apporte pas. Ouvrez leur page de facturation, cliquez sur Paperkeep : les PDF arrivent dans un seul dossier, nommés par date, fournisseur et montant, prêts pour votre comptable.",
+        voir="Voir la démo (22 s)", voir_url="video/paperkeep-demo-fr.mp4",
         autres="Aussi pour",
         gages=["Sans compte", "Rien ne quitte votre ordinateur", "Français · Nederlands · English"],
         demo_titre="Historique de facturation", demo_payee="Payée", demo_bouton="Télécharger (3)", demo_dossier="Téléchargements › Factures",
@@ -68,10 +68,10 @@ T = {
                 ("Vous choisissez", "Toutes les factures trouvées sont cochées ; décochez celles dont vous n'avez pas besoin."),
                 ("Trois langues", "Interface en français, en néerlandais et en anglais, selon la langue de votre navigateur.")],
         s4_oeil="Confidentialité", s4_h="Rien ne quitte votre ordinateur.",
-        s4_p="Paperkeep n'a ni compte, ni serveur, ni statistiques. Vos factures vont de la page à votre dossier, sans passer par nous.",
+        s4_p="Paperkeep n'a ni serveur ni statistiques, et la version gratuite ne demande aucun compte. Vos factures vont de la page à votre dossier, sans passer par nous.",
         prive=[("Aucun compte", "Rien à créer, rien à connecter."),
                ("Lecture au clic", "La page n'est lue qu'au moment où vous cliquez sur l'icône."),
-               ("Accès demandé site par site", "Rien n'est demandé à l'installation. Vous pouvez toujours refuser.")],
+               ("Accès demandé site par site", "Aucun accès à vos sites n'est demandé à l'installation. Vous pouvez toujours refuser.")],
         prive_lien="Lire la politique de confidentialité", code_lien="Vérifier par vous-même",
         s5_oeil="Pour les comptables", s5_h="Vos clients oublient leurs factures d'achat ?",
         s5_p="Envoyez-leur le lien. Ils récupèrent en un clic les factures de leurs abonnements et vous transmettent un dossier propre. Un fournisseur manque ? Dites-le-nous, nous ajoutons en priorité ceux que vos clients utilisent.",
@@ -79,8 +79,9 @@ T = {
         capture_alt="Paperkeep ouvert sur une page de facturation : quatre factures détectées avec leur date",
         capture_leg="L'extension sur une page de facturation.",
         faq_h="Questions fréquentes",
+        pro_h="Gratuit. Et pour ne plus rien oublier : Paperkeep Pro.", pro_p="La tournée du mois vous dit chez quels fournisseurs aller, signale les factures manquantes, vous rappelle la TVA trimestrielle et prépare le récapitulatif pour votre comptable. 39 € par an TVA comprise, essai gratuit de 14 jours sans carte, satisfait ou remboursé 30 jours.", pro_cta="Découvrir Paperkeep Pro",
         faq=[("Avec Peppol, à quoi sert encore Paperkeep ?", "Peppol ne concerne que les factures entre entreprises belges. Les fournisseurs établis à l'étranger n'y sont pas soumis : leurs factures restent des PDF à télécharger sur leur site. Paperkeep récupère et nomme celles-là."),
-             ("Est-ce gratuit ?", "Oui, sans compte et sans limite de téléchargements. Une formule payante pour les gros volumes et les cabinets comptables viendra plus tard ; ce que vous avez déjà récupéré reste à vous."),
+             ("Est-ce gratuit ?", "Oui : télécharger et renommer vos factures est gratuit, sans compte et sans limite. Paperkeep Pro (39 € par an, essai gratuit de 14 jours sans carte) ajoute la tournée du mois, les factures manquantes, le rappel TVA, le récapitulatif pour le comptable, le classement par trimestre et les factures reçues dans Gmail."),
              ("Sur quels services ça marche ?", "Sur les portails de facturation Stripe, sur les pages qui listent des factures en PDF et sur celles dont les liens n'ont pas d'extension. Si un service n'est pas reconnu, écrivez-nous : nous l'ajoutons."),
              ("Où arrivent mes factures ?", "Dans le dossier Téléchargements › Factures de votre ordinateur, sous la forme 2026-09-06_fournisseur_15-00EUR.pdf."),
              ("Mes données sont-elles envoyées quelque part ?", "Non. Aucun serveur, aucune statistique. Les fichiers vont directement dans votre dossier Téléchargements.")],
@@ -93,13 +94,13 @@ T = {
         fournisseur="fournisseur",
     ),
     "en": dict(
-        titre="Paperkeep — your supplier invoices collected and renamed in one click",
-        desc="Free Chrome extension: on the billing page of your subscriptions, one click downloads your invoices and renames them by date, vendor and amount. Nothing leaves your computer.",
+        titre="Paperkeep: download and rename your subscription invoices in one click",
+        desc="Free extension for Chrome, Edge and Firefox: on the billing page of your subscriptions, one click downloads your invoices and renames them by date, vendor and amount. Nothing leaves your computer.",
         nav=["How it works", "Privacy", "Accountants", "Help"],
         cta="Add to Chrome", cta_sub="free",
-        oeil="Free Chrome extension",
-        h1a="Forgotten invoices,", h1b="collected in one click.",
-        chapo="Canva, ChatGPT, Google, Meta Ads, your web host… These subscriptions don't send you their invoice: it stays in your online account, and Peppol doesn't bring it either. Open the billing page, click Paperkeep: invoices are downloaded and named for your accountant.",
+        oeil="Free · For freelancers and small businesses",
+        h1a="Your subscription invoices,", h1b="collected in one click.",
+        chapo="Canva, ChatGPT, Google, your web host… leave their invoice in your online account, and Peppol doesn't bring it. Open their billing page, click Paperkeep: the PDFs land in one folder, named by date, vendor and amount, ready for your accountant.",
         voir="Try it in 10 seconds",
         autres="Also for",
         gages=["No account", "Nothing leaves your computer", "English · Français · Nederlands"],
@@ -125,10 +126,10 @@ T = {
                 ("You choose", "Every invoice found is ticked; untick the ones you do not need."),
                 ("Three languages", "Interface in English, French and Dutch, following your browser language.")],
         s4_oeil="Privacy", s4_h="Nothing leaves your computer.",
-        s4_p="Paperkeep has no account, no server and no analytics. Your invoices go from the page to your folder, without passing through us.",
+        s4_p="Paperkeep has no server and no analytics, and the free version needs no account. Your invoices go from the page to your folder, without passing through us.",
         prive=[("No account", "Nothing to create, nothing to connect."),
                ("Read on click", "The page is only read when you click the icon."),
-               ("Access asked site by site", "Nothing is requested at install. You can always decline.")],
+               ("Access asked site by site", "No access to your sites is requested at install. You can always decline.")],
         prive_lien="Read the privacy policy", code_lien="Check it yourself (in French)",
         s5_oeil="For accountants", s5_h="Clients who forget their purchase invoices?",
         s5_p="Send them the link. In one click they collect the invoices of their subscriptions and hand you a clean folder. A provider is missing? Tell us: we add the ones your clients use first.",
@@ -136,8 +137,9 @@ T = {
         capture_alt="Paperkeep open on a billing page: four invoices detected with their date",
         capture_leg="The extension on a billing page.",
         faq_h="Frequently asked questions",
+        pro_h="Free. And to never miss an invoice again: Paperkeep Pro.", pro_p="The monthly checklist tells you which suppliers to visit, flags missing invoices, reminds you of the quarterly VAT return and prepares the summary for your accountant. €39 a year including VAT, 14-day free trial with no card, 30-day money-back guarantee.", pro_cta="Discover Paperkeep Pro (in French)",
         faq=[("With Peppol, what is Paperkeep still for?", "Peppol only covers invoices between Belgian businesses. Suppliers established abroad are not subject to it: their invoices remain PDFs to download from their website. Paperkeep collects and names those."),
-             ("Is it free?", "Yes, with no account and no download limit. A paid plan for high volumes and accounting firms will come later; what you have already collected stays yours."),
+             ("Is it free?", "Yes: downloading and renaming invoices is free, with no account and no limit. Paperkeep Pro (€39 a year, 14-day free trial, no card) adds the monthly checklist, missing-invoice alerts, the VAT reminder, the summary for your accountant, filing by quarter and invoices from Gmail."),
              ("Which services does it work on?", "On Stripe billing portals, on pages listing PDF invoices and on pages whose links have no file extension. If a service is not recognised, write to us: we add it."),
              ("Where do my invoices go?", "To the Downloads › Factures folder on your computer, named 2026-09-06_vendor_15-00EUR.pdf."),
              ("Is my data sent anywhere?", "No. No server, no analytics. Files go straight to your Downloads folder.")],
@@ -147,21 +149,21 @@ T = {
         fact_oeil="Where is my invoice?", fact_h="The exact path for 24 common services.",
         fact_p="Many services don't email you their invoice: it waits in your account, in a different place for each. These pages give the path from each provider's official help.",
         factures=[("ChatGPT", "invoice-chatgpt.html"), ("Canva", "invoice-canva.html"), ("Google Workspace", "invoice-google-workspace.html"), ("Microsoft 365", "invoice-microsoft-365.html"), ("Adobe", "invoice-adobe.html"), ("Notion", "invoice-notion.html"), ("Meta Ads", "invoice-meta-ads.html"), ("OVHcloud", "invoice-ovhcloud.html"), ("Zoom", "invoice-zoom.html"), ("Dropbox", "invoice-dropbox.html"), ("Claude", "invoice-claude.html"), ("Figma", "invoice-figma.html"), ("Slack", "invoice-slack.html"), ("Zapier", "invoice-zapier.html"), ("Calendly", "invoice-calendly.html"), ("HubSpot", "invoice-hubspot.html"), ("Mailchimp", "invoice-mailchimp.html"), ("Shopify", "invoice-shopify.html"), ("Wix", "invoice-wix.html"), ("Squarespace", "invoice-squarespace.html"), ("Hostinger", "invoice-hostinger.html"), ("Infomaniak", "invoice-infomaniak.html"), ("Apple", "invoice-apple.html"), ("Spotify", "invoice-spotify.html")],
-        pied=["Help and contact", "Privacy", "Withdraw from a contract"], pied_liens=["aide.html#en", "privacy.html", "retractation.html"],
+        pied=["Help and contact", "Paperkeep Pro", "Privacy", "Withdraw from a contract"], pied_liens=["aide.html#en", "pro.html", "privacy.html", "retractation.html"],
         mention="Paperkeep · BE 1042.078.027 · <a href=\"mentions-legales.html\">Legal notice</a>",
         fournisseur="vendor",
     ),
     "nl": dict(
-        titre="Paperkeep — je leveranciersfacturen opgehaald en hernoemd met één klik",
-        desc="Gratis Chrome-extensie: op de facturatiepagina van je abonnementen downloadt één klik je facturen en hernoemt ze op datum, leverancier en bedrag. Er verlaat niets je computer.",
+        titre="Paperkeep: download en hernoem je abonnementsfacturen met één klik",
+        desc="Gratis extensie voor Chrome, Edge en Firefox: op de facturatiepagina van je abonnementen downloadt één klik je facturen en hernoemt ze op datum, leverancier en bedrag. Niets verlaat je computer.",
         nav=["Hoe het werkt", "Privacy", "Boekhouders", "Hulp"],
         cta="Toevoegen aan Chrome", cta_sub="gratis",
-        oeil="Gratis Chrome-extensie",
-        h1a="Vergeten facturen,", h1b="opgehaald met één klik.",
-        chapo="Canva, ChatGPT, Google, Meta Ads, je hostingfirma… Die abonnementen sturen je hun factuur niet: ze blijft in je online account staan, en ook Peppol brengt ze niet. Open de facturatiepagina, klik op Paperkeep: de facturen worden gedownload en benoemd voor je boekhouder.",
+        oeil="Gratis · Voor zelfstandigen en kleine bedrijven",
+        h1a="Je abonnementsfacturen,", h1b="opgehaald met één klik.",
+        chapo="Canva, ChatGPT, Google, je hostingfirma… laten hun factuur in je online account staan, en via Peppol komt ze ook niet binnen. Open hun facturatiepagina, klik op Paperkeep: de pdf's komen in één map, met datum, leverancier en bedrag in de naam, klaar voor je boekhouder.",
         voir="Probeer het in 10 seconden",
         autres="Ook voor",
-        gages=["Geen account", "Er verlaat niets je computer", "Nederlands · Français · English"],
+        gages=["Geen account", "Niets verlaat je computer", "Nederlands · Français · English"],
         demo_titre="Factuurgeschiedenis", demo_payee="Betaald", demo_bouton="Downloaden (3)", demo_dossier="Downloads › Factures",
         avant="Voor", apres="Na",
         pep_oeil="En Peppol?", pep_h="Peppol bezorgt je niet al je facturen.",
@@ -172,10 +174,10 @@ T = {
         kit_lien="Het bericht dat je zo naar je klanten stuurt", kit_url="kit-boekhouders.html",
         s1_oeil="Het probleem", s1_h="Bestanden die niemand kan lezen.",
         s1_p="Elke dienst geeft zijn facturen een eigen naam. Paperkeep geeft ze allemaal dezelfde: datum, leverancier, bedrag. De map sorteert zichzelf.",
-        s2_oeil="Hoe het werkt", s2_h="Drie stappen, niet één meer.",
+        s2_oeil="Hoe het werkt", s2_h="Drie stappen, meer niet.",
         etapes=[("Open de facturatiepagina", "De pagina waar je dienst je facturen toont: “Facturatie”, “Betaalgeschiedenis”, “Facturen”."),
                 ("Klik op het Paperkeep-icoon", "De extensie vindt de facturen op de pagina, met datum en bedrag. Vink uit wat je al hebt."),
-                ("Haal de map op", "Alles komt in Downloads › Factures terecht, hernoemd en gecontroleerd, klaar om door te geven.")],
+                ("Open je map", "Alles komt in Downloads › Factures terecht, hernoemd en gecontroleerd, klaar om door te geven.")],
         s3_oeil="Wat Paperkeep doet", s3_h="Gemaakt voor pagina's die tegenwerken.",
         atouts=[("Stripe-portalen", "Het facturatieportaal dat heel veel online diensten gebruiken, wordt meteen herkend."),
                 ("Pdf achter een knop", "Is de factuur geen gewone link, dan haalt Paperkeep ze toch op."),
@@ -183,26 +185,27 @@ T = {
                 ("Elk bestand gecontroleerd", "Een lege download, of een die geen document is, wordt gemeld in plaats van door te gaan voor een factuur."),
                 ("Jij kiest", "Alle gevonden facturen zijn aangevinkt; vink uit wat je niet nodig hebt."),
                 ("Drie talen", "Interface in het Nederlands, Frans en Engels, volgens de taal van je browser.")],
-        s4_oeil="Privacy", s4_h="Er verlaat niets je computer.",
-        s4_p="Paperkeep heeft geen account, geen server en geen statistieken. Je facturen gaan van de pagina naar je map, zonder langs ons te gaan.",
+        s4_oeil="Privacy", s4_h="Niets verlaat je computer.",
+        s4_p="Paperkeep heeft geen server en geen statistieken, en de gratis versie vraagt geen account. Je facturen gaan van de pagina naar je map, zonder langs ons te gaan.",
         prive=[("Geen account", "Niets aan te maken, niets te koppelen."),
-               ("Lezen bij de klik", "De pagina wordt alleen gelezen wanneer je op het icoon klikt."),
-               ("Toegang per site gevraagd", "Bij de installatie wordt niets gevraagd. Je kunt altijd weigeren.")],
+               ("Alleen gelezen als je klikt", "De pagina wordt alleen gelezen wanneer je op het icoon klikt."),
+               ("Toegang per site gevraagd", "Bij de installatie wordt geen toegang tot je sites gevraagd. Je kunt altijd weigeren.")],
         prive_lien="Lees het privacybeleid", code_lien="Controleer het zelf", verif="vertrouwen.html",
         s5_oeil="Voor boekhouders", s5_h="Klanten die hun aankoopfacturen vergeten?",
-        s5_p="Bezorg hun de link. Met één klik halen ze de facturen van hun abonnementen op en bezorgen ze u een nette map. Ontbreekt er een leverancier? Laat het ons weten: we voegen eerst toe wat uw klanten gebruiken.",
+        s5_p="Stuur hun de link. Met één klik halen ze de facturen van hun abonnementen op en bezorgen ze je een nette map. Ontbreekt er een leverancier? Laat het ons weten: we voegen eerst toe wat jouw klanten gebruiken.",
         s5_cta="Schrijf ons",
         capture_alt="Paperkeep geopend op een facturatiepagina: vier facturen gevonden met hun datum",
         capture_leg="De extensie op een facturatiepagina.",
         faq_h="Veelgestelde vragen",
+        pro_h="Gratis. En om niets meer te vergeten: Paperkeep Pro.", pro_p="De maandronde zegt je bij welke leveranciers je langs moet, meldt ontbrekende facturen, herinnert je aan de btw-aangifte per kwartaal en maakt het overzicht voor je boekhouder klaar. € 39 per jaar, btw inbegrepen, 14 dagen gratis proberen zonder kaart, 30 dagen geld terug.", pro_cta="Paperkeep Pro bekijken (in het Frans)",
         faq=[("Waarvoor dient Paperkeep nog, nu er Peppol is?", "Peppol geldt alleen voor facturen tussen Belgische ondernemingen. Leveranciers die in het buitenland gevestigd zijn, vallen er niet onder: hun facturen blijven pdf's die je op hun website moet downloaden. Paperkeep haalt die op en geeft ze een naam."),
-             ("Is het gratis?", "Ja, zonder account en zonder downloadlimiet. Een betaalde formule voor grote volumes en boekhoudkantoren volgt later; wat je al hebt opgehaald, blijft van jou."),
+             ("Is het gratis?", "Ja: facturen downloaden en hernoemen is gratis, zonder account en zonder limiet. Paperkeep Pro (€ 39 per jaar, 14 dagen gratis proberen zonder kaart) voegt de maandronde, ontbrekende facturen, de btw-herinnering, het overzicht voor je boekhouder, ordenen per kwartaal en facturen uit Gmail toe."),
              ("Op welke diensten werkt het?", "Op Stripe-portalen, op pagina's met facturen in pdf en op pagina's waarvan de links geen extensie hebben. Wordt een dienst niet herkend, schrijf ons dan: we voegen hem toe."),
              ("Waar komen mijn facturen terecht?", "In de map Downloads › Factures op je computer, met de naam 2026-09-06_leverancier_15-00EUR.pdf."),
              ("Worden mijn gegevens ergens naartoe gestuurd?", "Nee. Geen server, geen statistieken. De bestanden gaan rechtstreeks naar je map Downloads.")],
         faq_plus="Alle vragen en contact",
         fin_h="Tien minuten per maand, en de map is klaar.", fin_p="Installeer Paperkeep, open een facturatiepagina, klik.",
-        pied=["Hulp en contact", "Gids", "Privacy", "Overeenkomst herroepen"], pied_liens=["aide.html#nl", "gids-facturen-abonnementen.html", "privacy.html", "retractation.html"],
+        pied=["Hulp en contact", "Gids", "Paperkeep Pro", "Privacy", "Overeenkomst herroepen"], pied_liens=["aide.html#nl", "gids-facturen-abonnementen.html", "pro.html", "privacy.html", "retractation.html"],
         pied_accueil=[("Paperkeep controleren", "vertrouwen.html"), ("Pers", "pers.html")],
         mention="Paperkeep · BE 1042.078.027 · <a href=\"mentions-legales.html\">Wettelijke vermeldingen</a>",
         fournisseur="leverancier",
@@ -253,7 +256,7 @@ h1,h2,h3{letter-spacing:-.025em;line-height:1.08;margin:0}
 .hero .w{position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:center;padding-block:78px 120px}
 .hero .oeil{color:var(--menthe);display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:7px 13px;border-radius:999px;letter-spacing:.06em}
 .hero .oeil i{width:7px;height:7px;border-radius:50%;background:var(--citron);box-shadow:0 0 0 4px rgba(217,243,106,.2)}
-.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:auto}
+.hero h1{font-size:clamp(34px,4.5vw,58px);font-weight:700;overflow-wrap:break-word;hyphens:manual}
 .hero h1 span{display:block}.hero h1 .b{color:var(--menthe)}
 .hero p.chapo{font-size:19px;line-height:1.55;color:rgba(255,255,255,.8);max-width:33em;margin:22px 0 30px}
 .actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
@@ -357,6 +360,12 @@ JS = ("document.documentElement.classList.add('js');"
       "if('IntersectionObserver' in window){var o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('vu');o.unobserve(x.target)}})},{threshold:.12});"
       "document.querySelectorAll('.r').forEach(function(n){o.observe(n)})}else{document.querySelectorAll('.r').forEach(function(n){n.classList.add('vu')})}")
 
+NAVIG = ("(function(){var ua=navigator.userAgent,c=/Edg\\//.test(ua)?[\"" + EDGE + "\",\"Edge\"]:/Firefox\\//.test(ua)?[\"" + FIREFOX + "\",\"Firefox\"]:null,"
+         "m=/Android|iPhone|iPad/.test(ua),l=document.documentElement.lang;"
+         "document.querySelectorAll('a[href*=\"chromewebstore.google.com\"]').forEach(function(a){"
+         "if(m){a.href='mailto:?subject=Paperkeep&body=https://paperkeep.be';a.textContent=({fr:\"M'envoyer le lien pour mon ordinateur\",nl:\"Stuur me de link voor mijn computer\",en:\"Email me the link for my computer\"})[l]||\"Email me the link\";}"
+         "else if(c){a.href=c[0];a.innerHTML=a.innerHTML.replace('Chrome',c[1]);}});})();")
+
 CHROME_ICO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>'
 
 
@@ -367,6 +376,19 @@ ORGANISATION = {
     "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": MAIL, "availableLanguage": ["fr", "nl", "en"]},
     "sameAs": [STORE, EDGE, FIREFOX, FACEBOOK, INSTAGRAM, YOUTUBE],
 }
+
+
+def insecables(h):
+    """Typographie française : espaces insécables avant « : ; ? ! » et dans « 39 € », hors balises et scripts."""
+    parts = re.split(r"(<script.*?</script>|<style.*?</style>|<[^>]+>)", h, flags=re.S)
+    for i in range(0, len(parts), 2):
+        t = parts[i]
+        t = t.replace(" :", "\u00a0:")
+        t = re.sub(r" ([;?!»])", "\u202f\\1", t)
+        t = t.replace("« ", "«\u202f")
+        t = re.sub(r"(\d) (€|%)", "\\1\u00a0\\2", t)
+        parts[i] = t
+    return "".join(parts)
 
 
 def page(lang):
@@ -381,7 +403,7 @@ def page(lang):
          "publisher": {"@id": BASE + "#organisation"}},
         {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Paperkeep", "applicationCategory": "BusinessApplication",
          "dateModified": AUJOURDHUI, "author": {"@id": BASE + "#organisation"},
-         "applicationSubCategory": "Browser extension", "operatingSystem": "Chrome", "inLanguage": ["fr", "nl", "en"], "description": t["desc"],
+         "applicationSubCategory": "Browser extension", "operatingSystem": "Chrome, Edge, Firefox", "inLanguage": ["fr", "nl", "en"], "description": t["desc"],
          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "downloadUrl": STORE, "installUrl": STORE, "url": BASE,
          "image": BASE + "img/logo-512.png", "screenshot": BASE + "img/capture-detection.png",
          "publisher": {"@id": BASE + "#organisation"}},
@@ -395,7 +417,7 @@ def page(lang):
     noms = [f"2026-09-06_{v}_29-00EUR.pdf", f"2026-08-06_{v}_29-00EUR.pdf", f"2026-07-06_{v}_19-00EUR.pdf"]
     sales = ["invoice_4821.pdf", "Receipt-2291-7743.pdf", "document (3).pdf", "F0091-2026.pdf"]
     propres = [f"2026-06-06_{v}_19-00EUR.pdf", f"2026-07-06_{v}_19-00EUR.pdf", f"2026-08-06_{v}_29-00EUR.pdf", f"2026-09-06_{v}_29-00EUR.pdf"]
-    btn = f'<a class="btn" href="{STORE}">{CHROME_ICO}{t["cta"]} <small>— {t["cta_sub"]}</small></a>'
+    btn = f'<a class="btn" href="{STORE}">{CHROME_ICO}{t["cta"]} <small>· {t["cta_sub"]}</small></a>'
     aide = "aide.html" if lang == "fr" else f"aide.html#{lang}"
     h = f"""<!doctype html>
 <html lang="{lang}">
@@ -431,7 +453,7 @@ def page(lang):
     <p class="oeil"><i></i>{t["oeil"]}</p>
     <h1><span>{t["h1a"]}</span><span class="b">{t["h1b"]}</span></h1>
     <p class="chapo">{t["chapo"]}</p>
-    <div class="actions">{btn}<a class="lien" href="essai.html">{t["voir"]}</a></div>
+    <div class="actions">{btn}<a class="lien" href="{t.get('voir_url', 'essai.html')}">{t["voir"]}</a></div>
     <p class="autres">{t["autres"]} <a href="{EDGE}">Microsoft Edge</a> · <a href="{FIREFOX}">Firefox</a></p>
     <ul class="gages">{"".join(f"<li>{g}</li>" for g in t["gages"])}</ul>
   </div>
@@ -491,7 +513,8 @@ def page(lang):
   <p class="r" style="margin:0;display:flex;flex-wrap:wrap;gap:12px 28px">{"".join(f'<a class="lien" href="{u}">{n}</a>' for n, u in t["factures"])}</p>
 </div></section>
 
-''' if "factures" in t else ""}<section style="padding-top:0"><div class="w faq">
+''' if "factures" in t else ""}<section id="pro" style="padding-top:0"><div class="w"><div class="entete r"><h2>{t["pro_h"]}</h2><p>{t["pro_p"]}</p><p><a class="btn sombre" href="pro.html">{t["pro_cta"]}</a></p></div></div></section>
+<section style="padding-top:0"><div class="w faq">
   <div class="entete r"><h2>{t["faq_h"]}</h2></div>
   {"".join(f'<details class="r"><summary>{q}</summary><p>{r}</p></details>' for q, r in t["faq"])}
   <p class="r" style="margin-top:22px"><a class="lien" href="{aide}">{t["faq_plus"]}</a></p>
@@ -506,10 +529,12 @@ def page(lang):
   <a href="mailto:{MAIL}">{MAIL}</a>
   <p>{t["mention"]}</p>
 </div></footer>
-<script>{JS}</script>
+<script>{JS}{NAVIG}</script>
 </body>
 </html>
 """
+    if lang == "fr":
+        h = insecables(h)
     pathlib.Path(f).write_text(marquer(h, f), encoding="utf-8")
     return f, len(h)
 
@@ -541,9 +566,9 @@ CSS_ARTICLE = r"""
 
 # fichier : (langue, titre, description, type, équivalent dans l'autre langue)
 PAGES = {
-    "aide.html": ("fr", "Aide et contact — Paperkeep", "Questions fréquentes sur Paperkeep, l'extension Chrome qui récupère vos factures fournisseurs, et comment nous contacter.", "faq", None),
-    "guides.html": ("fr", "Guides — récupérer, nommer et transmettre ses factures | Paperkeep", "Guides pratiques pour récupérer, nommer et transmettre ses factures d'achat en ligne à son comptable.", "page", None),
-    "guide-factures-abonnements.html": ("fr", "Récupérer les factures de vos abonnements en ligne — guide pratique", "Où trouver les factures de vos abonnements en ligne (logiciels, hébergement, outils) et comment les transmettre proprement à votre comptable.", "article", "gids-facturen-abonnementen.html"),
+    "aide.html": ("fr", "Aide et contact | Paperkeep", "Questions fréquentes sur Paperkeep, l'extension Chrome qui récupère vos factures fournisseurs, et comment nous contacter.", "faq", None),
+    "guides.html": ("fr", "Guides : récupérer, nommer et transmettre ses factures | Paperkeep", "Guides pratiques pour récupérer, nommer et transmettre ses factures d'achat en ligne à son comptable.", "page", None),
+    "guide-factures-abonnements.html": ("fr", "Récupérer les factures de vos abonnements en ligne : guide pratique", "Où trouver les factures de vos abonnements en ligne (logiciels, hébergement, outils) et comment les transmettre proprement à votre comptable.", "article", "gids-facturen-abonnementen.html"),
     "guide-factures-stripe.html": ("fr", "Télécharger toutes ses factures Stripe en une fois (portail client)", "Vos factures d'abonnement sont sur un portail client Stripe ? Où les trouver, comment les télécharger une par une, et comment toutes les récupérer en un clic.", "article", None),
     "guide-nommer-factures.html": ("fr", "Comment nommer ses factures pour son comptable : la convention date, fournisseur, montant", "Une convention simple pour nommer ses factures d'achat : date, fournisseur, montant. Le dossier se trie tout seul et votre comptable s'y retrouve.", "article", None),
     "guide-recu-sans-pdf.html": ("fr", "Pas de facture PDF ? Comment conserver un reçu en ligne pour sa comptabilité", "Certains services en ligne ne fournissent qu'un reçu à l'écran. Trois façons de le conserver proprement et de le transmettre à son comptable.", "article", None),
@@ -552,7 +577,7 @@ PAGES = {
     "guide-peppol-factures-etrangeres.html": ("fr", "Peppol : les factures de vos abonnements étrangers n'arrivent pas toutes seules", "Depuis 2026, les factures belges arrivent par Peppol. Celles des fournisseurs établis à l'étranger restent des PDF à télécharger : ce que dit la règle et comment s'organiser.", "article", ("gids-peppol-buitenlandse-facturen.html", "guide-peppol-foreign-invoices.html")),
     "gids-peppol-buitenlandse-facturen.html": ("nl", "Peppol: de facturen van je buitenlandse abonnementen komen niet vanzelf binnen", "Sinds 2026 komen Belgische facturen via Peppol binnen. Die van buitenlandse leveranciers blijven pdf's om te downloaden: wat de regel zegt en hoe je het aanpakt.", "article", ("guide-peppol-factures-etrangeres.html", "guide-peppol-foreign-invoices.html")),
     "guide-peppol-foreign-invoices.html": ("en", "Peppol in Belgium: invoices from foreign subscriptions still don't arrive on their own", "Since 2026, Belgian invoices arrive through Peppol. Invoices from suppliers established abroad remain PDFs to download: what the rule says and how to organise yourself.", "article", ("guide-peppol-factures-etrangeres.html", "gids-peppol-buitenlandse-facturen.html")),
-    "gids-facturen-abonnementen.html": ("nl", "De facturen van je online abonnementen terugvinden — praktische gids", "Waar je de facturen van je online abonnementen (software, hosting, tools) vindt en hoe je ze netjes aan je boekhouder bezorgt.", "article", "guide-factures-abonnements.html"),
+    "gids-facturen-abonnementen.html": ("nl", "De facturen van je online abonnementen terugvinden : praktische gids", "Waar je de facturen van je online abonnementen (software, hosting, tools) vindt en hoe je ze netjes aan je boekhouder bezorgt.", "article", "guide-factures-abonnements.html"),
     "kit-comptables.html": ("fr", "Kit pour comptables : faire récupérer leurs factures d'abonnements à vos clients", "Un message prêt à envoyer à vos clients pour qu'ils récupèrent eux-mêmes les factures de leurs abonnements en ligne, et les réponses à leurs questions.", "faq", "kit-boekhouders.html"),
     "kit-boekhouders.html": ("nl", "Kit voor boekhouders: laat je klanten hun abonnementsfacturen ophalen", "Een bericht dat je zo naar je klanten kunt sturen zodat ze zelf de facturen van hun online abonnementen ophalen, met de antwoorden op hun vragen.", "faq", "kit-comptables.html"),
     "comparatif-collecte-factures.html": ("fr", "Paperkeep, GetMyInvoices, Invoice Radar, Tailride ou Invoice Grabber : lequel choisir ?", "Comparaison honnête des outils qui récupèrent vos factures en ligne : ce que chacun fait, ce qu'il demande, à qui il convient, et quand ne pas choisir Paperkeep.", "article", None),
@@ -605,8 +630,8 @@ PAGES = {
     'factuur-uber.html': ('nl', 'Factuur Uber met btw-nummer: waar je ze downloadt (juiste weg)', 'Het betalingsbewijs van Uber is geen factuur: die download je op riders.uber.com, en je btw-nummer moet vóór de rit ingevuld zijn. De juiste weg volgens de officiële hulp.', 'article', 'facture-uber.html'),
     "rappels-tva.html": ("fr", "Rappels TVA gratuits : calendrier et e-mail avant chaque échéance trimestrielle", "Calendrier des échéances TVA trimestrielles belges à ajouter à votre agenda, ou rappel par e-mail 7 jours avant. Gratuit, désinscription en un clic.", "article", "btw-herinneringen.html"),
     "btw-herinneringen.html": ("nl", "Gratis btw-herinneringen: kalender en e-mail voor elke kwartaaldeadline", "Kalender met de Belgische btw-kwartaaldeadlines voor je agenda, of een herinnering per e-mail 7 dagen vooraf. Gratis, uitschrijven met één klik.", "article", "rappels-tva.html"),
-    "rappels-tva-merci.html": ("fr", "Vérifiez votre boîte mail — Paperkeep", "Confirmation de l'inscription aux rappels TVA.", "page", None),
-    "rappels-tva-confirme.html": ("fr", "Inscription confirmée — Paperkeep", "Vous recevrez les rappels TVA.", "page", None),
+    "rappels-tva-merci.html": ("fr", "Vérifiez votre boîte mail | Paperkeep", "Confirmation de l'inscription aux rappels TVA.", "page", None),
+    "rappels-tva-confirme.html": ("fr", "Inscription confirmée | Paperkeep", "Vous recevrez les rappels TVA.", "page", None),
     'facture-orange.html': ('fr', 'Facture Orange : où la télécharger en PDF (Espace client et app)', "Où trouver et télécharger la facture Orange Belgium d'après l'aide officielle : Espace client, application My Orange, facture détaillée, 18 factures en ligne.", 'article', 'factuur-orange.html'),
     'factuur-orange.html': ('nl', 'Factuur Orange: waar je ze downloadt als pdf (Klantenzone en app)', 'Waar je de factuur van Orange Belgium vindt en downloadt volgens de officiële hulp: Klantenzone, app My Orange, gedetailleerde factuur, 18 facturen online.', 'article', 'facture-orange.html'),
     'facture-engie.html': ('fr', 'Facture Engie : où la télécharger en PDF (espace client)', "Où trouver et télécharger la facture Engie d'après l'aide officielle : l'icône PDF de l'espace client, le délai d'affichage, et Peppol pour les indépendants.", 'article', 'factuur-engie.html'),
@@ -680,15 +705,15 @@ PAGES = {
     "facture-google-ads.html": ("fr", "Facture Google Ads : où la télécharger (chemin officiel)", "Google n'envoie pas les relevés Google Ads par e-mail en post-paiement et en prépaiement. Le chemin pour les télécharger en PDF, d'après l'aide officielle, et pourquoi la TVA n'y figure pas.", "article", "factuur-google-ads.html"),
     "factuur-google-ads.html": ("nl", "Factuur Google Ads: waar je ze downloadt (officiële weg)", "Google stuurt geen Google Ads-afschriften per e-mail bij achteraf of vooraf betalen. De weg om ze als pdf te downloaden, volgens de officiële hulp, en waarom er geen btw op staat.", "article", "facture-google-ads.html"),
     "mode-emploi.html": ("fr", "Mode d'emploi de Paperkeep en 4 images (clients et comptables)", "Épingler l'icône, ouvrir la page de facturation, télécharger, envoyer au comptable : le mode d'emploi illustré de Paperkeep, aussi en PDF.", "page", None),
-    "essai.html": ("fr", "Essayer Paperkeep en 10 secondes — page d'exemple", "Une page de facturation d'exemple pour voir Paperkeep télécharger et renommer trois factures, sans compte ni configuration.", "page", None),
-    "bienvenue.html": ("fr", "Paperkeep est installé — premiers pas", "Trois étapes pour récupérer vos premières factures avec Paperkeep.", "page", None),
+    "essai.html": ("fr", "Essayer Paperkeep en 10 secondes : page d'exemple", "Une page de facturation d'exemple pour voir Paperkeep télécharger et renommer trois factures, sans compte ni configuration.", "page", None),
+    "bienvenue.html": ("fr", "Paperkeep est installé : premiers pas", "Trois étapes pour récupérer vos premières factures avec Paperkeep.", "page", None),
     "au-revoir.html": ("fr", "Paperkeep est désinstallé", "Dites-nous ce qui n'allait pas.", "page", None),
-    "pro.html": ("fr", "Paperkeep Pro — la tournée du mois et le récapitulatif pour le comptable", "Paperkeep Pro : tournée du mois, factures manquantes, récapitulatif pour le comptable et classement par trimestre. 39 € par an, essai gratuit de 14 jours.", "faq", None),
-    "retractation.html": ("fr", "Renoncer au contrat — Paperkeep Pro", "Rétractation de l'abonnement Paperkeep Pro dans les 14 jours : formulaire en ligne et accusé de réception immédiat.", "page", None),
-    "conditions.html": ("fr", "Conditions de vente — Paperkeep Pro", "Conditions de vente de l'abonnement Paperkeep Pro : prix, essai, résiliation, remboursement, factures.", "page", None),
-    "a-propos.html": ("fr", "À propos de Paperkeep — qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
-    "mentions-legales.html": ("fr", "Mentions légales — Paperkeep", "Mentions légales de Paperkeep : éditeur, numéro d'entreprise, contact.", "page", None),
-    "privacy.html": ("fr", "Paperkeep — Politique de confidentialité / Privacy policy", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
+    "pro.html": ("fr", "Paperkeep Pro : tournée du mois, rappel TVA et récapitulatif pour le comptable", "Paperkeep Pro : tournée du mois, factures manquantes, récapitulatif pour le comptable et classement par trimestre. 39 € par an, essai gratuit de 14 jours.", "faq", None),
+    "retractation.html": ("fr", "Renoncer au contrat : Paperkeep Pro", "Rétractation de l'abonnement Paperkeep Pro dans les 14 jours : formulaire en ligne et accusé de réception immédiat.", "page", None),
+    "conditions.html": ("fr", "Conditions de vente de Paperkeep Pro", "Conditions de vente de l'abonnement Paperkeep Pro : prix, essai, résiliation, remboursement, factures.", "page", None),
+    "a-propos.html": ("fr", "À propos de Paperkeep : qui édite l'extension", "Paperkeep est une extension Chrome gratuite développée en Belgique. Qui l'édite, pourquoi, et comment nous contacter.", "page", None),
+    "mentions-legales.html": ("fr", "Mentions légales | Paperkeep", "Mentions légales de Paperkeep : éditeur, numéro d'entreprise, contact.", "page", None),
+    "privacy.html": ("fr", "Politique de confidentialité / Privacy policy | Paperkeep", "Politique de confidentialité de Paperkeep : aucune donnée n'est envoyée au développeur ni à un tiers.", "page", None),
 }
 PUBLIE = {"factuur-bol.html": "2026-10-27", "facture-bol.html": "2026-10-27", "factuur-mega.html": "2026-10-27", "facture-mega.html": "2026-10-27", "factuur-totalenergies.html": "2026-10-27", "facture-totalenergies.html": "2026-10-27", "factuur-luminus.html": "2026-10-27", "facture-luminus.html": "2026-10-27", "factuur-telenet.html": "2026-10-27", "facture-telenet.html": "2026-10-27", "factuur-base.html": "2026-10-27", "facture-base.html": "2026-10-27", "invoice-apple.html": "2026-10-27", "factuur-apple.html": "2026-10-27", "facture-apple.html": "2026-10-27", "invoice-zapier.html": "2026-10-27", "factuur-zapier.html": "2026-10-27", "facture-zapier.html": "2026-10-27", "invoice-calendly.html": "2026-10-27", "factuur-calendly.html": "2026-10-27", "facture-calendly.html": "2026-10-27", "invoice-hostinger.html": "2026-10-27", "factuur-hostinger.html": "2026-10-27", "facture-hostinger.html": "2026-10-27", "invoice-mailchimp.html": "2026-10-27", "factuur-mailchimp.html": "2026-10-27", "facture-mailchimp.html": "2026-10-27", "invoice-hubspot.html": "2026-10-27", "factuur-hubspot.html": "2026-10-27", "facture-hubspot.html": "2026-10-27", "invoice-figma.html": "2026-10-27", "factuur-figma.html": "2026-10-27", "facture-figma.html": "2026-10-27", "invoice-slack.html": "2026-10-27", "factuur-slack.html": "2026-10-27", "facture-slack.html": "2026-10-27", "invoice-shopify.html": "2026-10-27", "factuur-shopify.html": "2026-10-27", "facture-shopify.html": "2026-10-27", "invoice-squarespace.html": "2026-10-27", "factuur-squarespace.html": "2026-10-27", "facture-squarespace.html": "2026-10-27", "invoice-wix.html": "2026-10-27", "factuur-wix.html": "2026-10-27", "facture-wix.html": "2026-10-27", "invoice-claude.html": "2026-10-27", "factuur-claude.html": "2026-10-27", "facture-claude.html": "2026-10-27", "invoice-spotify.html": "2026-10-27", "factuur-spotify.html": "2026-10-27", "facture-spotify.html": "2026-10-27", "invoice-infomaniak.html": "2026-10-27", "factuur-infomaniak.html": "2026-10-27", "facture-infomaniak.html": "2026-10-27", "confiance.html": "2026-10-26", "vertrouwen.html": "2026-10-26", "presse.html": "2026-10-26", "pers.html": "2026-10-26", "filtres-gmail-factures.html": "2026-10-26", "gmail-filters-facturen.html": "2026-10-26", "deployer-paperkeep-cabinet.html": "2026-10-26", "paperkeep-uitrollen-kantoor.html": "2026-10-26", "facture-google-ads.html": "2026-10-26", "factuur-google-ads.html": "2026-10-26", "factures-achat-accountable.html": "2026-10-26", "aankoopfacturen-accountable.html": "2026-10-26", "factures-achat-billit.html": "2026-10-26", "aankoopfacturen-billit.html": "2026-10-26", "factures-achat-yuki.html": "2026-10-26", "aankoopfacturen-yuki.html": "2026-10-26", "factures-achat-odoo.html": "2026-10-26", "aankoopfacturen-odoo.html": "2026-10-26", "ajouter-numero-tva.html": "2026-10-26", "btw-nummer-toevoegen.html": "2026-10-26", "conserver-factures-belgique.html": "2026-10-26", "facturen-bewaren-belgie.html": "2026-10-26", "guide-peppol-telecom-energie.html": "2026-10-26", "gids-peppol-telecom-energie.html": "2026-10-26", "facture-uber.html": "2026-10-26", "factuur-uber.html": "2026-10-26", "facture-orange.html": "2026-10-26", "factuur-orange.html": "2026-10-26", "facture-engie.html": "2026-10-26", "factuur-engie.html": "2026-10-26", "facture-scarlet.html": "2026-10-26", "factuur-scarlet.html": "2026-10-26", "facture-linkedin-premium.html": "2026-10-26", "factuur-linkedin-premium.html": "2026-10-26", "factuur-chatgpt.html": "2026-10-25", "invoice-chatgpt.html": "2026-10-25", "factuur-google-workspace.html": "2026-10-25", "invoice-google-workspace.html": "2026-10-25", "factuur-adobe.html": "2026-10-25", "invoice-adobe.html": "2026-10-25", "factuur-notion.html": "2026-10-25", "invoice-notion.html": "2026-10-25", "factuur-meta-ads.html": "2026-10-25", "invoice-meta-ads.html": "2026-10-25", "factuur-canva.html": "2026-10-25", "invoice-canva.html": "2026-10-25", "factuur-microsoft-365.html": "2026-10-25", "invoice-microsoft-365.html": "2026-10-25", "factuur-ovhcloud.html": "2026-10-25", "invoice-ovhcloud.html": "2026-10-25", "factuur-zoom.html": "2026-10-25", "invoice-zoom.html": "2026-10-25", "factuur-dropbox.html": "2026-10-25", "invoice-dropbox.html": "2026-10-25", "facture-chatgpt.html": "2026-10-18", "facture-google-workspace.html": "2026-10-18", "facture-adobe.html": "2026-10-18", "facture-notion.html": "2026-10-18", "facture-meta-ads.html": "2026-10-18", "facture-canva.html": "2026-10-18", "facture-microsoft-365.html": "2026-10-18", "facture-ovhcloud.html": "2026-10-18", "facture-zoom.html": "2026-10-18", "facture-dropbox.html": "2026-10-18", "guide-peppol-factures-etrangeres.html": "2026-10-11", "gids-peppol-buitenlandse-facturen.html": "2026-10-11", "guide-peppol-foreign-invoices.html": "2026-10-11", "comparatif-collecte-factures.html": "2026-10-12", "ou-trouver-factures-abonnements.html": "2026-10-12", "waar-vind-ik-facturen-abonnementen.html": "2026-10-12"}
 NOINDEX = {"bienvenue.html", "au-revoir.html", "mentions-legales.html", "rappels-tva-merci.html", "rappels-tva-confirme.html"}
@@ -749,7 +774,7 @@ def secondaire(f):
   <a class="marque" href="{accueil}">{LOGO}Paperkeep</a>
   <nav><a href="{accueil}#fonctionnement">{t["nav"][0]}</a><a href="{accueil}#confidentialite">{t["nav"][1]}</a><a href="{accueil}#comptables">{t["nav"][2]}</a><a href="{aide}">{t["nav"][3]}</a></nav>
   <div class="langues">{langues}</div>
-  <a class="btn" href="{STORE}">{CHROME_ICO}{t["cta"]} <small>— {t["cta_sub"]}</small></a>
+  <a class="btn" href="{STORE}">{CHROME_ICO}{t["cta"]} <small>· {t["cta_sub"]}</small></a>
 </div></header>
 <main class="article"><div class="w etroit">
 {corps}
@@ -760,9 +785,12 @@ def secondaire(f):
   <a href="mailto:{MAIL}">{MAIL}</a>
   <p>{t["mention"]}</p>
 </div></footer>
+<script>{NAVIG}</script>
 </body>
 </html>
 """
+    if lang == "fr":
+        h = insecables(h)
     pathlib.Path(f).write_text(marquer(h, f), encoding="utf-8")
     return f, len(h)
 
