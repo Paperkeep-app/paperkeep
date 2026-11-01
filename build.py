@@ -68,7 +68,7 @@ T = {
                 ("Vous choisissez", "Toutes les factures trouvées sont cochées ; décochez celles dont vous n'avez pas besoin."),
                 ("Trois langues", "Interface en français, en néerlandais et en anglais, selon la langue de votre navigateur.")],
         s4_oeil="Confidentialité", s4_h="Rien ne quitte votre ordinateur.",
-        s4_p="Paperkeep n'a ni serveur ni statistiques, et la version gratuite ne demande aucun compte. Vos factures vont de la page à votre dossier, sans passer par nous.",
+        s4_p="L'extension n'a ni serveur ni statistiques, et la version gratuite ne demande aucun compte. Vos factures vont de la page à votre dossier, sans passer par nous.",
         prive=[("Aucun compte", "Rien à créer, rien à connecter."),
                ("Lecture au clic", "La page n'est lue qu'au moment où vous cliquez sur l'icône."),
                ("Accès demandé site par site", "Aucun accès à vos sites n'est demandé à l'installation. Vous pouvez toujours refuser.")],
@@ -84,7 +84,7 @@ T = {
              ("Est-ce gratuit ?", "Oui : télécharger et renommer vos factures est gratuit, sans compte et sans limite. Paperkeep Pro (39 € par an, offert 14 jours dès l'installation, sans e-mail ni carte) ajoute la tournée du mois, les factures manquantes, le rappel TVA, le récapitulatif pour le comptable, le classement par trimestre et les factures reçues dans Gmail."),
              ("Sur quels services ça marche ?", "Sur les portails de facturation Stripe, sur les pages qui listent des factures en PDF et sur celles dont les liens n'ont pas d'extension. Si un service n'est pas reconnu, écrivez-nous : nous l'ajoutons."),
              ("Où arrivent mes factures ?", "Dans le dossier Téléchargements › Factures de votre ordinateur, sous la forme 2026-09-06_fournisseur_15-00EUR.pdf."),
-             ("Mes données sont-elles envoyées quelque part ?", "Non. Aucun serveur, aucune statistique. Les fichiers vont directement dans votre dossier Téléchargements.")],
+             ("Mes données sont-elles envoyées quelque part ?", "Non. L'extension n'a ni serveur ni statistiques. Les fichiers vont directement dans votre dossier Téléchargements.")],
         faq_plus="Toutes les questions et le contact",
         fin_h="Dix minutes par mois, et le dossier est prêt.", fin_p="Installez Paperkeep, ouvrez une page de facturation, cliquez.",
         pied=["Aide et contact", "Mode d’emploi", "Guides", "Paperkeep Pro", "À propos", "Confidentialité", "Conditions de vente"] + (["Renoncer au contrat"] if RETRACTATION_URL else []), pied_liens=["aide.html", "mode-emploi.html", "guides.html", "pro.html", "a-propos.html", "privacy.html", "conditions.html"] + (["retractation.html"] if RETRACTATION_URL else []),
@@ -126,7 +126,7 @@ T = {
                 ("You choose", "Every invoice found is ticked; untick the ones you do not need."),
                 ("Three languages", "Interface in English, French and Dutch, following your browser language.")],
         s4_oeil="Privacy", s4_h="Nothing leaves your computer.",
-        s4_p="Paperkeep has no server and no analytics, and the free version needs no account. Your invoices go from the page to your folder, without passing through us.",
+        s4_p="The extension has no server and no analytics, and the free version needs no account. Your invoices go from the page to your folder, without passing through us.",
         prive=[("No account", "Nothing to create, nothing to connect."),
                ("Read on click", "The page is only read when you click the icon."),
                ("Access asked site by site", "No access to your sites is requested at install. You can always decline.")],
@@ -142,7 +142,7 @@ T = {
              ("Is it free?", "Yes: downloading and renaming invoices is free, with no account and no limit. Paperkeep Pro (€39 a year, free for 14 days from installation, no e-mail or card) adds the monthly checklist, missing-invoice alerts, the VAT reminder, the summary for your accountant, filing by quarter and invoices from Gmail."),
              ("Which services does it work on?", "On Stripe billing portals, on pages listing PDF invoices and on pages whose links have no file extension. If a service is not recognised, write to us: we add it."),
              ("Where do my invoices go?", "To the Downloads › Factures folder on your computer, named 2026-09-06_vendor_15-00EUR.pdf."),
-             ("Is my data sent anywhere?", "No. No server, no analytics. Files go straight to your Downloads folder.")],
+             ("Is my data sent anywhere?", "No. The extension has no server and no analytics. Files go straight to your Downloads folder.")],
         faq_plus="All questions and contact",
         fin_h="Ten minutes a month, and the folder is ready.", fin_p="Install Paperkeep, open a billing page, click.",
         # Section propre à la page anglaise (pas d'index anglais séparé) : liens vers les pages invoice-*.
@@ -186,7 +186,7 @@ T = {
                 ("Jij kiest", "Alle gevonden facturen zijn aangevinkt; vink uit wat je niet nodig hebt."),
                 ("Drie talen", "Interface in het Nederlands, Frans en Engels, volgens de taal van je browser.")],
         s4_oeil="Privacy", s4_h="Niets verlaat je computer.",
-        s4_p="Paperkeep heeft geen server en geen statistieken, en de gratis versie vraagt geen account. Je facturen gaan van de pagina naar je map, zonder langs ons te gaan.",
+        s4_p="De extensie heeft geen server en geen statistieken, en de gratis versie vraagt geen account. Je facturen gaan van de pagina naar je map, zonder langs ons te gaan.",
         prive=[("Geen account", "Niets aan te maken, niets te koppelen."),
                ("Alleen gelezen als je klikt", "De pagina wordt alleen gelezen wanneer je op het icoon klikt."),
                ("Toegang per site gevraagd", "Bij de installatie wordt geen toegang tot je sites gevraagd. Je kunt altijd weigeren.")],
@@ -202,7 +202,7 @@ T = {
              ("Is het gratis?", "Ja: facturen downloaden en hernoemen is gratis, zonder account en zonder limiet. Paperkeep Pro (€ 39 per jaar, 14 dagen gratis vanaf de installatie, zonder e-mail of kaart) voegt de maandronde, ontbrekende facturen, de btw-herinnering, het overzicht voor je boekhouder, ordenen per kwartaal en facturen uit Gmail toe."),
              ("Op welke diensten werkt het?", "Op Stripe-portalen, op pagina's met facturen in pdf en op pagina's waarvan de links geen extensie hebben. Wordt een dienst niet herkend, schrijf ons dan: we voegen hem toe."),
              ("Waar komen mijn facturen terecht?", "In de map Downloads › Factures op je computer, met de naam 2026-09-06_leverancier_15-00EUR.pdf."),
-             ("Worden mijn gegevens ergens naartoe gestuurd?", "Nee. Geen server, geen statistieken. De bestanden gaan rechtstreeks naar je map Downloads.")],
+             ("Worden mijn gegevens ergens naartoe gestuurd?", "Nee. De extensie heeft geen server en geen statistieken. De bestanden gaan rechtstreeks naar je map Downloads.")],
         faq_plus="Alle vragen en contact",
         fin_h="Tien minuten per maand, en de map is klaar.", fin_p="Installeer Paperkeep, open een facturatiepagina, klik.",
         pied=["Hulp en contact", "Gids", "Paperkeep Pro", "Privacy", "Overeenkomst herroepen"], pied_liens=["aide.html#nl", "gids-facturen-abonnementen.html", "pro.html", "privacy.html", "retractation.html"],
@@ -362,9 +362,14 @@ JS = ("document.documentElement.classList.add('js');"
 
 NAVIG = ("(function(){var ua=navigator.userAgent,c=/Edg\\//.test(ua)?[\"" + EDGE + "\",\"Edge\"]:/Firefox\\//.test(ua)?[\"" + FIREFOX + "\",\"Firefox\"]:null,"
          "m=/Android|iPhone|iPad/.test(ua),l=document.documentElement.lang;"
+         "var g=/[?&](gclid|utm_source=google)\\b/.test(location.search);"
          "document.querySelectorAll('a[href*=\"chromewebstore.google.com\"]').forEach(function(a){"
+         "if(g)a.href=a.href.replace('utm_source=paperkeep.be','utm_source=google-ads');"
          "if(m){a.href='mailto:?subject=Paperkeep&body=https://paperkeep.be';a.textContent=({fr:\"M'envoyer le lien pour mon ordinateur\",nl:\"Stuur me de link voor mijn computer\",en:\"Email me the link for my computer\"})[l]||\"Email me the link\";}"
          "else if(c){a.href=c[0];a.innerHTML=a.innerHTML.replace('Chrome',c[1]);}});})();")
+
+# Compteur de visites GoatCounter : sans cookie ni identifiant, voir privacy.html.
+COMPTEUR = '<script data-goatcounter="https://paperkeep.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
 
 CHROME_ICO = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m-4.5-4.5L12 15l4.5-4.5M5 20h14"/></svg>'
 
@@ -530,6 +535,7 @@ def page(lang):
   <p>{t["mention"]}</p>
 </div></footer>
 <script>{JS}{NAVIG}</script>
+{COMPTEUR}
 </body>
 </html>
 """
@@ -786,6 +792,7 @@ def secondaire(f):
   <p>{t["mention"]}</p>
 </div></footer>
 <script>{NAVIG}</script>
+{COMPTEUR}
 </body>
 </html>
 """
